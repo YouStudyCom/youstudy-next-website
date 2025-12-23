@@ -17,7 +17,7 @@ export default function AboutUs() {
                 description={t.description}
             />
 
-            {/* Magic Hero Section */}
+            {/* Magic Hero Section  test*/}
             <section className="relative bg-slate-900 text-white overflow-hidden py-24 md:py-32">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-20">
