@@ -1,0 +1,102 @@
+{
+    "welcome": "Welcome to YouStudy - Your Gateway to Global Education",
+    "home": "Home",
+    "advice": "Study Abroad Advice",
+    "subjects": "Subject Areas",
+    "breadcrumbs": {
+        "home": "Home",
+        "study_abroad_guide": "Study Abroad Guide",
+        "subject_areas": "Subject Areas"
+    },
+    "hero": {
+        "title": "Get Your Offer & Free Consultation",
+        "subtitle": "Begin your journey with professional support."
+    },
+    "steps": {
+        "title": "Ready to Study Abroad?",
+        "subtitle": "We’re Here to Guide You Every Step of the Way. Our proven process ensures a smooth transition to your dream university.",
+        "step1_title": "Send Your Enquiry",
+        "step1_desc": "Take the first step towards your future today. Click 'Get Started' and complete our simple enquiry form to connect with a dedicated study abroad counsellor who speaks your language and understands your goals.",
+        "step2_title": "Apply with YouStudy",
+        "step2_desc": "Don't navigate the complex application process alone. Apply through YouStudy and let our experts handle the paperwork, review your documents, and submit a professional application to your chosen universities.",
+        "step3_title": "Start Your Journey",
+        "step3_desc": "Congratulations! Once you receive your acceptance offer, we'll help you book your flight, arrange accommodation, and prepare for your visa interview so you can confidentally begin your study abroad journey.",
+        "get_started": "Get Started",
+        "get_free_consultation": "Get Free Consultation"
+    },
+    "destinations": {
+        "title": "Popular Study Destinations",
+        "subtitle": "Explore the world's top educational hubs. Whether you dream of the historic universities of the UK, the innovation of the USA, or the lifestyle of Australia, we have the connections to get you there.",
+        "learn_more": "Learn More About This Destination"
+    },
+    "subject_areas_title": "Subject Areas",
+    "subject_areas_subtitle": "Find your study path with these popular fields",
+    "explore": "Explore",
+    "view_all_courses": "View All Courses",
+    "read_more": "Read More",
+    "read_less": "Read Less",
+    "testimonials_title": "What Our Students Are Saying!",
+    "seo": {
+        "title": "YouStudy - Your Gateway to Global Education & Study Abroad",
+        "description": "Study abroad with confidence. Get a free consultation for university admissions in the UK, USA, Canada & Australia. YouStudy provides expert guidance, admissions support, and student visa assistance.",
+        "keywords": "study abroad, study overseas, university admissions, education consultants, study in UK, study in USA, study in Canada, study in Australia, free consultation, student visa, international students, undergraduate study abroad, postgraduate study abroad"
+    },
+    "study_abroad_guide_seo": {
+        "title": "Study Abroad Destinations | Your Complete Global Education Guide",
+        "description": "Explore top study abroad destinations including the UK, USA, Canada, Australia, and Europe. Find the best universities, admission requirements, student visas, and study costs for international students.",
+        "keywords": "study abroad destinations, study abroad, best countries to study abroad, study in UK, study in USA, study in Canada, study in Australia, international universities, student visa, global education"
+    },
+    "study_abroad_guide_hero": {
+        "title": "Where Will You Learn Next?",
+        "subtitle": "Combine academic excellence with cultural discovery. Choose from our curated list of educational destinations."
+    },
+    "faq": [
+        {
+            "question": "Why should I study abroad?",
+            "answer": "Studying abroad gives students access to world-class education, international exposure, globally recognized degrees, advanced research opportunities, and improved career prospects in the global job market."
+        },
+        {
+            "question": "Which country is best for international students?",
+            "answer": "The best country for international students depends on academic goals, budget, and career plans. Popular destinations include the UK, USA, Canada, Australia, Germany, Ireland, Turkey, Malaysia, and Georgia due to quality education and post-study opportunities."
+        },
+        {
+            "question": "What are the basic requirements to study abroad?",
+            "answer": "Common requirements include academic transcripts, proof of English language proficiency (IELTS or TOEFL), a valid passport, offer letter from a recognized university, financial proof, and a student visa."
+        },
+        {
+            "question": "How much does it cost to study abroad?",
+            "answer": "The cost of studying abroad varies by country, university, and program. Expenses usually include tuition fees, living costs, health insurance, and visa fees. Some countries offer affordable or tuition-free education options."
+        },
+        {
+            "question": "Can international students work while studying?",
+            "answer": "Yes, most study abroad destinations allow international students to work part-time during studies and full-time during holidays, subject to student visa regulations of the host country."
+        },
+        {
+            "question": "Are scholarships available for international students?",
+            "answer": "Many universities and governments offer scholarships for international students based on academic merit, financial need, or specific programs. Scholarships can significantly reduce tuition and living costs."
+        },
+        {
+            "question": "What is a post-study work visa?",
+            "answer": "A post-study work visa allows international graduates to stay and work in the country after completing their studies. Countries like the UK, Canada, and Australia offer attractive post-study work opportunities."
+        },
+        {
+            "question": "How long does the study abroad application process take?",
+            "answer": "The study abroad application process typically takes between 3 to 6 months, depending on the country, university deadlines, visa processing time, and document preparation."
+        },
+        {
+            "question": "Do I need IELTS or TOEFL to study abroad?",
+            "answer": "Most universities require IELTS or TOEFL to prove English proficiency. However, some countries and universities offer alternatives, exemptions, or English pathway programs."
+        },
+        {
+            "question": "Can an education consultant help with studying abroad?",
+            "answer": "Yes, professional education consultants assist with university selection, application processing, visa guidance, scholarships, and pre-departure support to ensure a smooth study abroad journey."
+        }
+    ],
+    "subject_areas_page": {
+        "title": "Explore Top Subject Areas",
+        "description": "Discover 18+ top academic subject areas for your study abroad journey. From Business and Engineering to Arts and Medicine, find the perfect program that matches your career goals and academic interests.",
+        "hero_title": "Find Your Path",
+        "hero_subtitle": "Explore our comprehensive guide to academic disciplines. Whether you're creative, analytical, or scientific, there's a world of opportunity waiting.",
+        "explore_programs": "Explore Programs"
+    }
+}

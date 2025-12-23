@@ -1,0 +1,156 @@
+{
+    "en": {
+        "title": "About Us",
+        "description": "YouStudy is a leader in international education services. We help and guide international students to study in the UK and USA as well as other destination countries.",
+        "hero": {
+            "title": "About YouStudy",
+            "subtitle": "Your Trusted Guide to Global Education",
+            "content": "YouStudy is a leader in international education services. We help and guide international students to study in the UK and USA as well as other destination countries. Our success comes from offering a personalized service for our students and their parents. We connect students with the right course, the right institution and the right country. We have been operating successfully since 2008, creating huge opportunities for our students, helping them from the moment they decide to study abroad until they arrive at their destination of choice and beyond."
+        },
+        "stats": [
+            {
+                "value": "2008",
+                "label": "Founded in"
+            },
+            {
+                "value": "500+",
+                "label": "Global Partners"
+            },
+            {
+                "value": "10k+",
+                "label": "Students Assisted"
+            }
+        ],
+        "whatWeDo": {
+            "title": "What We Do",
+            "subtitle": "Comprehensive support for your study abroad journey",
+            "items": [
+                {
+                    "title": "University Admissions Assistance",
+                    "content": "We guide students through every step of the application process, from selecting the right universities and programs to preparing and submitting applications. Our experienced education counsellors provide personalized support to maximize the chances of acceptance."
+                },
+                {
+                    "title": "Free Personalized Education Counselling",
+                    "content": "Our experienced education counsellors provide personalized consultations tailored to your aspirations, guiding you through every step of the process. Together, we'll uncover your dreams and craft a customized plan to turn them into reality."
+                },
+                {
+                    "title": "Scholarships Opportunities",
+                    "content": "Beyond enrollment, we actively seek out scholarships opportunities to alleviate the financial burden of studying abroad. Through our extensive network and partnerships, we connect students with scholarships, grants, and financial aid programs."
+                },
+                {
+                    "title": "Ongoing Support and Transition Assistance",
+                    "content": "Your success is our priority, even after you've secured admission! Count on us for ongoing support and transition assistance. From pre-departure orientations to arrival assistance, we'll be by your side to ensure a seamless transition."
+                },
+                {
+                    "title": "Accommodation Support",
+                    "content": "Finding the right place to live is crucial for a comfortable and successful academic experience. YouStudy helps students secure suitable accommodations, whether it's on-campus housing, private rentals, or homestays."
+                },
+                {
+                    "title": "Visa Application Guidance",
+                    "content": "Navigating the visa application process can be complex and daunting. Our team offers detailed guidance and support, ensuring that students have all the necessary documents and information to obtain their student visas without hassle."
+                },
+                {
+                    "title": "Tailored Language Course Matching",
+                    "content": "Find Your Perfect Language Course! With our vast network of prestigious language schools in numerous destinations, we’ll connect you with the ideal program that aligns with your language study goals, preferences, and budget."
+                }
+            ]
+        },
+        "whyChooseUs": {
+            "title": "Why Choose YouStudy",
+            "items": [
+                {
+                    "id": "01",
+                    "title": "Proven Success",
+                    "content": "Our extensive experience and track record speak volumes about our capability to deliver results."
+                },
+                {
+                    "id": "02",
+                    "title": "Personalized Approach",
+                    "content": "We recognize the unique needs of each student and provide bespoke services tailored to individual aspirations and circumstances."
+                },
+                {
+                    "id": "03",
+                    "title": "Unwavering Support",
+                    "content": "From initial consultation to the first day on campus, our commitment to student success is unwavering."
+                }
+            ]
+        }
+    },
+    "ar": {
+        "title": "من نحن",
+        "description": "يوستدي هي شركة رائدة في خدمات التعليم الدولي. نساعد ونرشد الطلاب الدوليين للدراسة في المملكة المتحدة والولايات المتحدة الأمريكية ودول أخرى.",
+        "hero": {
+            "title": "عن يوستدي",
+            "subtitle": "دليلك الموثوق للتعليم العالمي",
+            "content": "هل تحلم بدراسة تخصصك المفضل في جامعة عالمية؟ وهل تبحث عن تجربة دراسية فريدة تغير حياتك؟ أنت لست وحدك! فالكثير من الطلاب يطمحون للدراسة في الخارج. نحن \"يوستدي\" شركة رائدة في مجال الاستشارات الدراسية في الخارج وخدمات التعليم الدولي. نتمتع بخبرة واسعة في مساعدة الطلاب على تحقيق أهدافهم الدراسية. هدفنا هو توفير تجربة سلسة وممتعة للطلاب الدوليين، بدءاً من اختيار التخصص المناسب وحتى الاندماج في الحياة الجامعية في بلد جديد."
+        },
+        "stats": [
+            {
+                "value": "2008",
+                "label": "تأسست عام"
+            },
+            {
+                "value": "+500",
+                "label": "شريك عالمي"
+            },
+            {
+                "value": "+10k",
+                "label": "طالب تم مساعدتهم"
+            }
+        ],
+        "whatWeDo": {
+            "title": "ماذا نفعل؟",
+            "subtitle": "دعم شامل لرحلتك الدراسية",
+            "items": [
+                {
+                    "title": "الاستشارات الأكاديمية",
+                    "content": "حيث نرشدك لاختيار التخصص الجامعي المناسب بناءً على اهتماماتك، وقدراتك، وطموحاتك."
+                },
+                {
+                    "title": "التقديم للجامعات",
+                    "content": "نساعدك في إعداد ملفات التقديم وتقديمها للجامعات المختارة. كما يقدم مستشارونا التعليميون، ذوو الخبرة في المجال، الدعم الشخصي لزيادة فرص القبول."
+                },
+                {
+                    "title": "الحصول على المنح الدراسية",
+                    "content": "نسعى بنشاط للحصول على فرص المنح الدراسية المتاحة ونرشدك لكيفية التقديم عليها، لتخفيف العبء المالي للدراسة في الخارج."
+                },
+                {
+                    "title": "الدعم المستمر ومساعدة الانتقال",
+                    "content": "نجاحك هو أولويتنا، حتى بعد حصولك على القبول. سنعمل على الاستمرار في دعمك ومساعدتك على الانتقال عند استعدادك للانطلاق في مغامرة الدراسة في الخارج."
+                },
+                {
+                    "title": "توفير السكن",
+                    "content": "نساعدك في العثور على سكن مناسب ومريح، لما لذلك من أهمية في الحصول على تجربة أكاديمية ناجحة ومريحة. فنسعى في تأمين أماكن إقامة مناسبة."
+                },
+                {
+                    "title": "تسهيل إجراءات السفر",
+                    "content": "نساعدك في الحصول على التأشيرة والسفر إلى بلد الدراسة دون عناء من خلال تقديمنا إرشاداً ودعماً مفصلاً."
+                },
+                {
+                    "title": "كورسات اللغة الإنجليزية",
+                    "content": "نوفر لك كورسات تحضيرية للغة في أفضل معاهد ومدارس اللغة المرموقة في العديد من الوجهات. وسنضمن التحاقك بالبرنامج المثالي الذي يتوافق مع أهدافك."
+                }
+            ]
+        },
+        "whyChooseUs": {
+            "title": "لماذا تختارنا؟",
+            "items": [
+                {
+                    "id": "01",
+                    "title": "خبرة واسعة",
+                    "content": "سنوات من الخبرة في مجال الدراسة في الخارج مكنتنا من بناء علاقات قوية مع الجامعات والمعاهد العالمية."
+                },
+                {
+                    "id": "02",
+                    "title": "فريق عمل متخصص",
+                    "content": "فريقنا يتكون من خبراء في مجال التعليم والدراسة في الخارج والهجرة، يقدمون لك الاستشارات اللازمة في كل خطوة."
+                },
+                {
+                    "id": "03",
+                    "title": "خدمات شاملة",
+                    "content": "منذ الاستشارة الأولى وحتى أول يوم للطالب في الحرم الجامعي، نبقى ملتزمين بثبات بدعم نجاحه في كل خطوة."
+                }
+            ]
+        }
+    }
+}

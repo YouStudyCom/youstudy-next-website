@@ -1,0 +1,92 @@
+{
+    "en": {
+        "title": "Contact Us",
+        "metaDescription": "Get in touch with YouStudy experts in UK, Malaysia, and Pakistan. Personalized advice for your study abroad journey.",
+        "heroTitle": "We're Here to Help",
+        "heroDescription": "Whether you have questions about universities, visas, or just want to explore your options, our global team is ready to assist you.",
+        "formTitle": "Send us a Message",
+        "formSubtitle": "Fill out the form below and an education consultant will contact you shortly.",
+        "officesTitle": "Our Global Offices",
+        "whyUsTitle": "Why Contact YouStudy?",
+        "whyUsPoints": [
+            "Free initial consultation with expert advisors",
+            "Assistance with university applications & visas",
+            "Partial scholarship guidance",
+            "Support from application to arrival"
+        ],
+        "offices": [
+            {
+                "country": "United Kingdom",
+                "address": "Aizlewoods Mill, Nursery Street, Sheffield, S3 8GG, United Kingdom",
+                "phones": [
+                    "+44 203 608 2800",
+                    "+44 114 494 0777"
+                ],
+                "flag": "🇬🇧"
+            },
+            {
+                "country": "Malaysia",
+                "address": "D-01-01, Menara Mitraland, No 13A, Jalan PJU 5/1, Kota Damansara, 47810, Petaling Jaya, Selangor, Malaysia",
+                "phones": [
+                    "+60 3 9212 8000"
+                ],
+                "website": true,
+                "flag": "🇲🇾"
+            },
+            {
+                "country": "Pakistan",
+                "address": "Hotel One, Business Cabin, Ground Floor, Block C People's Colony No 1, Faisalabad, Punjab, Pakistan",
+                "phones": [
+                    "+92 (41) 539 22 22"
+                ],
+                "website": true,
+                "flag": "🇵🇰"
+            }
+        ]
+    },
+    "ar": {
+        "title": "تواصل معنا",
+        "metaDescription": "تواصل مع خبراء يوستدي في بريطانيا، ماليزيا، وباكستان. استشارات شخصية لرحلتك الدراسية في الخارج.",
+        "heroTitle": "نحن هنا لمساعدتك",
+        "heroDescription": "سواء كان لديك أسئلة حول الجامعات، التأشيرات، أو ترغب فقط في استكشاف خياراتك، فريقنا العالمي مستعد لمساعدتك.",
+        "formTitle": "أرسل لنا رسالة",
+        "formSubtitle": "املأ النموذج أدناه وسيقوم مستشار تعليمي بالتواصل معك قريباً.",
+        "officesTitle": "مكاتبنا العالمية",
+        "whyUsTitle": "لماذا تتواصل مع يوستدي؟",
+        "whyUsPoints": [
+            "استشارة أولية مجانية مع خبراء",
+            "مساعدة في تقديمات الجامعات والتأشيرات",
+            "توجيه بشأن المنح الدراسية الجزئية",
+            "دعم من التقديم حتى الوصول"
+        ],
+        "offices": [
+            {
+                "country": "المملكة المتحدة",
+                "address": "Aizlewoods Mill, Nursery Street, Sheffield, S3 8GG, United Kingdom",
+                "phones": [
+                    "+44 203 608 2800",
+                    "+44 114 494 0777"
+                ],
+                "flag": "🇬🇧"
+            },
+            {
+                "country": "ماليزيا",
+                "address": "D-01-01, Menara Mitraland, No 13A, Jalan PJU 5/1, Kota Damansara, 47810, Petaling Jaya, Selangor, Malaysia",
+                "phones": [
+                    "+60 3 9212 8000"
+                ],
+                "website": true,
+                "flag": "🇲🇾"
+            },
+            {
+                "country": "باكستان",
+                "address": "Hotel One, Business Cabin, Ground Floor, Block C People's Colony No 1, Faisalabad, Punjab, Pakistan",
+                "phones": [
+                    "+92 (41) 539 22 22"
+                ],
+                "website": true,
+                "flag": "🇵🇰"
+            }
+        ]
+    }
+}

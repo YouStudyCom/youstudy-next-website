@@ -1,0 +1,66 @@
+# ===============================================
+# Robots.txt for youstudy.com
+# ===============================================
+
+# Full permission for main search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Allow useful AI crawlers
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# General settings for all other good crawlers
+User-agent: *
+Content-signal: search=yes,ai-train=no
+Allow: /
+
+# ===============================================
+# Block crawlers used for AI model training without permission
+# ===============================================
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+# ===============================================
+# Sitemap
+# ===============================================
+Sitemap: https://youstudy.com/sitemap.xml
