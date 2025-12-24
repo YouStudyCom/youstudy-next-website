@@ -134,9 +134,12 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                     },
                     images: [
                         {
-                            url: (article.image || destination?.image)?.startsWith('http')
-                                ? (article.image || destination?.image)
-                                : `/gallery/blog/post/${article.image || destination?.image}`,
+                            url: (() => {
+                                const raw = article.image || destination?.image;
+                                if (!raw) return '';
+                                const filename = raw.split('/').pop().split('?')[0];
+                                return `/gallery/blog/post/${filename}`;
+                            })(),
                             alt: articleTitle,
                         },
                     ],
@@ -146,9 +149,12 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                 url={articleUrl}
                 title={articleTitle}
                 images={[
-                    (article.image || destination?.image)?.startsWith('http')
-                        ? (article.image || destination?.image)
-                        : `/gallery/blog/post/${article.image || destination?.image}`
+                    (() => {
+                        const raw = article.image || destination?.image;
+                        if (!raw) return '';
+                        const filename = raw.split('/').pop().split('?')[0];
+                        return `/gallery/blog/post/${filename}`;
+                    })()
                 ]}
                 datePublished={article.publishDate}
                 authorName={[siteConfig.metadata.siteName]}
@@ -185,9 +191,11 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                         {(article.image || destination?.image) && (
                             <div className="relative w-full h-[300px] md:h-[450px] mb-8 rounded-2xl overflow-hidden shadow-2xl group">
                                 <Image
-                                    src={(article.image || destination.image).startsWith('http')
-                                        ? (article.image || destination.image)
-                                        : `/gallery/blog/post/${article.image || destination.image}`}
+                                    src={(() => {
+                                        const raw = article.image || destination.image;
+                                        const filename = raw.split('/').pop().split('?')[0];
+                                        return `/gallery/blog/post/${filename}`;
+                                    })()}
                                     alt={articleTitle}
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"

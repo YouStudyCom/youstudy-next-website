@@ -346,8 +346,16 @@ export async function getStaticProps({ params, locale }) {
                 // 4. Image
                 if (apiSubject.image) {
                     let imgPath = apiSubject.image;
-                    if (!imgPath.startsWith('http') && !imgPath.startsWith('/')) {
-                        imgPath = `/gallery/blog/post/${imgPath}`;
+                    // If it is NOT an external stock photo, assume it's our CMS image and use local path
+                    const isExternal = imgPath.includes('unsplash.com') || imgPath.includes('flagcdn.com');
+
+                    if (!isExternal) {
+                        if (imgPath.startsWith('http')) {
+                            imgPath = imgPath.split('/').pop().split('?')[0];
+                        }
+                        if (!imgPath.startsWith('/')) {
+                            imgPath = `/gallery/blog/post/${imgPath}`;
+                        }
                     }
                     subject = { ...subject, image: imgPath };
                 }
