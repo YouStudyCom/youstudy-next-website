@@ -30,23 +30,10 @@ const nextConfig = {
             },
         ],
     },
-    devIndicators: {
-        buildActivity: false,
-        appIsrStatus: false,
-    },
+
     async headers() {
         return [
-            {
-                // Caching for static assets in public folder (images, fonts, etc.)
-                source: '/:all*(svg|jpg|jpeg|png|gif|ico|webp|mp4|webm|woff2|woff|ttf)',
-                locale: false,
-                headers: [
-                    {
-                        key: 'Cache-Control',
-                        value: 'public, max-age=31536000, immutable',
-                    }
-                ],
-            },
+
             {
                 // Caching for Next.js static assets
                 source: '/_next/static/:path*',
