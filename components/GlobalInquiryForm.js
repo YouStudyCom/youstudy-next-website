@@ -132,16 +132,17 @@ export default function GlobalInquiryForm() {
     // Mobile Component: Bottom Sticky Bar + Modal
     return (
         <>
-            <div className="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-4 z-50 md:hidden flex items-center justify-between shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-                <div>
-                    <p className="font-bold text-slate-900 text-sm">{locale === 'ar' ? 'تفكر في الدراسة بالخارج؟' : 'Thinking of studying abroad?'}</p>
-                    <p className="text-xs text-slate-500">{locale === 'ar' ? 'احصل على استشارة مجانية.' : 'Get free expert advice.'}</p>
+            <div className="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-3 pb-5 z-50 md:hidden flex flex-col items-center shadow-[0_-4px_20px_rgba(0,0,0,0.1)] rounded-t-2xl">
+                <div className="mb-2 w-full text-center">
+                    <p className="font-bold text-slate-800 text-base">
+                        {locale === 'ar' ? 'تفكر في الدراسة بالخارج؟' : 'Thinking of studying abroad?'}
+                    </p>
                 </div>
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="bg-blue-600 text-white font-bold px-5 py-2 rounded hover:bg-blue-700 transition text-sm"
+                    className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-xl hover:bg-blue-700 active:scale-95 transition-all shadow-lg flex items-center justify-center text-sm"
                 >
-                    {locale === 'ar' ? 'احصل على معلومات' : 'Get Info'}
+                    <span>{locale === 'ar' ? 'احصل على قبولك الجامعي واستشارتك مجاناً' : 'Get Your Offer & Free Consultation'}</span>
                 </button>
             </div>
 

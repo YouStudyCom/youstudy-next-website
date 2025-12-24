@@ -73,7 +73,7 @@ export default function HeroSlider() {
 
             {/* Static Content Overlay (Left Side) - SEO friendly on mobile */}
             <div className="absolute inset-0 z-10 flex items-center justify-center md:justify-start pointer-events-none">
-                <div className="px-6 md:px-20 max-w-2xl text-center md:text-left text-white sr-only md:not-sr-only md:block" dir={t('dir', { returnObjects: true }) || (locale === 'ar' ? 'rtl' : 'ltr')}>
+                <div className={`px-6 md:px-20 max-w-2xl text-center flex flex-col items-center ${locale === 'ar' ? 'md:items-end md:text-right' : 'md:items-start md:text-left'} text-white sr-only md:not-sr-only md:block`} dir={t('dir', { returnObjects: true }) || (locale === 'ar' ? 'rtl' : 'ltr')}>
                     <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
                         {t('hero.title', 'Get Your Offer & Free Consultation')}
                     </h1>
