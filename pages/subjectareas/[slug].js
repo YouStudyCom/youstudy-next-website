@@ -346,16 +346,18 @@ export async function getStaticProps({ params, locale }) {
                 // 4. Image
                 if (apiSubject.image) {
                     let imgPath = apiSubject.image;
-                    // If it is NOT an external stock photo, assume it's our CMS image and use local path
-                    const isExternal = imgPath.includes('unsplash.com') || imgPath.includes('flagcdn.com');
+                    // If it's a full URL, trust it (unless we want to proxy it, but usually next/image handles it)
+                    // If it's a relative path starting with /, trust it.
+                    // Only if it's a bare filename do we prepend a default path.
 
-                    if (!isExternal) {
-                        if (imgPath.startsWith('http')) {
-                            imgPath = imgPath.split('/').pop().split('?')[0];
-                        }
-                        if (!imgPath.startsWith('/')) {
-                            imgPath = `/gallery/blog/post/${imgPath}`;
-                        }
+                    const isUrl = imgPath.startsWith('http');
+                    const isAbsolutePath = imgPath.startsWith('/');
+
+                    if (!isUrl && !isAbsolutePath) {
+                        // Fallback for bare filenames - assuming they might be in the legacy folder
+                        // But purely guessing /gallery/blog/post/ is risky. 
+                        // However, keeping legacy behavior for bare files ONLY.
+                        imgPath = `/gallery/blog/post/${imgPath}`;
                     }
                     subject = { ...subject, image: imgPath };
                 }

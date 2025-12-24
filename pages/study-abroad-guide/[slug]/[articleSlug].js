@@ -112,6 +112,12 @@ export default function ArticlePage({ article, destination, locale: serverLocale
     const articleKeywords = getName(article.seo_keywords);
     const articleContent = cleanHTML(getDescription(article.content));
 
+    const resolveImagePath = (raw) => {
+        if (!raw) return null;
+        if (raw.startsWith('http') || raw.startsWith('/')) return raw;
+        return `/gallery/blog/post/${raw}`;
+    };
+
     const articleUrl = `https://www.youstudy.com/study-abroad-guide/${destination?.slug}/${article.slug}`;
     const destinationUrl = `https://www.youstudy.com/study-abroad-guide/${destination?.slug}`;
 
@@ -134,12 +140,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                     },
                     images: [
                         {
-                            url: (() => {
-                                const raw = article.image || destination?.image;
-                                if (!raw) return '';
-                                const filename = raw.split('/').pop().split('?')[0];
-                                return `/gallery/blog/post/${filename}`;
-                            })(),
+                            url: resolveImagePath(article.image || destination?.image) || '',
                             alt: articleTitle,
                         },
                     ],
@@ -149,12 +150,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                 url={articleUrl}
                 title={articleTitle}
                 images={[
-                    (() => {
-                        const raw = article.image || destination?.image;
-                        if (!raw) return '';
-                        const filename = raw.split('/').pop().split('?')[0];
-                        return `/gallery/blog/post/${filename}`;
-                    })()
+                    resolveImagePath(article.image || destination?.image) || ''
                 ]}
                 datePublished={article.publishDate}
                 authorName={[siteConfig.metadata.siteName]}
@@ -191,11 +187,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                         {(article.image || destination?.image) && (
                             <div className="relative w-full h-[300px] md:h-[450px] mb-8 rounded-2xl overflow-hidden shadow-2xl group">
                                 <Image
-                                    src={(() => {
-                                        const raw = article.image || destination.image;
-                                        const filename = raw.split('/').pop().split('?')[0];
-                                        return `/gallery/blog/post/${filename}`;
-                                    })()}
+                                    src={resolveImagePath(article.image || destination?.image)}
                                     alt={articleTitle}
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
