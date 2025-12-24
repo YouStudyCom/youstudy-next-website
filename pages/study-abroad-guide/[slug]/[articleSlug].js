@@ -136,7 +136,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                         {
                             url: (article.image || destination?.image)?.startsWith('http')
                                 ? (article.image || destination?.image)
-                                : `${siteConfig.api.baseUrl.cms}${siteConfig.api.endpoints.cms.storage}/${article.image || destination?.image}`,
+                                : `/gallery/blog/post/${article.image || destination?.image}`,
                             alt: articleTitle,
                         },
                     ],
@@ -148,7 +148,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                 images={[
                     (article.image || destination?.image)?.startsWith('http')
                         ? (article.image || destination?.image)
-                        : `${siteConfig.api.baseUrl.cms}${siteConfig.api.endpoints.cms.storage}/${article.image || destination?.image}`
+                        : `/gallery/blog/post/${article.image || destination?.image}`
                 ]}
                 datePublished={article.publishDate}
                 authorName={[siteConfig.metadata.siteName]}
@@ -187,7 +187,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                                 <Image
                                     src={(article.image || destination.image).startsWith('http')
                                         ? (article.image || destination.image)
-                                        : `${siteConfig.api.baseUrl.cms}${siteConfig.api.endpoints.cms.storage}/${article.image || destination.image}`}
+                                        : `/gallery/blog/post/${article.image || destination.image}`}
                                     alt={articleTitle}
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"

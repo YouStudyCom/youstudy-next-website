@@ -347,7 +347,7 @@ export async function getStaticProps({ params, locale }) {
                 if (apiSubject.image) {
                     let imgPath = apiSubject.image;
                     if (!imgPath.startsWith('http') && !imgPath.startsWith('/')) {
-                        imgPath = `/images/subjects/${imgPath}`;
+                        imgPath = `/gallery/blog/post/${imgPath}`;
                     }
                     subject = { ...subject, image: imgPath };
                 }
