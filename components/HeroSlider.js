@@ -27,6 +27,12 @@ export default function HeroSlider() {
             image: '/images/slides/YouStudy - Study abroad around the world (2).png',
             title: t('hero.title', 'Get Your Offer & Free Consultation'),
             subtitle: t('hero.subtitle', 'Begin your journey with professional support.')
+        },
+        {
+            id: 4,
+            image: '/images/slides/YouStudy - Study abroad around the world3.png',
+            title: t('hero.title', 'Get Your Offer & Free Consultation'),
+            subtitle: t('hero.subtitle', 'Begin your journey with professional support.')
         }
     ];
 

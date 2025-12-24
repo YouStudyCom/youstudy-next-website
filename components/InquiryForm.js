@@ -158,7 +158,8 @@ export default function InquiryForm({ className = "" }) {
             });
 
             if (!res.ok) {
-                throw new Error('Submission failed');
+                const errorData = await res.json();
+                throw new Error(errorData.message || 'Submission failed');
             }
 
             setStatus('success');
@@ -168,8 +169,9 @@ export default function InquiryForm({ className = "" }) {
             setTimeout(() => setStatus('idle'), 5000);
 
         } catch (error) {
-            console.error(error);
+            console.error('Submission Error:', error);
             setStatus('error');
+            setErrors(prev => ({ ...prev, submit: error.message }));
         }
     };
 
@@ -394,8 +396,9 @@ export default function InquiryForm({ className = "" }) {
             </button>
 
             {status === 'error' && (
-                <div className="p-2 bg-red-100 text-red-700 text-xs rounded text-center">
-                    {locale === 'ar' ? 'حدث خطأ. يرجى المحاولة مرة أخرى.' : 'Error sending inquiry. Please try again.'}
+                <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded text-center">
+                    <p className="font-bold mb-1">{locale === 'ar' ? 'حدث خطأ' : 'Error'}</p>
+                    <p>{errors.submit || (locale === 'ar' ? 'يرجى المحاولة مرة أخرى.' : 'Please try again.')}</p>
                 </div>
             )}
 

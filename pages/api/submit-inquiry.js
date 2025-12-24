@@ -86,9 +86,11 @@ export default async function handler(req, res) {
         };
 
         // 3. Send to CRM
-        // Assumed endpoint: /leads based on context. 
-        // If Base URL is http://127.0.0.1:8002/api/, then http://127.0.0.1:8002/api/lead
-        const leadResponse = await fetch(`${siteConfig.api.baseUrl.crm}${siteConfig.api.endpoints.crm.createStudent}`, {
+        const logLabel = `[CRM Submission]`;
+        const endpointUrl = `${siteConfig.api.baseUrl.crm}${siteConfig.api.endpoints.crm.createStudent}`;
+        console.log(`${logLabel} Sending to: ${endpointUrl}`);
+
+        const leadResponse = await fetch(endpointUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -103,14 +105,16 @@ export default async function handler(req, res) {
         try {
             leadData = JSON.parse(leadBody);
         } catch (e) {
-            console.error('Lead JSON Parse Error:', leadBody);
-            throw new Error(`Submission Endpoint returned non-JSON: ${leadBody.substring(0, 100)}...`);
+            console.error(`${logLabel} JSON Parse Error:`, leadBody);
+            throw new Error(`Submission Endpoint returned non-JSON. URL: ${endpointUrl}`);
         }
 
         if (!leadResponse.ok) {
             const errorText = typeof leadData === 'object' ? JSON.stringify(leadData) : leadBody;
-            console.error(`CRM Error (${leadResponse.status} ${leadResponse.statusText}):`, errorText);
-            throw new Error(`Failed to submit lead to CRM [${leadResponse.status} ${leadResponse.statusText}]: ${errorText}`);
+            console.error(`${logLabel} Error (${leadResponse.status}):`, errorText);
+            // Pass the specific backend error message to the client if available
+            const clientMsg = leadData.message || leadData.error || `CRM Error: ${leadResponse.status}`;
+            throw new Error(clientMsg);
         }
 
         return res.status(200).json({ success: true, data: leadData });
