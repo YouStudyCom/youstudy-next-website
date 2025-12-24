@@ -20,7 +20,7 @@ export const siteConfig = {
             // Backend Endpoints
             crm: {
                 login: '/api/login',
-                createStudent: '/api/students/create/'
+                createStudent: '/api/students/create'
             },
             cms: {
                 articles: '/api/articles',
