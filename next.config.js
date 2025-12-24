@@ -29,6 +29,18 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'flagcdn.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'www.youstudy.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'youstudy.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'youstudy.com',
+            },
         ],
     },
 
