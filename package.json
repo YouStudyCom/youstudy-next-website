@@ -11,6 +11,12 @@
     "cache-articles": "node scripts/cache-articles.mjs",
     "postbuild": "next-sitemap"
   },
+  "browserslist": [
+    "chrome >= 87",
+    "firefox >= 78",
+    "edge >= 88",
+    "safari >= 14"
+  ],
   "dependencies": {
     "i18next": "^25.7.3",
     "js-cookie": "^3.0.5",

@@ -19,7 +19,7 @@ module.exports = {
                 blob: "blob 7s infinite",
             },
             fontFamily: {
-                ar: ['Tajawal', 'sans-serif'],
+                ar: ['var(--font-tajawal)', 'sans-serif'],
             },
             keyframes: {
                 blob: {

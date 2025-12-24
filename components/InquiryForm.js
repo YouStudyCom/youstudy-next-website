@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useVisitorData } from '../hooks/useVisitorData';
@@ -402,7 +403,17 @@ export default function InquiryForm({ className = "" }) {
                 </div>
             )}
 
-            <p className="text-[10px] text-slate-400 text-center mt-2">No spam. Unsubscribe anytime.</p>
+            <p className="text-xs text-slate-400 text-center mt-2 px-4 leading-relaxed">
+                {locale === 'ar' ? (
+                    <>
+                        بإرسال معلوماتك، فإنك توافق على <Link href="/terms" target="_blank" className="underline hover:text-blue-500">شروط</Link> و <Link href="/terms" target="_blank" className="underline hover:text-blue-500">سياسة الخصوصية</Link> الخاصة بـYouStudy.
+                    </>
+                ) : (
+                    <>
+                        By submitting your information, you agree to YouStudy’s <Link href="/terms" target="_blank" className="underline hover:text-blue-500">Terms</Link> and <Link href="/terms" target="_blank" className="underline hover:text-blue-500">Privacy Policy</Link>.
+                    </>
+                )}
+            </p>
         </form>
     );
 }

@@ -90,7 +90,7 @@ export default function StudyDestinations({ destinations: propsDestinations }) {
                                         className="text-blue-600 font-semibold text-sm hover:text-blue-800 flex items-center gap-1 group/link"
                                         aria-label={`${t('destinations.learn_more', 'View Programs')} in ${getPrefixedName(destination.name)}`}
                                     >
-                                        {t('destinations.learn_more', 'View Programs')}
+                                        {locale === 'ar' ? `استكشف دليل ${getName(destination.name)}` : `Explore ${getName(destination.name)} Guide`}
                                         {locale === 'ar'
                                             ? <FaArrowLeft className="w-4 h-4 transform group-hover/link:-translate-x-1 transition-transform" />
                                             : <FaArrowRight className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" />

@@ -88,8 +88,10 @@ export default function Destinations() {
                                 </div>
                             </div>
                             <div className="p-6 flex-1 flex flex-col">
-                                <h2 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                                    {dest.name[locale]}
+                                <h2 className="text-2xl font-bold mb-3">
+                                    <Link href={`/study-abroad-guide/${dest.slug}`} className="text-blue-600 hover:text-blue-800 transition-colors">
+                                        {dest.name[locale]}
+                                    </Link>
                                 </h2>
 
                                 <div
@@ -100,9 +102,9 @@ export default function Destinations() {
                                 <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
                                     {/* <span className="text-sm text-slate-400 font-medium">Available Programs: 3</span> */}
                                     <Link href={`/study-abroad-guide/${dest.slug}`} className="text-blue-600 font-semibold text-sm hover:underline flex items-center gap-1">
-                                        View Programs
+                                        {locale === 'ar' ? `استكشف دليل ${dest.name[locale]}` : `Explore ${dest.name[locale]} Guide`}
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={locale === 'ar' ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
                                         </svg>
                                     </Link>
                                 </div>

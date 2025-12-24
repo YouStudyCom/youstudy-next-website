@@ -9,6 +9,16 @@ import Footer from '../components/Footer';
 import GlobalInquiryForm from '../components/GlobalInquiryForm';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { useVisitorData } from '../hooks/useVisitorData';
+import GTMManager from '../components/GTMManager';
+
+import { Tajawal } from 'next/font/google';
+
+const tajawal = Tajawal({
+    subsets: ['arabic', 'latin'],
+    weight: ['400', '500', '700'],
+    variable: '--font-tajawal',
+    display: 'swap',
+});
 
 function MyApp({ Component, pageProps }) {
     // Initialize visitor detection globally
@@ -20,17 +30,12 @@ function MyApp({ Component, pageProps }) {
     }
 
     return (
-        <>
+        <main className={tajawal.variable}>
             <DefaultSeo {...SEO} />
-            <Script id="gtm" strategy="afterInteractive">
-                {`
-                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                  })(window,document,'script','dataLayer','GTM-KL7RPPMM');
-                `}
-            </Script>
+
+            {/* Optimized GTM Loading (Interaction-based) */}
+            <GTMManager gtmId="GTM-KL7RPPMM" />
+
             <OrganizationJsonLd
                 type="EducationalOrganization"
                 id="https://testinglogin.youstudy.com/#organization"
@@ -61,7 +66,7 @@ function MyApp({ Component, pageProps }) {
             <GlobalInquiryForm />
             <WhatsAppButton />
             <Footer />
-        </>
+        </main>
     );
 }
 

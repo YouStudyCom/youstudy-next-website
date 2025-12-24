@@ -61,8 +61,11 @@ export default function HeroSlider() {
                                 alt={slide.title}
                                 fill
                                 priority={index === 0}
+                                loading={index === 0 ? "eager" : "lazy"}
+                                fetchPriority={index === 0 ? "high" : "auto"}
                                 className="object-cover"
                                 sizes="100vw"
+                                quality={75}
                             />
                             {/* Dark Overlay for contrast */}
                             <div className="absolute inset-0 bg-black/40"></div>

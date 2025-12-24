@@ -10,9 +10,6 @@ class MyDocument extends Document {
                 <Head>
                     <link rel="dns-prefetch" href="https://images.unsplash.com" />
                     <link rel="preconnect" href="https://images.unsplash.com" />
-                    <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
                 </Head>
                 <body className={locale === 'ar' ? 'font-ar text-[18px] font-normal' : ''}>
                     <noscript>
