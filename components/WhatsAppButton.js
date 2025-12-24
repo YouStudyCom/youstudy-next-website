@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
-            className="fixed bottom-24 right-4 md:bottom-6 md:right-6 z-[45] group"
+            className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-[55] group"
         >
             <div className="relative">
                 {/* Pulse Effect */}
