@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useVisitorData } from '../hooks/useVisitorData';
+import { useSourceTracking } from '../hooks/useSourceTracking';
 import { siteConfig } from '../data/siteConfig.mjs';
 import { countries } from '../data/countries';
 
@@ -23,6 +24,7 @@ export default function InquiryForm({ className = "" }) {
 
     // Visitor Data for Auto-fill
     const visitorData = useVisitorData();
+    const { sourceId, channel, referrerId, schoolId } = useSourceTracking();
     const [selectedCountry, setSelectedCountry] = useState('');
 
     // Form State
@@ -148,6 +150,10 @@ export default function InquiryForm({ className = "" }) {
                     mobile: finalMobile,
                     whatsapp: finalMobile, // Mapping rule: whatsapp = mobile
                     selectedCountry, // Nationality
+                    sourceId, // Tracked Source ID
+                    sourceChannel: channel, // Tracked Channel Name (optional meta)
+                    referrerId, // ?re=
+                    schoolId, // ?schoolId=
                     // residenceCountry is already in ...formData
                     pageUrl: typeof window !== 'undefined' ? window.location.href : asPath,
                     visitorData: {

@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { name, email, mobile, message, pageUrl, selectedCountry, residenceCountry, studyLevel, visitorData } = req.body;
+        const { name, email, mobile, message, pageUrl, selectedCountry, residenceCountry, studyLevel, visitorData, sourceId, referrerId, schoolId } = req.body;
 
         // 1. Authenticate to get Token
         // NOTE: In a real production environment, we should cache this token
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
             "nationality_id": selectedCountry || 4,
             "gender_id": 0,
             "birth_date": "2000-01-01",
-            "source_id": 4,
+            "source_id": sourceId || 4,
             "residence_id": residenceCountry || 20,
             "english_level_id": null,
             "inquiryType": 0,
@@ -78,8 +78,8 @@ export default async function handler(req, res) {
             "countries": null,
             "course_name": null,
             "currency_id": null,
-            "referrer_id": null,
-            "school_id": null,
+            "referrer_id": referrerId || null,
+            "school_id": schoolId || null,
             "event_id": null,
             "branch_id": null,
             "note": finalNote
