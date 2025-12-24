@@ -33,8 +33,8 @@ function MyApp({ Component, pageProps }) {
             </Script>
             <OrganizationJsonLd
                 type="EducationalOrganization"
-                id="https://www.youstudy.com/#organization"
-                logo="https://www.youstudy.com/logo.png"
+                id="https://testinglogin.youstudy.com/#organization"
+                logo="https://testinglogin.youstudy.com/logo.png"
                 legalName="YouStudy.com"
                 name="YouStudy"
                 address={{
@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
                     },
                 ]}
                 sameAs={siteConfig.socials.map(s => s.url)}
-                url="https://www.youstudy.com"
+                url="https://testinglogin.youstudy.com"
             />
 
             <Navbar />

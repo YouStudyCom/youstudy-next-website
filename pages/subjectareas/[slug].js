@@ -104,7 +104,7 @@ export default function SubjectDetailPage({ subject, locale: serverLocale }) {
     const keywordsText = subject.seo ? getDescription(subject.seo.keywords) : '';
 
     // Dynamic Canonical URL
-    const canonicalUrl = `https://www.youstudy.com${locale === 'en' ? '' : '/' + locale}/subjectareas/${subject.slug}`;
+    const canonicalUrl = `https://testinglogin.youstudy.com${locale === 'en' ? '' : '/' + locale}/subjectareas/${subject.slug}`;
 
     // Schema
     const schema = {

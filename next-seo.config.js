@@ -2,7 +2,7 @@ export default {
     openGraph: {
         type: 'website',
         locale: 'en_IE',
-        url: 'https://www.youstudy.com/',
+        url: 'https://testinglogin.youstudy.com/',
         siteName: 'YouStudy',
     },
     twitter: {
