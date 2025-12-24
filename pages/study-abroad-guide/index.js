@@ -14,7 +14,7 @@ export default function Destinations() {
     const { t } = useTranslation('common');
     const locale = router.locale || 'en';
 
-    const canonicalUrl = `https://testinglogin.youstudy.com${locale === 'en' ? '' : '/' + locale}/study-abroad-guide`;
+    const canonicalUrl = `https://www.youstudy.com${locale === 'en' ? '' : '/' + locale}/study-abroad-guide`;
 
     return (
         <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
@@ -37,9 +37,9 @@ export default function Destinations() {
                 hasPart={destinations.map(dest => ({
                     '@type': 'EducationalOrganization',
                     name: dest.name[locale],
-                    url: `https://testinglogin.youstudy.com/study-abroad-guide/${dest.slug}`,
+                    url: `https://www.youstudy.com/study-abroad-guide/${dest.slug}`,
                     description: dest.description[locale].replace(/<[^>]*>?/gm, ''), // Strip HTML
-                    image: dest.image.startsWith('http') ? dest.image : `https://testinglogin.youstudy.com${dest.image.startsWith('/') ? '' : '/images/destinations/'}${dest.image}`
+                    image: dest.image.startsWith('http') ? dest.image : `https://www.youstudy.com${dest.image.startsWith('/') ? '' : '/images/destinations/'}${dest.image}`
                 }))}
             />
 

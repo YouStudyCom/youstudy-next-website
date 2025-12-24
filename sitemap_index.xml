@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ <sitemap>
+ <loc>https://www.youstudy.com/sitemap-articles.xml</loc>
+ <lastmod>2025-12-15T08:51:34+00:00</lastmod>
+ </sitemap>
+ <sitemap>
+ <loc>https://www.youstudy.com/sitemap-subjects.xml</loc>
+ <lastmod>2025-12-15T08:51:34+00:00</lastmod>
+ </sitemap>
+ <sitemap>
+ <loc>https://www.youstudy.com/sitemap-pages.xml</loc>
+ <lastmod>2025-12-15T08:51:34+00:00</lastmod>
+ </sitemap>
+ <sitemap>
+ <loc>https://www.youstudy.com/sitemap-destinations.xml</loc>
+ <lastmod>2025-12-15T08:51:34+00:00</lastmod>
+ </sitemap>
+ <sitemap>
+ <loc>https://www.youstudy.com/sitemap-categories.xml</loc>
+ <lastmod>2025-12-15T08:51:34+00:00</lastmod>
+ </sitemap>
+</sitemapindex>

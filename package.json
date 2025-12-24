@@ -9,7 +9,7 @@
     "lint": "eslint",
     "update-data": "node scripts/cache-subjects.mjs",
     "cache-articles": "node scripts/cache-articles.mjs",
-    "postbuild": "next-sitemap"
+    "postbuild": "echo 'Sitemap generation skipped'"
   },
   "browserslist": [
     "chrome >= 87",

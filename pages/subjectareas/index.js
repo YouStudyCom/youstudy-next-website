@@ -17,7 +17,7 @@ export default function SubjectsListingPage({ subjectsList }) {
     // Use data from props (which includes cache merge) or fallback to static import
     const displaySubjects = subjectsList || subjects;
 
-    const canonicalUrl = `https://testinglogin.youstudy.com${locale === 'en' ? '' : `/${locale}`}/subjectareas`;
+    const canonicalUrl = `https://www.youstudy.com${locale === 'en' ? '' : `/${locale}`}/subjectareas`;
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans">

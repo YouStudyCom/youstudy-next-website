@@ -1,7 +1,7 @@
 export const siteConfig = {
     metadata: {
         siteName: 'YouStudy',
-        siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://testinglogin.youstudy.com',
+        siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.youstudy.com',
         author: 'YouStudy UK Ltd',
         ahrefsAnalyticsKey: 'wUwh+2Xm+h2rIU5C1Ibh4Q',
         defaultLocale: 'en'

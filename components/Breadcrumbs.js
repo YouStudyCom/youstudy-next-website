@@ -9,7 +9,7 @@ export default function Breadcrumbs({ items }) {
     const validItems = items.filter(item => item.label);
 
     // Prepare Schema Items
-    const SITE_URL = 'https://testinglogin.youstudy.com';
+    const SITE_URL = 'https://www.youstudy.com';
 
     const schemaItems = validItems.map((item, index) => ({
         position: index + 1,

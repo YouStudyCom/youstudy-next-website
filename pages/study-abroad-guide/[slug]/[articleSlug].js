@@ -112,8 +112,8 @@ export default function ArticlePage({ article, destination, locale: serverLocale
     const articleKeywords = getName(article.seo_keywords);
     const articleContent = cleanHTML(getDescription(article.content));
 
-    const articleUrl = `https://testinglogin.youstudy.com/study-abroad-guide/${destination?.slug}/${article.slug}`;
-    const destinationUrl = `https://testinglogin.youstudy.com/study-abroad-guide/${destination?.slug}`;
+    const articleUrl = `https://www.youstudy.com/study-abroad-guide/${destination?.slug}/${article.slug}`;
+    const destinationUrl = `https://www.youstudy.com/study-abroad-guide/${destination?.slug}`;
 
     return (
         <div className="min-h-screen bg-white font-sans text-slate-900">

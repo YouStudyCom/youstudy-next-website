@@ -13,7 +13,7 @@ export default function Home(props) {
     const { t } = useTranslation('common');
     const router = useRouter();
     const locale = router.locale || 'en';
-    const canonicalUrl = `https://testinglogin.youstudy.com${locale === 'ar' ? '/ar' : ''}`;
+    const canonicalUrl = `https://www.youstudy.com${locale === 'ar' ? '/ar' : ''}`;
 
     const faqData = t('faq', { returnObjects: true });
 
@@ -35,7 +35,7 @@ export default function Home(props) {
                     {
                         position: 1,
                         name: t('breadcrumbs.home'),
-                        item: 'https://testinglogin.youstudy.com',
+                        item: 'https://www.youstudy.com',
                     },
                 ]}
             />

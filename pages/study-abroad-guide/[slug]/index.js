@@ -80,7 +80,7 @@ export default function DestinationLandingPage({ destination, articles, locale: 
     const seoKeywords = destination.seo ? getName(destination.seo.keywords) : '';
 
     // Dynamic Canonical URL
-    const canonicalUrl = `https://testinglogin.youstudy.com${locale === 'en' ? '' : '/' + locale}/study-abroad-guide/${destination.slug}`;
+    const canonicalUrl = `https://www.youstudy.com${locale === 'en' ? '' : '/' + locale}/study-abroad-guide/${destination.slug}`;
 
     const placeSchema = {
         "@context": "https://schema.org",
@@ -88,11 +88,11 @@ export default function DestinationLandingPage({ destination, articles, locale: 
         "name": destName,
         "description": seoDesc,
         "url": canonicalUrl,
-        "image": imagePath ? (imagePath.startsWith('http') ? imagePath : `https://testinglogin.youstudy.com${imagePath}`) : undefined,
+        "image": imagePath ? (imagePath.startsWith('http') ? imagePath : `https://www.youstudy.com${imagePath}`) : undefined,
         "containsPlace": articles.map(a => ({
             "@type": "Article",
             "name": a.title,
-            "url": `https://testinglogin.youstudy.com/study-abroad-guide/${destination.slug}/${a.slug}`
+            "url": `https://www.youstudy.com/study-abroad-guide/${destination.slug}/${a.slug}`
         }))
     };
 
@@ -110,7 +110,7 @@ export default function DestinationLandingPage({ destination, articles, locale: 
                     site_name: 'YouStudy',
                     images: [
                         {
-                            url: imagePath?.startsWith('http') ? imagePath : `https://testinglogin.youstudy.com${imagePath}`,
+                            url: imagePath?.startsWith('http') ? imagePath : `https://www.youstudy.com${imagePath}`,
                             alt: destName,
                         },
                     ],
