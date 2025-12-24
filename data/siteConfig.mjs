@@ -8,8 +8,8 @@ export const siteConfig = {
     },
     api: {
         baseUrl: {
-            crm: 'http://127.0.0.1:8002',
-            cms: 'http://127.0.0.1:8000'
+            crm: process.env.NEXT_PUBLIC_CRM_API_URL || 'https://login.youstudy.com',
+            cms: process.env.NEXT_PUBLIC_CMS_API_URL || 'https://cpanelblog.youstudy.com',
         },
         endpoints: {
             // Frontend API Routes

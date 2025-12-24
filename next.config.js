@@ -12,13 +12,16 @@ const nextConfig = {
                 hostname: 'images.unsplash.com',
             },
             {
-                protocol: 'http',
-                hostname: '127.0.0.1',
-                port: '8000',
+                protocol: 'https',
+                hostname: 'cpanelblog.youstudy.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'login.youstudy.com',
             },
             {
                 protocol: 'http',
-                hostname: 'localhost',
+                hostname: '127.0.0.1',
                 port: '8000',
             },
             {

@@ -226,24 +226,11 @@ export default function DestinationLandingPage({ destination, articles, locale: 
     );
 }
 
-export async function getStaticPaths({ locales }) {
-    const paths = [];
-
-    // Generate paths for all destinations in the DATA and all locales
-    destinations.forEach(dest => {
-        const slug = dest.slug;
-        if (slug) {
-            locales.forEach(locale => {
-                paths.push({
-                    params: { slug },
-                    locale,
-                });
-            });
-        }
-    });
-
+export async function getStaticPaths() {
+    // Optimization: Do not pre-render all destinations at build time to avoid partial build failures due to API rate limits.
+    // Allow ISR (Incremental Static Regeneration) to build pages on demand.
     return {
-        paths,
+        paths: [],
         fallback: 'blocking',
     };
 }

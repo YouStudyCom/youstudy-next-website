@@ -234,25 +234,12 @@ export default function ArticlePage({ article, destination, locale: serverLocale
     );
 }
 
-export async function getStaticPaths({ locales }) {
-    const paths = [];
-
-    // Loop articlesCache to generate paths.
-    // Each article already has destination_slug attached from our cache script.
-    articlesCache.forEach(art => {
-        if (art.destination_slug) {
-            locales.forEach(locale => {
-                paths.push({
-                    params: { slug: art.destination_slug, articleSlug: art.slug },
-                    locale
-                });
-            });
-        }
-    });
-
+export async function getStaticPaths() {
+    // Optimization: Do not pre-render all articles at build time.
+    // Use ISR with blocking fallback to generate pages on first request.
     return {
-        paths,
-        fallback: 'blocking' // Blocking for SEO to generate new pages on demand if needed
+        paths: [],
+        fallback: 'blocking'
     };
 }
 
