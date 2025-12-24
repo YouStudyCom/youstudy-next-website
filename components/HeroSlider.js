@@ -5,6 +5,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import Image from 'next/image';
 import InquiryForm from './InquiryForm';
 
 export default function HeroSlider() {
@@ -45,13 +47,16 @@ export default function HeroSlider() {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="w-full h-full"
             >
-                {slides.map((slide) => (
+                {slides.map((slide, index) => (
                     <SwiperSlide key={slide.id}>
                         <div className="relative w-full h-full">
-                            <img
+                            <Image
                                 src={slide.image}
                                 alt={slide.title}
-                                className="w-full h-full object-cover"
+                                fill
+                                priority={index === 0}
+                                className="object-cover"
+                                sizes="100vw"
                             />
                             {/* Dark Overlay for contrast */}
                             <div className="absolute inset-0 bg-black/40"></div>

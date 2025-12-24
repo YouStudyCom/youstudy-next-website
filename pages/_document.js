@@ -7,7 +7,10 @@ class MyDocument extends Document {
 
         return (
             <Html lang={locale} dir={dir}>
-                <Head />
+                <Head>
+                    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+                    <link rel="preconnect" href="https://images.unsplash.com" />
+                </Head>
                 <body className={locale === 'ar' ? 'font-ar' : ''}>
                     <noscript>
                         <iframe
