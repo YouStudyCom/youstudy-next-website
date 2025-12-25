@@ -200,64 +200,178 @@ export async function getStaticPaths() {
     };
 }
 
+// Manual Category Translations Map
+const CATEGORY_TRANSLATIONS = {
+    'choosing-where-to-study': {
+        en: 'Choosing Where to Study',
+        ar: 'اختيار وجهة الدراسة'
+    },
+    'getting-your-visa': {
+        en: 'Getting Your Visa',
+        ar: 'الحصول على التأشيرة'
+    },
+    'latest-news-scholarships': {
+        en: 'Latest News & Scholarships',
+        ar: 'آخر الأخبار والمنح الدراسية'
+    },
+    'post-study-life': {
+        en: 'Post-Study Life',
+        ar: 'الحياة بعد التخرج'
+    },
+    'choosing-a-subject': {
+        en: 'Choosing a Subject',
+        ar: 'اختيار التخصص'
+    },
+    'applying-to-a-university': {
+        en: 'Applying to a University',
+        ar: 'التقديم للجامعة'
+    },
+    'study-accommodation-costs': {
+        en: 'Study & Accommodation Costs',
+        ar: 'تكاليف الدراسة والسكن'
+    },
+    'once-you-arrive': {
+        en: 'Once You Arrive',
+        ar: 'عند الوصول'
+    },
+    'before-you-leave': {
+        en: 'Before You Leave',
+        ar: 'قبل السفر'
+    },
+    'your-first-step-in-studying-abroad': {
+        en: 'Your First Step in Studying Abroad',
+        ar: 'خطوتك الأولى للدراسة في الخارج'
+    }
+};
+
 export async function getStaticProps({ params, locale }) {
     const { category: categorySlug } = params;
     let filteredArticles = [];
+
+    // Default Category Object structure
     let category = {
         slug: categorySlug,
-        name: { en: categorySlug.replace(/-/g, ' '), ar: categorySlug.replace(/-/g, ' ') },
+        name: {
+            en: categorySlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+            ar: categorySlug.replace(/-/g, ' ')
+        },
         description: { en: '', ar: '' }
     };
 
-    try {
-        // Load articles from local cache which is enriched with categories
-        const articlesCache = (await import('../../../../data/articles-cache.json')).default;
+    // 1. Check if we have a manual translation for this slug
+    if (CATEGORY_TRANSLATIONS[categorySlug]) {
+        category.name = CATEGORY_TRANSLATIONS[categorySlug];
+    }
 
-        if (Array.isArray(articlesCache)) {
-            filteredArticles = articlesCache.filter(a => {
-                if (!a.category) return false;
+    // 2. Attempt to fetch localized articles from API (especially for non-English)
+    // This ensures we get specific language titles (e.g. Arabic) instead of default cache (English)
+    if (locale !== 'en') {
+        try {
+            const { api } = await import('../../../../lib/api.mjs');
+            // Construct endpoint: /api/categories/{slug}/articles
+            const cmsUrl = siteConfig.api.baseUrl.cms;
+            const apiUrl = `${cmsUrl}/api/categories/${categorySlug}/articles`;
 
-                const catSlug = typeof a.category === 'object' ? a.category.slug : a.category_slug;
-                // Check 1: Exact Slug Match
-                if (catSlug && catSlug === categorySlug) return true;
-                return false;
-            });
-
-            // Map articles to ensure they have necessary fields for the UI
-            filteredArticles = filteredArticles.map(article => {
-                // Resolve Destination Slug for URL generation
-                let destSlug = 'general';
-                if (article.destination_slug) {
-                    destSlug = article.destination_slug;
-                } else if (article.destination && article.destination.slug) {
-                    destSlug = article.destination.slug;
+            const res = await fetch(apiUrl, {
+                headers: {
+                    'language': locale,
+                    'Accept': 'application/json'
                 }
-
-                return {
-                    ...article,
-                    destination_slug: destSlug || null,
-                    title: article.title || null,
-                    excerpt: article.excerpt || article.seo_description || article.metaDescription || null,
-                    image: article.image || (article.destination ? article.destination.image : null) || null
-                };
             });
 
-            // Update Category Information from the first matching article
-            if (filteredArticles.length > 0) {
-                const first = filteredArticles[0];
-                if (first.category && typeof first.category === 'object') {
-                    category = {
-                        ...category,
-                        name: first.category.name || category.name,
-                        description: first.category.description || category.description,
-                        slug: first.category.slug || categorySlug
-                    };
+            if (res.ok) {
+                const apiData = await res.json();
+                const apiArticles = Array.isArray(apiData) ? apiData : (apiData.data || []);
+
+                if (apiArticles.length > 0) {
+                    // Transform API articles to match our internal structure
+                    filteredArticles = apiArticles.map(article => {
+                        // Resolve Destination Slug for URL generation if missing
+                        let destSlug = 'general';
+                        if (article.destination_slug) {
+                            destSlug = article.destination_slug;
+                        } else if (article.destination && article.destination.slug) {
+                            destSlug = article.destination.slug;
+                        }
+
+                        return {
+                            ...article,
+                            destination_slug: destSlug,
+                            // Ensure we use the title from API which respects the 'language' header
+                            title: article.title,
+                            // Use raw excerpt or description from API
+                            excerpt: article.excerpt || article.seo_description || article.metaDescription || null,
+                            image: article.image || (article.destination ? article.destination.image : null) || null,
+                            category: {
+                                slug: categorySlug,
+                                name: article.category ? article.category.name : category.name
+                            }
+                        };
+                    });
                 }
             }
+        } catch (apiError) {
+            console.warn(`[CategoryPage] API fetch failed for ${categorySlug}, falling back to cache:`, apiError);
         }
+    }
 
-    } catch (e) {
-        console.warn(`Failed to load cached articles for ${categorySlug}`, e);
+    // 3. Fallback to Cache if API returned nothing (or if we are in EN and rely on cache)
+    if (filteredArticles.length === 0) {
+        try {
+            // Load articles from local cache which is enriched with categories
+            const articlesCache = (await import('../../../../data/articles-cache.json')).default;
+
+            if (Array.isArray(articlesCache)) {
+                filteredArticles = articlesCache.filter(a => {
+                    if (!a.category) return false;
+
+                    const catSlug = typeof a.category === 'object' ? a.category.slug : a.category_slug;
+                    // Check 1: Exact Slug Match
+                    if (catSlug && catSlug === categorySlug) return true;
+                    return false;
+                });
+
+                // Map articles to ensure they have necessary fields for the UI
+                filteredArticles = filteredArticles.map(article => {
+                    // Resolve Destination Slug for URL generation
+                    let destSlug = 'general';
+                    if (article.destination_slug) {
+                        destSlug = article.destination_slug;
+                    } else if (article.destination && article.destination.slug) {
+                        destSlug = article.destination.slug;
+                    }
+
+                    return {
+                        ...article,
+                        destination_slug: destSlug || null,
+                        title: article.title || null,
+                        excerpt: article.excerpt || article.seo_description || article.metaDescription || null,
+                        image: article.image || (article.destination ? article.destination.image : null) || null
+                    };
+                });
+
+                // Update Category Description from the first matching article if available (optional enhancement)
+                // But KEEP our manual name translation as the source of truth if it exists
+                if (filteredArticles.length > 0) {
+                    const first = filteredArticles[0];
+                    if (first.category && typeof first.category === 'object') {
+                        category = {
+                            ...category,
+                            description: first.category.description || category.description,
+                            // Ensure slug matches
+                            slug: first.category.slug || categorySlug
+                        };
+
+                        // Only overwrite name if we DON'T have a manual translation
+                        if (!CATEGORY_TRANSLATIONS[categorySlug]) {
+                            category.name = first.category.name || category.name;
+                        }
+                    }
+                }
+            }
+        } catch (e) {
+            console.warn(`Failed to load cached articles for ${categorySlug}`, e);
+        }
     }
 
     return {

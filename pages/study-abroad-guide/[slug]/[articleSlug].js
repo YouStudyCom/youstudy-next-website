@@ -257,6 +257,8 @@ export async function getStaticProps({ params, locale }) {
         const { api } = await import('../../../lib/api.mjs');
 
         const apiUrl = `${siteConfig.api.baseUrl.cms}${siteConfig.api.endpoints.cms.articles}/${articleSlug}`;
+
+        // A. Try fetching in requested locale
         const res = await fetch(apiUrl, {
             headers: {
                 'language': locale, // 👈 sent to Laravel
@@ -271,6 +273,37 @@ export async function getStaticProps({ params, locale }) {
                 article = freshArticle;
             }
         }
+
+        // B. Smart Redirect Logic: If missing in non-English locale, check if it exists in English
+        if (!article && locale !== 'en' && destination) {
+            try {
+                const resEn = await fetch(apiUrl, {
+                    headers: {
+                        'language': 'en', // Force English check
+                    },
+                });
+
+                if (resEn.ok) {
+                    const apiDataEn = await resEn.json();
+                    const articleEn = apiDataEn.data || apiDataEn;
+
+                    if (articleEn && (articleEn.title || articleEn.id)) {
+                        // Article exists in English -> Redirect to Destination Guide in current locale
+                        // Using permanent: false (Status 307/302) because the translation might be added later.
+                        console.log(`[SmartRedirect] Article ${articleSlug} missing in ${locale} but found in EN. Redirecting.`);
+                        return {
+                            redirect: {
+                                destination: `/study-abroad-guide/${destination.slug}`,
+                                permanent: false,
+                            },
+                        };
+                    }
+                }
+            } catch (innerError) {
+                console.warn(`Fallback fetch failed for ${articleSlug}:`, innerError);
+            }
+        }
+
     } catch (error) {
         console.warn(`Failed to fetch article from API: ${error.message}.`);
     }
