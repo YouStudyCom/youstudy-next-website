@@ -241,7 +241,7 @@ export default function InquiryForm({ className = "" }) {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm ${errors.name ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
+                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm bg-white ${errors.name ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
                     placeholder={locale === 'ar' ? 'اسمك الكريم' : 'Your Name'}
                 />
                 {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -256,7 +256,7 @@ export default function InquiryForm({ className = "" }) {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm ${errors.email ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
+                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm bg-white ${errors.email ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
                     placeholder="you@example.com"
                 />
                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -271,7 +271,7 @@ export default function InquiryForm({ className = "" }) {
                         <button
                             type="button"
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                            className="h-full px-2 border border-r-0 rounded-l bg-gray-50 border-slate-300 flex items-center justify-center min-w-[60px] hover:bg-gray-100 transition-colors"
+                            className="h-full px-2 border border-r-0 rounded-l bg-white border-slate-300 flex items-center justify-center min-w-[60px] hover:bg-gray-50 transition-colors"
                         >
                             {formData.mobileCountryCode && countries.find(c => c.id === formData.mobileCountryId)?.code ? (
                                 <div className="flex items-center gap-1">
@@ -327,7 +327,7 @@ export default function InquiryForm({ className = "" }) {
                         name="mobile"
                         value={formData.mobile}
                         onChange={handleChange}
-                        className={`flex-1 px-3 py-2 border rounded-r focus:ring-2 outline-none text-sm ${errors.mobile ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
+                        className={`flex-1 px-3 py-2 border rounded-r focus:ring-2 outline-none text-sm bg-white ${errors.mobile ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
                         placeholder={locale === 'ar' ? '55...' : '55...'}
                     />
                 </div>
@@ -384,7 +384,7 @@ export default function InquiryForm({ className = "" }) {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm ${errors.message ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
+                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm bg-white ${errors.message ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
                     rows="3"
                     placeholder={locale === 'ar' ? 'أخبرنا عن هدفك...' : 'Tell us about your goals...'}
                 ></textarea>

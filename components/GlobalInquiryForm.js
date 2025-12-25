@@ -63,12 +63,19 @@ export default function GlobalInquiryForm() {
         }
     }, [router.pathname, isMobile]);
 
+    // Listener for custom open events (e.g. from Hero Button)
+    useEffect(() => {
+        const handleCustomToggle = () => setIsOpen(true);
+        window.addEventListener('toggle-global-form', handleCustomToggle);
+        return () => window.removeEventListener('toggle-global-form', handleCustomToggle);
+    }, []);
+
     // Auto-open on mobile after 5 seconds
     useEffect(() => {
         if (isMobile && !isOpen && !sessionStorage.getItem('formClosed')) {
             const timer = setTimeout(() => {
                 setIsOpen(true);
-            }, 5000);
+            }, 10000);
             return () => clearTimeout(timer);
         }
     }, [isMobile]);
