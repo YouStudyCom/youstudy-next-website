@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 
-const SEO = ({ title, description, canonical, openGraph, keywords, children }) => {
+const SEO = ({ title, description, canonical, openGraph, keywords, languageAlternates, children }) => {
     return (
         <>
             <NextSeo
@@ -9,7 +9,7 @@ const SEO = ({ title, description, canonical, openGraph, keywords, children }) =
                 description={description}
                 canonical={canonical}
                 openGraph={openGraph}
-                languageAlternates={props.languageAlternates}
+                languageAlternates={languageAlternates}
                 additionalMetaTags={keywords ? [{ name: 'keywords', content: keywords }] : []}
             />
             <Head>
