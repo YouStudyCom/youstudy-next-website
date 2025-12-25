@@ -73,26 +73,45 @@ export default function Navbar() {
                         width={180}
                         height={60}
                         priority
-                        className="h-12 w-auto object-contain"
+                        className="h-9 md:h-12 w-auto object-contain"
                     />
                 </a>
 
-                {/* Desktop Menu */}
-                <nav className="hidden md:flex items-center gap-8 text-sm">
-                    {siteConfig.content[locale].navigation.header.map((link) => (
-                        <a key={link.path} href={getHref(link.path)} className={linkClass(link.path)}>
-                            {link.label}
-                        </a>
-                    ))}
+                {/* Right Side: Desktop Menu + Mobile Controls */}
+                <div className="flex items-center gap-2 md:gap-4">
+                    {/* Desktop Menu */}
+                    <nav className="hidden md:flex items-center gap-8 text-sm">
+                        {siteConfig.content[locale].navigation.header.map((link) => (
+                            <a key={link.path} href={getHref(link.path)} className={linkClass(link.path)}>
+                                {link.label}
+                            </a>
+                        ))}
 
+                        {/* Language Switcher Desktop */}
+                        <button
+                            onClick={switchLanguage}
+                            className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-slate-700 hover:bg-white hover:shadow-md hover:text-blue-600 transition-all duration-300 group"
+                        >
+                            <div className="relative w-6 h-6 rounded-full overflow-hidden shadow-sm group-hover:scale-110 transition-transform">
+                                <Image
+                                    src={locale === 'en' ? 'https://flagcdn.com/w40/sa.png' : 'https://flagcdn.com/w40/gb.png'}
+                                    alt={locale === 'en' ? 'Arabic' : 'English'}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <span className="font-bold text-sm">
+                                {locale === 'en' ? 'العربية' : 'English'}
+                            </span>
+                        </button>
+                    </nav>
 
-
-                    {/* Language switcher */}
+                    {/* Mobile Language Switcher (Compact & Professional) */}
                     <button
                         onClick={switchLanguage}
-                        className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-slate-700 hover:bg-white hover:shadow-md hover:text-blue-600 transition-all duration-300 group"
+                        className="md:hidden flex items-center gap-1.5 p-1 pr-2.5 rounded-full border border-slate-100 bg-slate-50 text-slate-600 active:scale-95 transition-all duration-300"
                     >
-                        <div className="relative w-6 h-6 rounded-full overflow-hidden shadow-sm group-hover:scale-110 transition-transform">
+                        <div className="relative w-7 h-7 rounded-full overflow-hidden shadow-sm ring-1 ring-white">
                             <Image
                                 src={locale === 'en' ? 'https://flagcdn.com/w40/sa.png' : 'https://flagcdn.com/w40/gb.png'}
                                 alt={locale === 'en' ? 'Arabic' : 'English'}
@@ -100,20 +119,20 @@ export default function Navbar() {
                                 className="object-cover"
                             />
                         </div>
-                        <span className="font-bold text-sm">
-                            {locale === 'en' ? 'العربية' : 'English'}
+                        <span className="font-bold text-[10px] uppercase tracking-wide">
+                            {locale === 'en' ? 'AR' : 'EN'}
                         </span>
                     </button>
-                </nav>
 
-                {/* Mobile Hamburger */}
-                <button
-                    className="md:hidden text-gray-700 text-2xl"
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    aria-label="Toggle Menu"
-                >
-                    ☰
-                </button>
+                    {/* Mobile Hamburger */}
+                    <button
+                        className="md:hidden p-2 text-gray-700 text-2xl"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        aria-label="Toggle Menu"
+                    >
+                        ☰
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -130,28 +149,6 @@ export default function Navbar() {
                             {link.label}
                         </a>
                     ))}
-
-
-
-                    {/* Language Switcher Mobile */}
-                    <div className="flex gap-2 mt-2 pt-2 border-t border-gray-100">
-                        <button
-                            onClick={switchLanguage}
-                            className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:bg-white hover:shadow-sm"
-                        >
-                            <div className="relative w-8 h-8 rounded-full overflow-hidden shadow-sm">
-                                <Image
-                                    src={locale === 'en' ? 'https://flagcdn.com/w40/sa.png' : 'https://flagcdn.com/w40/gb.png'}
-                                    alt={locale === 'en' ? 'Arabic' : 'English'}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                            <span className="font-bold">
-                                {locale === 'en' ? 'العربية' : 'English'}
-                            </span>
-                        </button>
-                    </div>
                 </nav>
             </div>
         </header>

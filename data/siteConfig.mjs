@@ -73,8 +73,8 @@ export const siteConfig = {
             navigation: {
                 header: [
                     { label: 'Home', path: '/' },
-                    { label: 'Your Guide', path: '/study-abroad-guide' },
-                    { label: 'Subject Areas', path: '/subjectareas' }
+                    { label: 'Advice or Insights', path: '/study-abroad-guide' },
+                    { label: 'Course Guides', path: '/subjectareas' }
                 ],
                 footer: [
                     { label: 'Home', path: '/' },
@@ -96,8 +96,8 @@ export const siteConfig = {
             navigation: {
                 header: [
                     { label: 'الرئيسية', path: '/' },
-                    { label: 'دليلك', path: '/study-abroad-guide' },
-                    { label: 'المجالات', path: '/subjectareas' }
+                    { label: 'نصائح وإرشادات', path: '/study-abroad-guide' },
+                    { label: 'دليل التخصصات', path: '/subjectareas' }
                 ],
                 footer: [
                     { label: 'الرئيسية', path: '/' },

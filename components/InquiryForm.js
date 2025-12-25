@@ -61,8 +61,6 @@ export default function InquiryForm({ className = "" }) {
         }
     }, [visitorData]);
 
-
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
@@ -122,7 +120,6 @@ export default function InquiryForm({ className = "" }) {
 
         try {
             // Prepare robust mobile number
-            // Prepare robust mobile number: strip leading 0s and +s
             const prefix = formData.mobileCountryCode || '';
             const prefixNumeric = prefix.replace('+', '');
             let rawMobile = (formData.mobile || '').trim();
@@ -148,13 +145,12 @@ export default function InquiryForm({ className = "" }) {
                 body: JSON.stringify({
                     ...formData,
                     mobile: finalMobile,
-                    whatsapp: finalMobile, // Mapping rule: whatsapp = mobile
-                    selectedCountry, // Nationality
-                    sourceId, // Tracked Source ID
-                    sourceChannel: channel, // Tracked Channel Name (optional meta)
-                    referrerId, // ?re=
-                    schoolId, // ?schoolId=
-                    // residenceCountry is already in ...formData
+                    whatsapp: finalMobile,
+                    selectedCountry,
+                    sourceId,
+                    sourceChannel: channel,
+                    referrerId,
+                    schoolId,
                     pageUrl: typeof window !== 'undefined' ? window.location.href : asPath,
                     visitorData: {
                         country: visitorData.country,
@@ -231,9 +227,9 @@ export default function InquiryForm({ className = "" }) {
     }
 
     return (
-        <form className={`space-y-4 ${className}`} onSubmit={handleSubmit}>
+        <form className={`space-y-3 ${className}`} onSubmit={handleSubmit}>
             <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-gray-600 mb-1">
                     {locale === 'ar' ? 'الاسم' : 'Name'} <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -241,14 +237,14 @@ export default function InquiryForm({ className = "" }) {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm bg-white ${errors.name ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
+                    className={`w-full px-3 py-2 border rounded-md focus:ring-2 outline-none text-sm bg-gray-50 focus:bg-white transition-colors ${errors.name ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-blue-100 focus:border-blue-400'}`}
                     placeholder={locale === 'ar' ? 'اسمك الكريم' : 'Your Name'}
                 />
-                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                {errors.name && <p className="text-red-500 text-[10px] mt-0.5">{errors.name}</p>}
             </div>
 
             <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-gray-600 mb-1">
                     {locale === 'ar' ? 'البريد الإلكتروني' : 'Email'} <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -256,13 +252,14 @@ export default function InquiryForm({ className = "" }) {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm bg-white ${errors.email ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
+                    className={`w-full px-3 py-2 border rounded-md focus:ring-2 outline-none text-sm bg-gray-50 focus:bg-white transition-colors ${errors.email ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-blue-100 focus:border-blue-400'}`}
                     placeholder="you@example.com"
                 />
-                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                {errors.email && <p className="text-red-500 text-[10px] mt-0.5">{errors.email}</p>}
             </div>
+
             <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-gray-600 mb-1">
                     {locale === 'ar' ? 'رقم الموبايل' : 'Mobile number'} <span className="text-red-500">*</span>
                 </label>
                 <div className="flex relative items-stretch" dir="ltr">
@@ -271,14 +268,14 @@ export default function InquiryForm({ className = "" }) {
                         <button
                             type="button"
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                            className="h-full px-2 border border-r-0 rounded-l bg-white border-slate-300 flex items-center justify-center min-w-[60px] hover:bg-gray-50 transition-colors"
+                            className="h-full px-2 border border-r-0 rounded-l-md bg-gray-50 border-slate-200 flex items-center justify-center min-w-[60px] hover:bg-gray-100 transition-colors"
                         >
                             {formData.mobileCountryCode && countries.find(c => c.id === formData.mobileCountryId)?.code ? (
                                 <div className="flex items-center gap-1">
                                     <img
                                         src={`https://flagcdn.com/w40/${countries.find(c => c.id === formData.mobileCountryId).code.toLowerCase()}.png`}
                                         alt="flag"
-                                        className="w-6 h-4 object-cover rounded-sm shadow-sm"
+                                        className="w-5 h-3.5 object-cover rounded-sm shadow-sm"
                                     />
                                     <span className="text-[10px] text-slate-500">▼</span>
                                 </div>
@@ -291,7 +288,7 @@ export default function InquiryForm({ className = "" }) {
                         {isDropdownOpen && (
                             <>
                                 <div className="fixed inset-0 z-40" onClick={() => setIsDropdownOpen(false)}></div>
-                                <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-slate-200 rounded shadow-xl z-50 max-h-60 overflow-y-auto">
+                                <div className="absolute top-full left-0 mt-1 w-60 bg-white border border-slate-200 rounded shadow-xl z-50 max-h-48 overflow-y-auto">
                                     {countries.map((country) => (
                                         <button
                                             key={country.id}
@@ -304,7 +301,7 @@ export default function InquiryForm({ className = "" }) {
                                                 }));
                                                 setIsDropdownOpen(false);
                                             }}
-                                            className="w-full px-4 py-2 text-left text-sm hover:bg-blue-50 flex items-center gap-3 border-b last:border-0 border-slate-100"
+                                            className="w-full px-4 py-2 text-left text-sm hover:bg-blue-50 flex items-center gap-3 border-b last:border-0 border-slate-50"
                                         >
                                             {country.code && (
                                                 <img
@@ -313,8 +310,8 @@ export default function InquiryForm({ className = "" }) {
                                                     className="w-5 h-3 object-cover rounded-sm"
                                                 />
                                             )}
-                                            <span className="text-gray-600 font-mono text-xs w-10">{country.dialCode}</span>
-                                            <span className="text-gray-800 truncate flex-1">{country.name.en}</span>
+                                            <span className="text-gray-500 font-mono text-xs w-10">{country.dialCode}</span>
+                                            <span className="text-gray-700 truncate flex-1 text-xs">{country.name.en}</span>
                                         </button>
                                     ))}
                                 </div>
@@ -327,74 +324,75 @@ export default function InquiryForm({ className = "" }) {
                         name="mobile"
                         value={formData.mobile}
                         onChange={handleChange}
-                        className={`flex-1 px-3 py-2 border rounded-r focus:ring-2 outline-none text-sm bg-white ${errors.mobile ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
+                        className={`flex-1 px-3 py-2 border rounded-r-md focus:ring-2 outline-none text-sm bg-gray-50 focus:bg-white transition-colors ${errors.mobile ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-blue-100 focus:border-blue-400'}`}
                         placeholder={locale === 'ar' ? '55...' : '55...'}
                     />
                 </div>
-                {errors.mobile && <p className="text-red-500 text-xs mt-1">{errors.mobile}</p>}
+                {errors.mobile && <p className="text-red-500 text-[10px] mt-0.5">{errors.mobile}</p>}
             </div>
 
-            {/* Nationality (Single Column) */}
-            <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    {locale === 'ar' ? 'الجنسية' : 'Nationality'} <span className="text-red-500">*</span>
-                </label>
-                <select
-                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm bg-white ${errors.country ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
-                    value={selectedCountry}
-                    onChange={(e) => {
-                        setSelectedCountry(e.target.value);
-                        if (errors.country) setErrors(prev => ({ ...prev, country: null }));
-                    }}
-                >
-                    <option value="">{locale === 'ar' ? '-- اختر الجنسية --' : '-- Select Nationality --'}</option>
-                    {countries.map((country) => (
-                        <option key={country.id} value={country.id}>
-                            {country.name[locale] || country.name.en}
-                        </option>
-                    ))}
-                </select>
-                {errors.country && <p className="text-red-500 text-xs mt-1">{errors.country}</p>}
+            {/* Grid for Selects */}
+            <div className="grid grid-cols-2 gap-3">
+                <div>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1 truncate">
+                        {locale === 'ar' ? 'الجنسية' : 'Nationality'} <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                        className={`w-full px-2 py-2 border rounded-md focus:ring-2 outline-none text-sm bg-gray-50 focus:bg-white ${errors.country ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-blue-100 focus:border-blue-400'}`}
+                        value={selectedCountry}
+                        onChange={(e) => {
+                            setSelectedCountry(e.target.value);
+                            if (errors.country) setErrors(prev => ({ ...prev, country: null }));
+                        }}
+                    >
+                        <option value="">{locale === 'ar' ? 'اختر...' : 'Select...'}</option>
+                        {countries.map((country) => (
+                            <option key={country.id} value={country.id}>
+                                {country.name[locale] || country.name.en}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
+                <div>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1 truncate">
+                        {locale === 'ar' ? 'المستوى الدراسي' : 'Study Level'} <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                        className={`w-full px-2 py-2 border rounded-md focus:ring-2 outline-none text-sm bg-gray-50 focus:bg-white ${errors.studyLevel ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-blue-100 focus:border-blue-400'}`}
+                        name="studyLevel"
+                        value={formData.studyLevel}
+                        onChange={handleChange}
+                    >
+                        <option value="">{locale === 'ar' ? 'اختر...' : 'Select...'}</option>
+                        {studyLevels.map((level) => (
+                            <option key={level.id} value={level.id}>
+                                {locale === 'ar' ? level.ar : level.en}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </div>
 
             <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    {locale === 'ar' ? 'المستوى الدراسي المطلوب' : 'Required study level'} <span className="text-red-500">*</span>
-                </label>
-                <select
-                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm bg-white ${errors.studyLevel ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
-                    name="studyLevel"
-                    value={formData.studyLevel}
-                    onChange={handleChange}
-                >
-                    <option value="">{locale === 'ar' ? '-- اختر المستوى --' : '-- Select Level --'}</option>
-                    {studyLevels.map((level) => (
-                        <option key={level.id} value={level.id}>
-                            {locale === 'ar' ? level.ar : level.en}
-                        </option>
-                    ))}
-                </select>
-                {errors.studyLevel && <p className="text-red-500 text-xs mt-1">{errors.studyLevel}</p>}
-            </div>
-            <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    {locale === 'ar' ? 'ما هو استفسارك؟' : 'What is your enquiry?'} <span className="text-red-500">*</span>
+                <label className="block text-xs font-semibold text-gray-600 mb-1">
+                    {locale === 'ar' ? 'استفسارك' : 'Enquiry'} <span className="text-red-500">*</span>
                 </label>
                 <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2 border rounded focus:ring-2 outline-none text-sm bg-white ${errors.message ? 'border-red-500 focus:ring-red-200' : 'border-slate-300 focus:ring-blue-500'}`}
-                    rows="3"
+                    className={`w-full px-3 py-2 border rounded-md focus:ring-2 outline-none text-sm bg-gray-50 focus:bg-white transition-colors ${errors.message ? 'border-red-500 focus:ring-red-200' : 'border-slate-200 focus:ring-blue-100 focus:border-blue-400'}`}
+                    rows="2"
                     placeholder={locale === 'ar' ? 'أخبرنا عن هدفك...' : 'Tell us about your goals...'}
                 ></textarea>
-                {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+                {errors.message && <p className="text-red-500 text-[10px] mt-0.5">{errors.message}</p>}
             </div>
 
             <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className={`w-full font-bold py-2 rounded transition text-sm shadow-md ${status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} text-white`}
+                className={`w-full font-bold py-3 rounded-md transition text-sm shadow-lg transform hover:-translate-y-0.5 ${status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800'} text-white`}
             >
                 {status === 'submitting'
                     ? (locale === 'ar' ? 'جاري الإرسال...' : 'Sending...')

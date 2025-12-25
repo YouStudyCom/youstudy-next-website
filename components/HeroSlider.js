@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -13,6 +14,30 @@ export default function HeroSlider() {
     const { t } = useTranslation('common');
     const router = useRouter();
     const { locale } = router;
+
+    const [promoText, setPromoText] = useState('');
+
+    useEffect(() => {
+        const enOptions = [
+            "Free Educational Consultation",
+            "100% Free Education Advice",
+            "Free Academic Consultation",
+            "No‑Cost Education Consultation",
+            "Free Study Consultation",
+            "Free Guidance Session"
+        ];
+
+        const arOptions = [
+            "استشارات تعليمية مجانية",
+            "استشارات تعليمة مجانية 100٪",
+            "استشارات مجانية للطلاب",
+            "استشارات دراسية مجانية"
+        ];
+
+        const options = locale === 'ar' ? arOptions : enOptions;
+        const randomText = options[Math.floor(Math.random() * options.length)];
+        setPromoText(randomText);
+    }, [locale]);
 
     const slides = [
 
@@ -114,15 +139,23 @@ export default function HeroSlider() {
 
 
             {/* Enquiry Form Overlay - Hidden on Mobile */}
-            <div className="absolute top-0 right-0 z-10 w-full h-full hidden md:flex items-center justify-center md:items-start md:pt-20 md:justify-end pointer-events-none">
+            <div className="absolute top-0 right-0 z-10 w-full h-full hidden md:flex items-center justify-center md:items-start md:pt-16 md:justify-end pointer-events-none">
                 <div
-                    className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-2xl w-full max-w-md mx-4 md:mr-20 pointer-events-auto border-t-4 border-blue-600 max-h-[85vh] overflow-y-auto"
+                    className="bg-white/95 backdrop-blur-md rounded-xl shadow-2xl w-full max-w-[400px] mx-4 md:mr-20 pointer-events-auto overflow-hidden animate-fade-in-up"
                     dir={locale === 'ar' ? 'rtl' : 'ltr'}
                 >
-                    <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-                        {locale === 'ar' ? 'قدم طلبك الآن' : 'Enquire Now'}
-                    </h3>
-                    <InquiryForm />
+                    <div className="bg-gradient-to-r from-blue-700 to-blue-900 px-6 py-2 text-center">
+                        <h3 className="text-xl font-bold text-white tracking-wide">
+                            {locale === 'ar' ? 'قدم طلبك الآن' : 'Enquire Now'}
+                        </h3>
+                        <p className="text-blue-100 text-xs mt-1 opacity-90 animate-pulse">
+                            {promoText || (locale === 'ar' ? 'استشارة تعليمية مجانية' : 'Free Educational Consultation')}
+                        </p>
+                    </div>
+
+                    <div className="p-5">
+                        <InquiryForm />
+                    </div>
                 </div>
             </div>
         </div >
