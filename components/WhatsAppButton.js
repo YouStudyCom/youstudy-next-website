@@ -14,8 +14,11 @@ export default function WhatsAppButton() {
             className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-[55] group"
         >
             <div className="relative">
-                {/* Pulse Effect */}
-                <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
+                {/* Pulse Effect - Custom 30s interval */}
+                <div
+                    className="absolute inset-0 bg-green-500 rounded-full opacity-75"
+                    style={{ animation: 'periodic-ping 30s cubic-bezier(0, 0, 0.2, 1) infinite' }}
+                ></div>
 
                 {/* Button */}
                 <div className="relative bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300">
@@ -29,6 +32,23 @@ export default function WhatsAppButton() {
                     Chat with us
                 </span>
             </div>
+
+            <style jsx>{`
+                @keyframes periodic-ping {
+                    0% {
+                        transform: scale(1);
+                        opacity: 0.75;
+                    }
+                    5% {
+                        transform: scale(2);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: scale(2);
+                        opacity: 0;
+                    }
+                }
+            `}</style>
         </Link>
     );
 }
