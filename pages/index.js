@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { FAQPageJsonLd, BreadcrumbJsonLd, OrganizationJsonLd, WebSiteJsonLd } from 'next-seo';
+import { FAQPageJsonLd, BreadcrumbJsonLd, OrganizationJsonLd } from 'next-seo';
 import HeroSlider from '../components/HeroSlider';
 import StepsSection from '../components/StepsSection';
 import StudyDestinations from '../components/StudyDestinations';
@@ -65,10 +65,6 @@ export default function Home(props) {
                     'https://www.tiktok.com/@youstudy.com'
                 ]}
                 url="https://www.youstudy.com"
-            />
-            <WebSiteJsonLd
-                siteUrl="https://www.youstudy.com"
-                availableLanguage={['en', 'ar']}
             />
 
             {Array.isArray(faqData) && (
