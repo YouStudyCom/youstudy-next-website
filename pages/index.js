@@ -30,15 +30,7 @@ export default function Home(props) {
                 }}
                 keywords={t('seo.keywords')}
             />
-            <BreadcrumbJsonLd
-                itemListElement={[
-                    {
-                        position: 1,
-                        name: t('breadcrumbs.home'),
-                        item: 'https://www.youstudy.com',
-                    },
-                ]}
-            />
+
             {Array.isArray(faqData) && (
                 <FAQPageJsonLd
                     mainEntity={faqData.map((item) => ({

@@ -22,7 +22,10 @@ export default function Breadcrumbs({ items }) {
     return (
         <>
             {/* Structured Data */}
-            <BreadcrumbJsonLd itemListElement={schemaItems} />
+            {/* Structured Data: Only render if we have valid items with URLs */}
+            {schemaItems.filter(i => i.item).length > 0 && (
+                <BreadcrumbJsonLd itemListElement={schemaItems.filter(i => i.item)} />
+            )}
 
             {/* Visual Navigation */}
             <nav aria-label="Breadcrumb" className="mb-6 w-full overflow-hidden">
