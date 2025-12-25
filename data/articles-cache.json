@@ -9,7 +9,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-to-choose-your-destination-of-study-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "Do I Need a Visa to Study in the UK?",
@@ -21,7 +27,13 @@
     },
     "updated_at": "2022-03-13",
     "slug": "how-to-get-a-student-visa-to-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "How can I Finance My Studies in the UK?",
@@ -33,7 +45,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "how-to-fund-your-studies",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 87,
+      "name": "Latest news & scholarships",
+      "slug": "latest-news-scholarships",
+      "sorted": 10
+    }
   },
   {
     "title": "How to Pursue Postgraduate Studies in the UK",
@@ -45,7 +63,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "terms-of-masters-degree-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How do I Fund my studies in UK?",
@@ -57,7 +81,13 @@
     },
     "updated_at": "2022-05-10",
     "slug": "how-can-i-fund-my-study-in-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 87,
+      "name": "Latest news & scholarships",
+      "slug": "latest-news-scholarships",
+      "sorted": 10
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -69,7 +99,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Life in UK",
@@ -81,7 +117,13 @@
     },
     "updated_at": "2022-05-12",
     "slug": "the-lifestyle-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why You Should Study Engineering in the UK",
@@ -93,7 +135,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "reasons-for-studying-engineering-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "University Admission in UK",
@@ -105,7 +153,13 @@
     },
     "updated_at": "2022-05-12",
     "slug": "admissions-acceptance-letters-from-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Study in the UK: 4 Best Cities for Students",
@@ -117,7 +171,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "4-best-cities-to-study-in-britain",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Find Part-Time Jobs in the United Kingdom Easily",
@@ -129,7 +189,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "the-easiest-way-to-find-part-time-work-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Study Medicine in the UK ",
@@ -141,7 +207,13 @@
     },
     "updated_at": "2022-03-13",
     "slug": "studying-medicine-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Living Cost in the United Kingdom",
@@ -153,7 +225,13 @@
     },
     "updated_at": "2022-05-12",
     "slug": "living-costs-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 82,
+      "name": "Study & accommodation costs",
+      "slug": "study-accommodation-costs",
+      "sorted": 5
+    }
   },
   {
     "title": "Medical Insurance for international students in UK ",
@@ -165,7 +243,13 @@
     },
     "updated_at": "2022-07-03",
     "slug": "medical-insurance-for-britain-scholars",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "Tourist Places to Enjoy When You Visit the UK",
@@ -177,7 +261,13 @@
     },
     "updated_at": "2022-03-13",
     "slug": "tourism-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "Requirements for Tier 4 UK Visa ",
@@ -189,7 +279,13 @@
     },
     "updated_at": "2022-05-12",
     "slug": "requirements-for-visa-tier-4",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Most Attractive Tourist Places in the UK",
@@ -201,7 +297,13 @@
     },
     "updated_at": "2022-03-13",
     "slug": "best-places-to-visit-in-britain",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "Student Health Insurance Services in the UK",
@@ -213,7 +315,13 @@
     },
     "updated_at": "2022-05-12",
     "slug": "student-health-services-in-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "International Students’ Guide to Living in London",
@@ -225,7 +333,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "living-in-london-for-scholarship-students",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Student Health Care System in the UK",
@@ -237,7 +351,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "health-care-system-for-students-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "Studying English at EF First Education Schools",
@@ -249,7 +369,13 @@
     },
     "updated_at": "2022-05-12",
     "slug": "study-english-language-in-ef-education-first-schools",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Pathway Courses: Your Gateway to UK Universities",
@@ -261,7 +387,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "a-short-trip-to-some-of-the-educational-institutions-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -273,7 +405,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "How Can I Work in the UK While Studying?",
@@ -285,7 +423,13 @@
     },
     "updated_at": "2022-03-13",
     "slug": "how-can-i-work-during-my-study-in-the-united-kingdom",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Features and Benefits of Studying in the UK",
@@ -297,7 +441,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "features-and-benefits-of-studying-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Overcome the Language Barrier While Studying Abroad",
@@ -309,7 +459,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "easy-steps-how-to-go-beyond-the-language-barrier-to-begin-your-studies-abroad",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -321,7 +477,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Important Steps to Get a Student visa to the UK",
@@ -333,7 +495,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "several-steps-your-guide-to-get-a-student-visa-to-the-united-kingdom",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Things to Know about Living in London as a Student",
@@ -345,7 +513,13 @@
     },
     "updated_at": "2022-03-13",
     "slug": "things-to-know-about-living-in-london",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "UK University Scholarships: How to Apply and Win",
@@ -357,7 +531,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-to-get-a-scholarship-in-britain",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 87,
+      "name": "Latest news & scholarships",
+      "slug": "latest-news-scholarships",
+      "sorted": 10
+    }
   },
   {
     "title": "Study in the UK: Best Cities for Students",
@@ -369,7 +549,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "best-cities-to-study-in-the-united-kingdom",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "Top 5 Best UK Universities You Should Know",
@@ -381,7 +567,13 @@
     },
     "updated_at": "2022-07-18",
     "slug": "britains-renowned-universities-which-changed-the-point-of-rudder",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "6 tips to meet admission requirements in british medical colleges",
@@ -393,7 +585,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "6-tips-to-meet-admission-requirements-in-british-medical-colleges",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -405,7 +603,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "All You Need To Know About London",
@@ -417,7 +621,13 @@
     },
     "updated_at": "2022-03-24",
     "slug": "all-you-wanted-to-know-about-london",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Most Recommended English Language Schools in the UK",
@@ -429,7 +639,13 @@
     },
     "updated_at": "2023-02-08",
     "slug": "most-recommended-english-language-schools-in-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Kaplan International Colleges: Complete Guide for Students",
@@ -441,7 +657,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "learn-about-kaplan-international-colleges",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -453,7 +675,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Most Majors Required By International Students in UK",
@@ -465,7 +693,13 @@
     },
     "updated_at": "2022-12-05",
     "slug": "the-most-popular-majors-for-international-students-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -477,7 +711,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "Important Tips Before Studying in the UK",
@@ -489,7 +729,13 @@
     },
     "updated_at": "2022-03-27",
     "slug": "important-tips-before-studying-in-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -501,7 +747,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Why Study in Scotland?",
@@ -513,7 +765,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "5-reasons-why-you-might-want-to-study-in-scotland",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "Top 5 universities in Scotland",
@@ -525,7 +783,13 @@
     },
     "updated_at": "2022-03-28",
     "slug": "top-5-universities-in-scotland",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "UK Immigration",
@@ -537,7 +801,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "uk-immigration",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Accommodation for Students on Scholarships in the UK",
@@ -549,7 +819,13 @@
     },
     "updated_at": "2022-03-28",
     "slug": "accommodation-for-students-on-scholarships-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 87,
+      "name": "Latest news & scholarships",
+      "slug": "latest-news-scholarships",
+      "sorted": 10
+    }
   },
   {
     "title": "Labor Laws for International Students in UK",
@@ -561,7 +837,13 @@
     },
     "updated_at": "2022-03-28",
     "slug": "labor-laws-for-international-students-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Top Universities for Distance Education in the UK",
@@ -573,7 +855,13 @@
     },
     "updated_at": "2022-03-29",
     "slug": "top-universities-for-distance-education-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Recommended Universities in the UK",
@@ -585,7 +873,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "recommended-universities-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "Learn English in the UK: Tips and Opportunities",
@@ -597,7 +891,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "studying-english-in-the-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "UK University Entry Requirements 2017",
@@ -609,7 +909,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "admission-requirements-in-british-universities",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -621,7 +927,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -633,7 +945,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -645,7 +963,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -657,7 +981,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -669,7 +999,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -681,7 +1017,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -693,7 +1035,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -705,7 +1053,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -717,7 +1071,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -729,7 +1089,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -741,7 +1107,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Why Studying in the UK is Worthy?",
@@ -753,7 +1125,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "is-studying-in-the-uk-worthy",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "Is Studying in the UK Worthy?",
@@ -765,7 +1143,13 @@
     },
     "updated_at": "2018-07-11",
     "slug": "is-studying-in-the-uk-worthy",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "7 Reasons Arab Students Should Study in the UK",
@@ -777,7 +1161,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "reasons-for-arab-students-to-study-in-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "Students’ Guide: 7 Tips Before Traveling to the UK",
@@ -789,7 +1179,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "tips-for-students-before-traveling-to-uk",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "UK Universities Offering Admissions In January Intake 2019",
@@ -801,7 +1197,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "uk-universities-available-in-january-2019",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -813,7 +1215,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -825,7 +1233,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -837,7 +1251,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "study-in-uk"
+    "destination_slug": "study-in-uk",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -849,7 +1269,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -861,7 +1287,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -873,7 +1305,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Studying English in the USA",
@@ -885,7 +1323,13 @@
     },
     "updated_at": "2022-05-16",
     "slug": "all-you-need-to-know-about-studying-english-in-america",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "How Much Does It Cost to Study in the USA?",
@@ -897,7 +1341,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "study-costs-in-america",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 82,
+      "name": "Study & accommodation costs",
+      "slug": "study-accommodation-costs",
+      "sorted": 5
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -909,7 +1359,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -921,7 +1377,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -933,7 +1395,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -945,7 +1413,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -957,7 +1431,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -969,7 +1449,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -981,7 +1467,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -993,7 +1485,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why International Students Should Study in the USA",
@@ -1005,7 +1503,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "why-study-in-the-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -1017,7 +1521,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -1029,7 +1539,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -1041,7 +1557,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -1053,7 +1575,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -1065,7 +1593,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "Tourism in the USA: Top Destinations and Tips",
@@ -1077,7 +1611,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "tourism-in-the-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -1089,7 +1629,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -1101,7 +1647,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "7 Reasons for Arab Students to Study in the US",
@@ -1113,7 +1665,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "good-reasons-for-arab-students-to-study-in-us",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": " Study Information Technology in the USA",
@@ -1125,7 +1683,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "study-information-technology-in-the-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Guide to Internet and Communication Services in the USA",
@@ -1137,7 +1701,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "telecommunications-and-internet-services-in-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "4 BEST PATHWAY PROGRAMS IN USA",
@@ -1149,7 +1719,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "four-best-pathway-programs-in-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Features of Studying Interior Design in the USA",
@@ -1161,7 +1737,13 @@
     },
     "updated_at": "2022-05-16",
     "slug": "studying-interior-design-in-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Studying Biomedical Engineering in the USA",
@@ -1173,7 +1755,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "biomedical-engineering-in-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Studying MBA in the USA",
@@ -1185,7 +1773,13 @@
     },
     "updated_at": "2022-05-30",
     "slug": "studying-mba-in-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "How to Study Physiotherapy in the USA: Tips and Requirements",
@@ -1197,7 +1791,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "studying-physiotherapy-in-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -1209,7 +1809,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -1221,7 +1827,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -1233,7 +1845,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Average Tuition Fees for Master's Degree in USA for International Students",
@@ -1245,7 +1863,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "average-fees-for-master-in-usa",
-    "destination_slug": "study-in-usa"
+    "destination_slug": "study-in-usa",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -1257,7 +1881,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -1269,7 +1899,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -1281,7 +1917,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -1293,7 +1935,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -1305,7 +1953,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -1317,7 +1971,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -1329,7 +1989,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -1341,7 +2007,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -1353,7 +2025,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -1365,7 +2043,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -1377,7 +2061,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -1389,7 +2079,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -1401,7 +2097,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -1413,7 +2115,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -1425,7 +2133,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -1437,7 +2151,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -1449,7 +2169,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -1461,7 +2187,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -1473,7 +2205,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -1485,7 +2223,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -1497,7 +2241,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "australia"
+    "destination_slug": "australia",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -1509,7 +2259,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -1521,7 +2277,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -1533,7 +2295,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -1545,7 +2313,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -1557,7 +2331,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -1569,7 +2349,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -1581,7 +2367,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -1593,7 +2385,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -1605,7 +2403,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -1617,7 +2421,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -1629,7 +2439,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -1641,7 +2457,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -1653,7 +2475,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -1665,7 +2493,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -1677,7 +2511,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -1689,7 +2529,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -1701,7 +2547,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -1713,7 +2565,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -1725,7 +2583,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -1737,7 +2601,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -1749,7 +2619,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "ireland"
+    "destination_slug": "ireland",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -1761,7 +2637,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -1773,7 +2655,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -1785,7 +2673,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -1797,7 +2691,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -1809,7 +2709,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -1821,7 +2727,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -1833,7 +2745,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -1845,7 +2763,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -1857,7 +2781,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -1869,7 +2799,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -1881,7 +2817,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -1893,7 +2835,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -1905,7 +2853,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -1917,7 +2871,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -1929,7 +2889,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -1941,7 +2907,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -1953,7 +2925,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -1965,7 +2943,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -1977,7 +2961,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -1989,7 +2979,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -2001,7 +2997,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "germany"
+    "destination_slug": "germany",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -2013,7 +3015,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -2025,7 +3033,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -2037,7 +3051,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -2049,7 +3069,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -2061,7 +3087,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -2073,7 +3105,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -2085,7 +3123,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -2097,7 +3141,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -2109,7 +3159,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -2121,7 +3177,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -2133,7 +3195,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -2145,7 +3213,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -2157,7 +3231,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -2169,7 +3249,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -2181,7 +3267,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -2193,7 +3285,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -2205,7 +3303,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -2217,7 +3321,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -2229,7 +3339,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -2241,7 +3357,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -2253,7 +3375,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "georgia"
+    "destination_slug": "georgia",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -2265,7 +3393,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -2277,7 +3411,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -2289,7 +3429,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -2301,7 +3447,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -2313,7 +3465,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -2325,7 +3483,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -2337,7 +3501,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -2349,7 +3519,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -2361,7 +3537,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -2373,7 +3555,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -2385,7 +3573,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -2397,7 +3591,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -2409,7 +3609,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -2421,7 +3627,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -2433,7 +3645,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -2445,7 +3663,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -2457,7 +3681,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -2469,7 +3699,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -2481,7 +3717,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -2493,7 +3735,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -2505,7 +3753,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "study-in-canada"
+    "destination_slug": "study-in-canada",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -2517,7 +3771,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -2529,7 +3789,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -2541,7 +3807,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -2553,7 +3825,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -2565,7 +3843,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -2577,7 +3861,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -2589,7 +3879,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -2601,7 +3897,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -2613,7 +3915,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -2625,7 +3933,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -2637,7 +3951,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -2649,7 +3969,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -2661,7 +3987,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -2673,7 +4005,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -2685,7 +4023,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -2697,7 +4041,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -2709,7 +4059,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -2721,7 +4077,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -2733,7 +4095,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -2745,7 +4113,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -2757,7 +4131,13 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "malaysia"
+    "destination_slug": "malaysia",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "Learn English at Education First",
@@ -2769,7 +4149,13 @@
     },
     "updated_at": "2022-02-06",
     "slug": "study-english-at-education-first",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "Before You Study Abroad: 8 Tips You Must Know",
@@ -2781,7 +4167,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "8-practical-and-positive-tips-for-a-successful-studying-abroad-life-part-1",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "IELTS UKVI Test for Visa and Immigration",
@@ -2793,7 +4185,13 @@
     },
     "updated_at": "2022-03-14",
     "slug": "ielts-exam-for-the-purpose-of-immigration-and-visas",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 83,
+      "name": "Getting your visa",
+      "slug": "getting-your-visa",
+      "sorted": 6
+    }
   },
   {
     "title": "Why Do International Students Want to Study Abroad?",
@@ -2805,7 +4203,13 @@
     },
     "updated_at": "2022-03-22",
     "slug": "why-study-abroad",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "How to Study a Master’s Degree in the UK or USA",
@@ -2817,7 +4221,13 @@
     },
     "updated_at": "2025-08-18",
     "slug": "how-masters-degree-start-in-uk-or-america",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "how to save money 7 tips for students abroad",
@@ -2829,7 +4239,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-successful-methods-for-managing-financial-expenses-while-studying-abroad",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Simple Tips to Learn English Faster and Easier",
@@ -2841,7 +4257,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "7-tips-to-learn-english-quickly-and-easily",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Engineering",
@@ -2853,7 +4275,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-engineering",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Business and Management: Complete Guide for Students",
@@ -2865,7 +4293,13 @@
     },
     "updated_at": "2025-08-20",
     "slug": "everything-you-want-to-know-about-management-and-business-study",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "The Complete Guide to Law",
@@ -2877,7 +4311,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-law",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   },
   {
     "title": "The Complete Guide to Health and Medicine",
@@ -2889,7 +4329,13 @@
     },
     "updated_at": "2025-08-17",
     "slug": "all-you-need-to-know-about-health-and-medicine",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "Why should you study Computer Science and Technology?",
@@ -2901,7 +4347,13 @@
     },
     "updated_at": "2022-05-14",
     "slug": "computer-science-and-information-technology",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "What are Pre-sessional English Courses?",
@@ -2913,7 +4365,13 @@
     },
     "updated_at": "2022-04-14",
     "slug": "pre-sessional-english-courses",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "How to Improve Your Academic Performance",
@@ -2925,7 +4383,13 @@
     },
     "updated_at": "2022-02-07",
     "slug": "how-to-improve-your-academic-performance",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 85,
+      "name": "Once you arrive",
+      "slug": "once-you-arrive",
+      "sorted": 8
+    }
   },
   {
     "title": "7 Reasons to Choose Youstudy.com for Studying Abroad",
@@ -2937,7 +4401,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-youstudy",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What Career is Right For Me?",
@@ -2949,7 +4419,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "why-should-you-study-what-you-love",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 78,
+      "name": "Your first step in studying abroad",
+      "slug": "your-first-step-in-studying-abroad",
+      "sorted": 1
+    }
   },
   {
     "title": "What is Homestay Student Accommodation?",
@@ -2961,7 +4437,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "what-is-homestay-student-accommodation",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 84,
+      "name": "Before you leave",
+      "slug": "before-you-leave",
+      "sorted": 7
+    }
   },
   {
     "title": "Benefits of Pre-sessional English Course",
@@ -2973,7 +4455,13 @@
     },
     "updated_at": "2022-05-15",
     "slug": "pre-sessional-english-for-academic-purposes",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 80,
+      "name": "Choosing a subject",
+      "slug": "choosing-a-subject",
+      "sorted": 3
+    }
   },
   {
     "title": "What after graduation?",
@@ -2985,7 +4473,13 @@
     },
     "updated_at": "2022-05-31",
     "slug": "what-after-graduation",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 86,
+      "name": "Post-study life",
+      "slug": "post-study-life",
+      "sorted": 9
+    }
   },
   {
     "title": "What is the Best Place to Study Abroad?",
@@ -2997,7 +4491,13 @@
     },
     "updated_at": "2022-06-08",
     "slug": "best-place-to-study",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 79,
+      "name": "Choosing where to study",
+      "slug": "choosing-where-to-study",
+      "sorted": 2
+    }
   },
   {
     "title": "How to Write a Personal Statement for University Applications",
@@ -3009,6 +4509,12 @@
     },
     "updated_at": "2022-06-11",
     "slug": "how-to-write-a-personal-statement",
-    "destination_slug": "study-in-turky"
+    "destination_slug": "study-in-turky",
+    "category": {
+      "id": 81,
+      "name": "Applying to a university",
+      "slug": "applying-to-a-university",
+      "sorted": 4
+    }
   }
 ]
