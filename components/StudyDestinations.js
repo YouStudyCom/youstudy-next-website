@@ -87,7 +87,7 @@ export default function StudyDestinations({ destinations: propsDestinations }) {
                                 <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
                                     <Link
                                         href={`/study-abroad-guide/${destination.slug}`}
-                                        className="text-blue-600 font-semibold text-sm hover:text-blue-800 flex items-center gap-1 group/link"
+                                        className="text-blue-600 font-semibold text-sm hover:text-blue-800 flex items-center gap-1 group/link py-2"
                                         aria-label={`${t('destinations.learn_more', 'View Programs')} in ${getPrefixedName(destination.name)}`}
                                     >
                                         {locale === 'ar' ? `استكشف دليل ${getName(destination.name)}` : `Explore ${getName(destination.name)} Guide`}

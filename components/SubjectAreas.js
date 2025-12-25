@@ -38,7 +38,8 @@ export default function SubjectAreas({ subjects: propsSubjects }) {
                             <p className="text-gray-600 text-sm mb-4 flex-grow">{subject.seo.description[locale]}</p>
                             <Link
                                 href={`/subjectareas/${subject.slug}`}
-                                className="text-blue-600 font-semibold text-sm hover:text-blue-800 inline-flex items-center mt-auto gap-1"
+                                className="text-blue-600 font-semibold text-sm hover:text-blue-800 inline-flex items-center mt-auto gap-1 py-2"
+                                aria-label={`${t('explore', 'Explore')} ${subject.title[locale]}`}
                             >
                                 {t('explore', 'Explore')}
                                 {locale === 'ar' ? <FaArrowLeft className="w-4 h-4" /> : <FaArrowRight className="w-4 h-4" />}
@@ -63,7 +64,8 @@ export default function SubjectAreas({ subjects: propsSubjects }) {
                             <p className="text-gray-600 text-sm mb-4 flex-grow">{subject.seo.description[locale]}</p>
                             <Link
                                 href={`/subjectareas/${subject.slug}`}
-                                className="text-blue-600 font-semibold text-sm hover:text-blue-800 inline-flex items-center mt-auto gap-1"
+                                className="text-blue-600 font-semibold text-sm hover:text-blue-800 inline-flex items-center mt-auto gap-1 py-2"
+                                aria-label={`${t('explore', 'Explore')} ${subject.title[locale]}`}
                             >
                                 {t('explore', 'Explore')}
                                 {locale === 'ar' ? <FaArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" /> : <FaArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />}
