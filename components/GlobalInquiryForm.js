@@ -7,13 +7,18 @@ export default function GlobalInquiryForm() {
     const { locale } = router;
     const [isOpen, setIsOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
+
+    // Initial Resize Check
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize(); // Check immediately
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // Visibility Logic
     useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 768);
-        handleResize();
-        window.addEventListener('resize', handleResize);
-
         // Pages where form should ALWAYS be open on desktop (ignoring previous close preference)
         const alwaysOpenPages = [
             '/study-abroad-guide/[slug]/[articleSlug]',
@@ -21,56 +26,66 @@ export default function GlobalInquiryForm() {
         ];
         const shouldForceOpen = !isMobile && alwaysOpenPages.includes(router.pathname);
 
-        // If manually closed, respect that choice globally (UNLESS on forced pages)
+        // Check if explicitly closed
         const hasClosed = sessionStorage.getItem('formClosed');
-        if (hasClosed && !shouldForceOpen) {
-            setIsOpen(false);
-            return () => window.removeEventListener('resize', handleResize);
-        }
 
+        // Decide sidebar visibility based on Route
         const isHomePage = router.pathname === '/';
 
-        if (shouldForceOpen) {
-            setIsOpen(true);
-            return () => window.removeEventListener('resize', handleResize);
-        }
-
         if (isHomePage) {
-            // Home Page: Toggle based on scroll position (height of HeroSlider approx 700px)
+            // Home Page: Hide completely on top, show button/form after scroll
             const handleScroll = () => {
-                // Double check closing state inside handler
-                if (sessionStorage.getItem('formClosed')) return;
-
                 if (window.scrollY > 700) {
-                    setIsOpen(true);
+                    setShowSidebar(true);
+                    // Standard logic: If not closed, ensure it's open (tab or expanded)
+                    // If we want it to auto-expand, we use setIsOpen(true)
+                    if (!hasClosed && !isOpen) {
+                        // Keep it collapsed as a tab initially? Or auto-expand?
+                        // Original code auto-expanded. Let's stick to that for consistency, 
+                        // or just show the button (setIsOpen(false)) but showSidebar(true).
+                        // Let's auto-expand if that was the desired behavior.
+                        // Actually, auto-expanding every scroll is annoying. 
+                        // Let's checks if we haven't auto-opened it yet this session? 
+                        // For now, let's just make it visible (showSidebar=true). 
+                        // The user can click to open.
+                        // BUT, if it was "forced open" before, we should respect that?
+                        // Let's just set showSidebar(true).
+                    }
                 } else {
-                    setIsOpen(false);
+                    setShowSidebar(false);
+                    setIsOpen(false); // Collapse/Hide content if hidden
                 }
             };
 
-            // Initial check
-            handleScroll();
+            handleScroll(); // Initial check
             window.addEventListener('scroll', handleScroll);
-
             return () => {
-                window.removeEventListener('resize', handleResize);
                 window.removeEventListener('scroll', handleScroll);
             };
         } else {
-            // Other Pages: Always open by default
-            setIsOpen(true);
-            return () => window.removeEventListener('resize', handleResize);
+            // Other Pages: Always show sidebar
+            setShowSidebar(true);
+            if (shouldForceOpen) {
+                setIsOpen(true);
+            } else if (!hasClosed) {
+                // Default open behavior on inner pages?
+                setIsOpen(true);
+            }
         }
+
     }, [router.pathname, isMobile]);
 
     // Listener for custom open events (e.g. from Hero Button)
     useEffect(() => {
-        const handleCustomToggle = () => setIsOpen(true);
+        const handleCustomToggle = () => {
+            setShowSidebar(true); // Ensure it's visible
+            setIsOpen(true);      // Open it
+        };
         window.addEventListener('toggle-global-form', handleCustomToggle);
         return () => window.removeEventListener('toggle-global-form', handleCustomToggle);
     }, []);
 
-    // Auto-open on mobile after 5 seconds
+    // Auto-open on mobile after 10 seconds (delayed)
     useEffect(() => {
         if (isMobile && !isOpen && !sessionStorage.getItem('formClosed')) {
             const timer = setTimeout(() => {
@@ -78,7 +93,7 @@ export default function GlobalInquiryForm() {
             }, 10000);
             return () => clearTimeout(timer);
         }
-    }, [isMobile]);
+    }, [isMobile, isOpen]);
 
     const toggleForm = () => {
         if (isOpen) {
@@ -94,16 +109,32 @@ export default function GlobalInquiryForm() {
 
     // Desktop Component: Sticky Sidebar
     if (!isMobile) {
+        // showSidebar controls if the whole component (button included) is on screen
+        // isOpen controls if the form panel is slid out
+
+        // CSS Logic:
+        // if !showSidebar -> translate-x-full (completely off screen)
+        // if showSidebar && isOpen -> translate-x-0 (fully visible)
+        // if showSidebar && !isOpen -> translate-x-[calc(100%-40px)] (only button visible)
+
+        const translateClass = !showSidebar
+            ? 'translate-x-full'
+            : (isOpen ? 'translate-x-0' : 'translate-x-[calc(100%-40px)]');
+        // Logic: standard LTR transform for right-aligned sidebar.
+        // Positive translate moves Right (off-screen).
+        // 0 is fully visible.
+        // calc(100%-40px) leaves 40px visible.
+
         return (
             <div
-                className={`fixed top-1/2 right-0 transform -translate-y-1/2 z-50 transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-[calc(100%-40px)]'}`}
+                className={`fixed top-1/2 right-0 transform -translate-y-1/2 z-50 transition-all duration-300 ease-in-out ${translateClass}`}
                 dir="ltr"
             >
                 <div className="flex shadow-2xl rounded-l-xl overflow-hidden bg-white h-auto max-h-[80vh] border border-slate-200">
                     {/* Toggle Tab */}
                     <button
                         onClick={toggleForm}
-                        className="bg-blue-600 text-white w-10 flex flex-col items-center justify-center cursor-pointer hover:bg-blue-700 transition-colors py-8"
+                        className="bg-blue-600 text-white w-10 flex flex-col items-center justify-center cursor-pointer hover:bg-blue-700 transition-colors py-8 outline-none"
                     >
                         <div
                             className={`transform whitespace-nowrap font-bold tracking-widest text-sm translate-y-2 flex items-center gap-2 ${locale === 'ar' ? 'rotate-90' : '-rotate-90'}`}
@@ -120,7 +151,7 @@ export default function GlobalInquiryForm() {
 
                     {/* Form Content */}
                     <div
-                        className="w-80 p-6 overflow-y-auto"
+                        className="w-80 p-6 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
                         dir={locale === 'ar' ? 'rtl' : 'ltr'}
                     >
                         <h3 className="text-xl font-bold text-slate-900 mb-2">
@@ -156,10 +187,10 @@ export default function GlobalInquiryForm() {
             {/* Mobile Modal */}
             {isOpen && (
                 <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/50 p-4 transition-opacity md:hidden">
-                    <div className="bg-white rounded-t-2xl sm:rounded-xl w-full max-w-md p-6 animate-slide-up sm:animate-fade-in relative">
+                    <div className="bg-white rounded-t-2xl sm:rounded-xl w-full max-w-md p-6 animate-slide-up sm:animate-fade-in relative" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                         <button
                             onClick={closeMobileForm}
-                            className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"
+                            className={`absolute top-4 ${locale === 'ar' ? 'left-4' : 'right-4'} text-slate-400 hover:text-slate-600`}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
