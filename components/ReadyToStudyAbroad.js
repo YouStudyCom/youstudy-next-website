@@ -20,7 +20,7 @@ export default function ReadyToStudyAbroad({ name }) {
             </p>
             <button
                 className="bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition shadow-lg"
-                onClick={() => document.querySelector('button[class*="bg-blue-600 text-white w-10"]')?.click()}
+                onClick={() => window.dispatchEvent(new Event('toggle-global-form'))}
             >
                 {locale === 'ar' ? 'احصل على استشارة مجانية' : 'Get Free Advice'}
             </button>

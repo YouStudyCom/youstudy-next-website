@@ -62,7 +62,7 @@ export default function HeroSlider() {
     ];
 
     return (
-        <div className="relative w-full h-[600px] md:h-[700px]" dir="ltr">
+        <div className="relative w-full h-[500px] md:h-[600px]" dir="ltr">
             {/* Slider */}
             <Swiper
                 spaceBetween={0}
@@ -100,40 +100,29 @@ export default function HeroSlider() {
             </Swiper>
 
             {/* Static Content Overlay (Left Side) - SEO friendly on mobile */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center md:justify-start pointer-events-none">
-                <div className={`px-6 md:px-20 max-w-4xl text-center flex flex-col items-center ${locale === 'ar' ? 'md:items-end md:text-right' : 'md:items-start md:text-left'} text-white pointer-events-auto`} dir={t('dir', { returnObjects: true }) || (locale === 'ar' ? 'rtl' : 'ltr')}>
-                    <h1 className="text-3xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-                        {t('hero.title', 'Get Your Offer & Free Consultation')}
+            <div className={`absolute inset-0 z-10 flex items-center justify-center md:justify-start pointer-events-none`}>
+                <div className={`px-6 md:px-20 max-w-2xl text-center flex flex-col items-center ${locale === 'ar' ? 'md:items-end md:text-right' : 'md:items-start md:text-left'} text-white pointer-events-auto transition-all duration-500`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+
+                    {/* Main Heading - Optimized for Tajawal/Professional Look */}
+                    <h1 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 drop-shadow-lg tracking-normal ${locale === 'ar' ? 'leading-normal font-ar' : 'leading-tight'}`}>
+                        {t('hero.title', 'Get Your Admission Offer + Free Study Abroad Consultation')}
                     </h1>
-                    <p className="text-lg md:text-2xl font-medium drop-shadow-md mb-8 max-w-2xl">
-                        {t('hero.subtitle', 'Begin your journey with professional support.')}
+
+                    {/* Subtitle - Better hierarchy */}
+                    <p className={`text-base md:text-lg font-medium mb-8 max-w-2xl text-blue-50/90 drop-shadow-md ${locale === 'ar' ? 'leading-relaxed' : 'leading-snug'}`}>
+                        {t('hero.subtitle', 'Free guidance to choose courses, prepare applications, and receive your admission offer.')}
                     </p>
 
-                    {/* Mobile/Desktop CTA Button (Since form is now hidden on mobile) */}
-                    <a
-                        href="#"
+                    {/* Mobile/Desktop CTA Button */}
+                    <button
                         onClick={(e) => {
                             e.preventDefault();
-                            // Trigger the global form to open
-                            const event = new CustomEvent('open-inquiry-form');
-                            window.dispatchEvent(event);
-                            // Fallback if event logic isn't set up yet, we can also target the global form state if we had access,
-                            // but usually a sticky bar button or GlobalForm listens to open commands.
-                            // For now, let's assume the user just wants the button visually, but ideally it should open the GlobalInquiryForm.
-                            // Given I cannot easily pass props to GlobalInquiryForm from here without Context, I'll link to the form section or simulate a click on the sticky bar toggle which might be hard.
-                            // Alternative: Simply use the same style/link as the sticky bar.
-                            // Let's implement a direct open logic if possible or just a button that looks professional.
-                            // Better yet, update GlobalInquiryForm to listen to an event? 
-                            // Or just make it a link to a contact page if that exists.
-                            // User request: "like the existing Get Your Offer... button".
-                            // I'll make it trigger the same state if I can, or for now just a hash link that does nothing until clicked?
-                            // Actually, I can use a simple event listener in GlobalInquiryForm.
                             window.dispatchEvent(new Event('toggle-global-form'));
                         }}
-                        className="bg-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl hover:bg-blue-700 transition-transform active:scale-95 md:hidden"
+                        className="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl hover:shadow-2xl hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform active:scale-95 md:hidden border border-blue-400/20 backdrop-blur-sm"
                     >
                         {t('hero.cta', locale === 'ar' ? 'احصل على استشارتك المجانية' : 'Get Your Free Consultation')}
-                    </a>
+                    </button>
                 </div>
             </div>
 

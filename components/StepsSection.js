@@ -58,9 +58,9 @@ export default function StepsSection() {
                             <div className="mb-6 p-4 bg-blue-50 rounded-full">
                                 {step.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                <span className="text-blue-600 mr-2">{step.id}.</span>
-                                {step.title}
+                            <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center justify-center gap-2">
+                                <span className="text-blue-600">{step.id}.</span>
+                                <span>{step.title}</span>
                             </h3>
                             <p className="text-gray-600 leading-relaxed">
                                 {step.description}

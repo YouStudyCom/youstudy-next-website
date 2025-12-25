@@ -196,7 +196,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-80" />
                             </div>
                         )}
-                        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+                        <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
                             {articleTitle}
                         </h1>
                         <div className="text-xl text-slate-600 leading-relaxed border-l-4 border-blue-600 pl-6 italic">

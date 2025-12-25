@@ -17,17 +17,30 @@ export default function GlobalInquiryForm() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Visibility Logic
+    // Auto-open logic (Desktop & Mobile)
     useEffect(() => {
-        // Pages where form should ALWAYS be open on desktop (ignoring previous close preference)
-        const alwaysOpenPages = [
-            '/study-abroad-guide/[slug]/[articleSlug]',
-            '/subjectareas/[slug]'
-        ];
-        const shouldForceOpen = !isMobile && alwaysOpenPages.includes(router.pathname);
+        // If it's already open, or user closed it previously, do nothing
+        if (isOpen || sessionStorage.getItem('formClosed')) return;
 
-        // Check if explicitly closed
-        const hasClosed = sessionStorage.getItem('formClosed');
+        // Timer to open after 10 seconds
+        const timer = setTimeout(() => {
+            // Re-check conditions inside timeout
+            if (!sessionStorage.getItem('formClosed')) {
+                setIsOpen(true);
+                // Also ensure sidebar is shown on desktop if it was hidden
+                setShowSidebar(true);
+            }
+        }, 10000); // 10 seconds delay
+
+        return () => clearTimeout(timer);
+    }, [isOpen]); // Depend on isOpen so we don't set timer if already open
+
+    // Visibility Logic (Immediate Setup)
+    useEffect(() => {
+        // Pages where form should ALWAYS be open on desktop (ignoring previous close preference)? 
+        // User requested delay, so we should probably respect delay even here, OR maybe these specific pages need immediate action?
+        // Let's assume the "30 second" rule applies generally to auto-opening.
+        // But we still need to show the SIDEBAR (collapsed) on inner pages immediately.
 
         // Decide sidebar visibility based on Route
         const isHomePage = router.pathname === '/';
@@ -37,23 +50,14 @@ export default function GlobalInquiryForm() {
             const handleScroll = () => {
                 if (window.scrollY > 700) {
                     setShowSidebar(true);
-                    // Standard logic: If not closed, ensure it's open (tab or expanded)
-                    // If we want it to auto-expand, we use setIsOpen(true)
-                    if (!hasClosed && !isOpen) {
-                        // Keep it collapsed as a tab initially? Or auto-expand?
-                        // Original code auto-expanded. Let's stick to that for consistency, 
-                        // or just show the button (setIsOpen(false)) but showSidebar(true).
-                        // Let's auto-expand if that was the desired behavior.
-                        // Actually, auto-expanding every scroll is annoying. 
-                        // Let's checks if we haven't auto-opened it yet this session? 
-                        // For now, let's just make it visible (showSidebar=true). 
-                        // The user can click to open.
-                        // BUT, if it was "forced open" before, we should respect that?
-                        // Let's just set showSidebar(true).
-                    }
+                    // We REMOVED the auto-open on scroll logic here to respect the 30s timer preference
+                    // The sidebar will appear (collapsed), and the timer will open it eventually if not closed.
                 } else {
                     setShowSidebar(false);
-                    setIsOpen(false); // Collapse/Hide content if hidden
+                    // setIsOpen(false); // Do we want to auto-close on scroll up? Maybe annoying if user is typing.
+                    // Better to keep it open if user opened it, or just hide the sidebar container.
+                    // Original logic hid it. Let's keep hiding sidebar, but maybe not Reset isOpen state?
+                    // actually if sidebar is hidden, form is hidden.
                 }
             };
 
@@ -63,14 +67,8 @@ export default function GlobalInquiryForm() {
                 window.removeEventListener('scroll', handleScroll);
             };
         } else {
-            // Other Pages: Always show sidebar
+            // Other Pages: Always show sidebar (collapsed or open)
             setShowSidebar(true);
-            if (shouldForceOpen) {
-                setIsOpen(true);
-            } else if (!hasClosed) {
-                // Default open behavior on inner pages?
-                setIsOpen(true);
-            }
         }
 
     }, [router.pathname, isMobile]);
@@ -84,16 +82,6 @@ export default function GlobalInquiryForm() {
         window.addEventListener('toggle-global-form', handleCustomToggle);
         return () => window.removeEventListener('toggle-global-form', handleCustomToggle);
     }, []);
-
-    // Auto-open on mobile after 10 seconds (delayed)
-    useEffect(() => {
-        if (isMobile && !isOpen && !sessionStorage.getItem('formClosed')) {
-            const timer = setTimeout(() => {
-                setIsOpen(true);
-            }, 10000);
-            return () => clearTimeout(timer);
-        }
-    }, [isMobile, isOpen]);
 
     const toggleForm = () => {
         if (isOpen) {

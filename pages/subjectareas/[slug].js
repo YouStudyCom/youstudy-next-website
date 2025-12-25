@@ -149,7 +149,7 @@ export default function SubjectDetailPage({ subject, locale: serverLocale }) {
                             <span className="text-xl">{subject.icon}</span>
                             <span>Subject Guide</span>
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">
+                        <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">
                             {subjectTitle}
                         </h1>
                         <div

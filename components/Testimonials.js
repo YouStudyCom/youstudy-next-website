@@ -59,11 +59,36 @@ export default function Testimonials() {
                 >
                     {testimonials.map((testimonial) => {
                         const comment = testimonial.comment[locale] || testimonial.comment.en;
+                        const name = testimonial.name[locale] || testimonial.name.en;
+                        const nationality = testimonial.nationality?.[locale] || testimonial.nationality?.en || testimonial.nationality;
                         const isExpanded = expandedIds.includes(testimonial.id);
                         const shouldTruncate = comment.length > 180;
 
                         return (
                             <SwiperSlide key={testimonial.id} className="h-auto">
+                                <script
+                                    type="application/ld+json"
+                                    dangerouslySetInnerHTML={{
+                                        __html: JSON.stringify({
+                                            "@context": "https://schema.org/",
+                                            "@type": "Review",
+                                            "itemReviewed": {
+                                                "@type": "Organization",
+                                                "name": "YouStudy",
+                                                "image": "https://www.youstudy.com/logo.png"
+                                            },
+                                            "reviewRating": {
+                                                "@type": "Rating",
+                                                "ratingValue": testimonial.rating.toString()
+                                            },
+                                            "author": {
+                                                "@type": "Person",
+                                                "name": name
+                                            },
+                                            "reviewBody": comment
+                                        })
+                                    }}
+                                />
                                 <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgb(0,0,0,0.1)] transition-all duration-300 border border-slate-100 h-full flex flex-col relative group overflow-hidden">
                                     {/* Decorative Quote Mark */}
                                     <div className="absolute top-4 right-6 text-9xl text-slate-50 opacity-50 font-serif leading-none select-none pointer-events-none group-hover:text-blue-50 transition-colors">
@@ -75,7 +100,7 @@ export default function Testimonials() {
                                             <div className="w-16 h-16 rounded-full p-1 bg-gradient-to-tr from-brand to-blue-300">
                                                 <img
                                                     src={testimonial.image}
-                                                    alt={testimonial.name[locale] || testimonial.name.en}
+                                                    alt={name}
                                                     className="w-full h-full rounded-full object-cover border-2 border-white"
                                                     onError={(e) => {
                                                         e.target.onerror = null;
@@ -86,10 +111,10 @@ export default function Testimonials() {
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-lg text-slate-900 leading-tight">
-                                                {testimonial.name[locale] || testimonial.name.en}
+                                                {name}
                                             </h4>
                                             <span className="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1 block">
-                                                {testimonial.nationality}
+                                                {nationality}
                                             </span>
                                             <div className="flex text-amber-400 text-sm gap-0.5">
                                                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -124,8 +149,6 @@ export default function Testimonials() {
                         );
                     })}
                 </Swiper>
-
-
             </div>
         </section>
     );

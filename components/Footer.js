@@ -43,7 +43,7 @@ export default function Footer() {
                         <p className="text-sm leading-relaxed text-slate-400 p-note">
                             {t.description}
                         </p>
-                        <div className="flex space-x-4 rtl:space-x-reverse pt-2">
+                        <div className="flex gap-4 pt-2">
                             {socials.map((social) => (
                                 <a
                                     key={social.platform}
