@@ -82,6 +82,5 @@ export const countries = [
     { id: 792, name: { en: "Turkey", ar: "تركيا" }, dialCode: "+90", code: "TR" },
     { id: 826, name: { en: "United Kingdom", ar: "المملكة المتحدة" }, dialCode: "+44", code: "GB" },
     { id: 840, name: { en: "United States", ar: "الولايات المتحدة" }, dialCode: "+1", code: "US" },
-    { id: 887, name: { en: "Yemen", ar: "اليمن" }, dialCode: "+967", code: "YE" },
-    { id: 897, name: { en: "None", ar: "لا يوجد" }, dialCode: "", code: "" }
+    { id: 887, name: { en: "Yemen", ar: "اليمن" }, dialCode: "+967", code: "YE" }
 ];
