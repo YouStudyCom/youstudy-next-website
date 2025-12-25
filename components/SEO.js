@@ -9,6 +9,7 @@ const SEO = ({ title, description, canonical, openGraph, keywords, children }) =
                 description={description}
                 canonical={canonical}
                 openGraph={openGraph}
+                languageAlternates={props.languageAlternates}
                 additionalMetaTags={keywords ? [{ name: 'keywords', content: keywords }] : []}
             />
             <Head>
