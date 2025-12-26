@@ -133,7 +133,7 @@ export async function getStaticProps({ locale }) {
                         id: finalSub.id,
                         slug: finalSub.slug,
                         icon: finalSub.icon, // Ensure icon is preserved if static
-                        image: finalSub.image,
+                        image: finalSub.image || null,
                         title: finalSub.title,
                         seo: {
                             description: finalSub.seo?.description || {}
@@ -142,22 +142,21 @@ export async function getStaticProps({ locale }) {
                 });
             }
         }
-    }
     } catch (e) {
-    // Ignore cache errors
-}
+        // Ignore cache errors
+    }
 
-// Since we are modifying the data passed to the component, we need to pass it as props
-// NOTE: The component currently imports `subjects` directly. 
-// We should update the component to accept `subjects` as a prop appropriately.
-// However, since `subjects` is imported at top level, we might have a conflict.
-// Let's rely on the prop if passed, or import if not.
-// Actually, to make this work, the Component function header must act on props.
+    // Since we are modifying the data passed to the component, we need to pass it as props
+    // NOTE: The component currently imports `subjects` directly. 
+    // We should update the component to accept `subjects` as a prop appropriately.
+    // However, since `subjects` is imported at top level, we might have a conflict.
+    // Let's rely on the prop if passed, or import if not.
+    // Actually, to make this work, the Component function header must act on props.
 
-return {
-    props: {
-        subjectsList: subjectsData,
-        ...(await serverSideTranslations(locale, ['common'])),
-    },
-};
+    return {
+        props: {
+            subjectsList: subjectsData,
+            ...(await serverSideTranslations(locale, ['common'])),
+        },
+    };
 }
