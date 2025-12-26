@@ -121,6 +121,7 @@ export default function GlobalInquiryForm() {
 
         return (
             <div
+                id="global-inquiry-form-container"
                 className={`fixed top-1/2 right-0 transform -translate-y-1/2 z-50 transition-all duration-300 ease-in-out ${translateClass}`}
                 dir="ltr"
             >
