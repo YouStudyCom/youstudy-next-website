@@ -12,7 +12,11 @@ import { siteConfig } from '../../../data/siteConfig.mjs';
 import ReadyToStudyAbroad from '../../../components/ReadyToStudyAbroad';
 import { useTranslation } from 'next-i18next';
 
-export default function ArticlePage({ article, destination, locale: serverLocale }) {
+import RelatedArticles from '../../../components/RelatedArticles';
+
+// ... (imports remain)
+
+export default function ArticlePage({ article, destination, relatedArticles, locale: serverLocale }) {
     const router = useRouter();
     const { t } = useTranslation('common');
     const locale = serverLocale || router.locale;
@@ -226,6 +230,12 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                         )}
                     </div>
 
+                    <RelatedArticles
+                        articles={relatedArticles}
+                        locale={locale}
+                        destinationSlug={destination?.slug}
+                    />
+
                     <ReadyToStudyAbroad name={getName(destination?.name)} />
 
                 </article>
@@ -246,31 +256,51 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params, locale }) {
     const { slug, articleSlug } = params;
 
-    // 1. Initial State: Null (Do not use cache as per user request)
     let article = null;
+    let relatedArticles = [];
 
-    // 2. Find Destination in Rich Data
     const destination = destinations.find(d => d.slug.toLowerCase() === slug.toLowerCase());
 
-    // 3. Attempt to fetch fresh data from API
     try {
         const { api } = await import('../../../lib/api.mjs');
+        // Use default URL if siteConfig is not fully populated in this context, 
+        // though siteConfig usage in other files implies it works.
+        // We'll trust the existing pattern: siteConfig.api.baseUrl.cms
+        const baseUrl = siteConfig.api.baseUrl.cms;
+        const apiUrl = `${baseUrl}${siteConfig.api.endpoints.cms.articles}/${articleSlug}`;
 
-        const apiUrl = `${siteConfig.api.baseUrl.cms}${siteConfig.api.endpoints.cms.articles}/${articleSlug}`;
-
-        // A. Try fetching in requested locale
+        // 1. Fetch Main Article
         const res = await fetch(apiUrl, {
-            headers: {
-                'language': locale, // 👈 sent to Laravel
-            },
+            headers: { 'language': locale },
         });
 
         if (res.ok) {
             const apiData = await res.json();
             const freshArticle = apiData.data || apiData;
-            // Validate and assign
             if (freshArticle && (freshArticle.title || freshArticle.id)) {
                 article = freshArticle;
+
+                // 2. Fetch Related Articles (Only if main article found)
+                if (article) {
+                    try {
+                        // API supports fetching related articles by Slug (since ID is not returned in article details)
+                        const relatedUrl = `${baseUrl}/api/articles/${articleSlug}/related`;
+                        const resRelated = await fetch(relatedUrl, {
+                            headers: { 'language': locale }
+                        });
+
+                        if (resRelated.ok) {
+                            const relatedData = await resRelated.json();
+                            // API might return { data: [...] } or just [...]
+                            relatedArticles = Array.isArray(relatedData.data) ? relatedData.data : (Array.isArray(relatedData) ? relatedData : []);
+
+                            // Limit to 3 items for UI balance
+                            relatedArticles = relatedArticles.slice(0, 3);
+                        }
+                    } catch (relErr) {
+                        console.warn('Related articles fetch failed:', relErr.message);
+                    }
+                }
             }
         }
 
@@ -309,22 +339,20 @@ export async function getStaticProps({ params, locale }) {
     }
 
     if (!article || !destination) {
-        // If article exists but slug mismatch (e.g. wrong destination in url)
-        if (article && article.destination_slug && article.destination_slug !== slug) {
-            return { notFound: true };
-        }
-        // Strict check: if no article found in cache OR api, 404
+        // ... (404 logic remains) ...
+        if (article && article.destination_slug && article.destination_slug !== slug) return { notFound: true }; // existing check
         if (!article) return { notFound: true };
     }
 
     return {
         props: {
             article,
-            destination, // Rich object
+            destination,
+            relatedArticles,
             locale,
             ...(await serverSideTranslations(locale, ['common'])),
         },
-        revalidate: 60, // Revalidate every 60 seconds to keep data fresh
+        revalidate: 60,
     };
 }
 

@@ -53,16 +53,17 @@ export default function StepsSection() {
                     {steps.map((step) => (
                         <div
                             key={step.id}
-                            className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center border border-gray-100"
+                            onClick={() => window.dispatchEvent(new CustomEvent('toggle-global-form'))}
+                            className="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center border border-gray-100 cursor-pointer group hover:border-blue-200 hover:-translate-y-1"
                         >
-                            <div className="mb-6 p-4 bg-blue-50 rounded-full">
+                            <div className="mb-6 p-4 bg-blue-50 rounded-full group-hover:bg-blue-100 transition-colors">
                                 {step.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center justify-center gap-2">
-                                <span className="text-blue-600">{step.id}.</span>
+                            <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center justify-center gap-2 group-hover:text-blue-600 transition-colors">
+                                <span className="text-blue-600 group-hover:underline">{step.id}.</span>
                                 <span>{step.title}</span>
                             </h3>
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-gray-600 leading-relaxed group-hover:text-gray-700">
                                 {step.description}
                             </p>
                         </div>
@@ -70,16 +71,12 @@ export default function StepsSection() {
                 </div>
 
                 <div className="text-center">
-                    <Link
-                        href="#enquiry-form" // Assuming we can add an ID to the form later or just link to top
-                        className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-lg text-lg"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }}
+                    <button
+                        onClick={() => window.dispatchEvent(new CustomEvent('toggle-global-form'))}
+                        className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-lg text-lg cursor-pointer"
                     >
                         {t('steps.get_started', 'Get Started')}
-                    </Link>
+                    </button>
                 </div>
             </div>
         </section>
