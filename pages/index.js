@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { FAQPageJsonLd, BreadcrumbJsonLd, OrganizationJsonLd, SiteLinksSearchBoxJsonLd } from 'next-seo';
+import { FAQPageJsonLd, OrganizationJsonLd } from 'next-seo';
 import HeroSlider from '../components/HeroSlider';
 import StepsSection from '../components/StepsSection';
 import StudyDestinations from '../components/StudyDestinations';
@@ -35,24 +35,7 @@ export default function Home(props) {
                 ]}
             />
 
-            <SiteLinksSearchBoxJsonLd
-                url="https://www.youstudy.com"
-                potentialActions={[
-                    {
-                        target: 'https://www.youstudy.com/search?q={search_term_string}',
-                        queryInput: 'required name=search_term_string',
-                    },
-                ]}
-            />
-            <BreadcrumbJsonLd
-                itemListElements={[
-                    {
-                        position: 1,
-                        name: 'Home',
-                        item: 'https://www.youstudy.com',
-                    },
-                ]}
-            />
+
 
             <OrganizationJsonLd
                 type="Organization"
