@@ -91,8 +91,8 @@ const nextConfig = {
                     },
                     {
                         key: 'Content-Security-Policy',
-                        // Allowing specific domains for scripts and images. Adjust 'unsafe-inline' as needed for Next.js scripts.
-                        value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://cpanelblog.youstudy.com https://images.unsplash.com https://flagcdn.com https://login.youstudy.com https://www.youstudy.com https://youstudy.com http://localhost:8000 http://127.0.0.1:8000; font-src 'self' data:; connect-src 'self' https://cpanelblog.youstudy.com https://login.youstudy.com https://www.google-analytics.com http://localhost:8000 http://127.0.0.1:8000;"
+                        // Relaxed for Google Analytics, GTM, and Ads
+                        value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.googleadservices.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://cpanelblog.youstudy.com https://images.unsplash.com https://flagcdn.com https://login.youstudy.com https://www.youstudy.com https://youstudy.com http://localhost:8000 http://127.0.0.1:8000 https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net https://*.googleadservices.com; font-src 'self' data:; connect-src 'self' https://cpanelblog.youstudy.com https://login.youstudy.com https://www.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com http://localhost:8000 http://127.0.0.1:8000; frame-src 'self' https://*.googletagmanager.com https://www.youtube.com https://player.vimeo.com;"
                     }
                 ],
             }
