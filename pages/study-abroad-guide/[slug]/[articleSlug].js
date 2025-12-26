@@ -234,6 +234,7 @@ export default function ArticlePage({ article, destination, relatedArticles, loc
                         articles={relatedArticles}
                         locale={locale}
                         destinationSlug={destination?.slug}
+                        fallbackImage={destination?.image}
                     />
 
                     <ReadyToStudyAbroad name={getName(destination?.name)} />
@@ -283,7 +284,6 @@ export async function getStaticProps({ params, locale }) {
                 // 2. Fetch Related Articles (Only if main article found)
                 if (article) {
                     try {
-                        // API supports fetching related articles by Slug (since ID is not returned in article details)
                         const relatedUrl = `${baseUrl}/api/articles/${articleSlug}/related`;
                         const resRelated = await fetch(relatedUrl, {
                             headers: { 'language': locale }
@@ -291,11 +291,31 @@ export async function getStaticProps({ params, locale }) {
 
                         if (resRelated.ok) {
                             const relatedData = await resRelated.json();
-                            // API might return { data: [...] } or just [...]
-                            relatedArticles = Array.isArray(relatedData.data) ? relatedData.data : (Array.isArray(relatedData) ? relatedData : []);
+                            let basicRelated = Array.isArray(relatedData.data) ? relatedData.data : (Array.isArray(relatedData) ? relatedData : []);
 
-                            // Limit to 3 items for UI balance
-                            relatedArticles = relatedArticles.slice(0, 3);
+                            // Limit to 3 items first to save requests
+                            basicRelated = basicRelated.slice(0, 3);
+
+                            // Fetch full details for each related article to get the IMAGE
+                            // (The related endpoint is lightweight and misses the image field)
+                            relatedArticles = await Promise.all(basicRelated.map(async (item) => {
+                                try {
+                                    if (!item.slug) return item;
+                                    const detailUrl = `${baseUrl}/api/articles/${item.slug}`;
+                                    const resDetail = await fetch(detailUrl, { headers: { 'language': locale } });
+                                    if (resDetail.ok) {
+                                        const jsonDetail = await resDetail.json();
+                                        const fullItem = jsonDetail.data || jsonDetail;
+                                        // Merge full details, ensuring we keep the original structure if needed, 
+                                        // but prioritizing the full item which has the 'image'
+                                        return { ...item, ...fullItem };
+                                    }
+                                    return item;
+                                } catch (e) {
+                                    console.warn(`Failed to fetch details for related article ${item.slug}:`, e.message);
+                                    return item;
+                                }
+                            }));
                         }
                     } catch (relErr) {
                         console.warn('Related articles fetch failed:', relErr.message);

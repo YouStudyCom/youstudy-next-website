@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { FaCalendarAlt, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
-export default function RelatedArticles({ articles, locale, destinationSlug }) {
+export default function RelatedArticles({ articles, locale, destinationSlug, fallbackImage }) {
     const { t } = useTranslation('common');
 
     if (!articles || articles.length === 0) {
-        return null;
+        return null; // Return null to render nothing if there are no articles
     }
 
     // Helper to get localized string from potentially complex object
@@ -29,9 +29,20 @@ export default function RelatedArticles({ articles, locale, destinationSlug }) {
     };
 
     const resolveImagePath = (raw) => {
-        if (!raw) return '/images/placeholders/study-placeholder.jpg'; // Fallback
-        if (raw.startsWith('http') || raw.startsWith('/')) return raw;
-        return `/gallery/blog/post/${raw}`;
+        // 1. Try Article Image
+        if (raw) {
+            if (raw.startsWith('http') || raw.startsWith('https')) return raw;
+            if (raw.startsWith('/')) return raw;
+            return `/gallery/blog/post/${raw}`;
+        }
+        // 2. Try Fallback Image (Destination Image)
+        if (fallbackImage) {
+            if (fallbackImage.startsWith('http') || fallbackImage.startsWith('https')) return fallbackImage;
+            if (fallbackImage.startsWith('/')) return fallbackImage;
+            return `/gallery/blog/post/${fallbackImage}`;
+        }
+        // 3. Default Placeholder
+        return '/images/placeholders/study-placeholder.jpg';
     };
 
     return (
@@ -41,6 +52,7 @@ export default function RelatedArticles({ articles, locale, destinationSlug }) {
                     {t('related_articles', locale === 'ar' ? 'مقالات ذات صلة' : 'Related Articles')}
                 </h2>
                 {/* Optional: View All Link could go here */}
+                {/* DEBUG: fallbackImage is: {JSON.stringify(fallbackImage)} */}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
