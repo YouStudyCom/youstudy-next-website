@@ -26,9 +26,11 @@ export default function GlobalInquiryForm() {
         const timer = setTimeout(() => {
             // Re-check conditions inside timeout
             if (!sessionStorage.getItem('formClosed')) {
-                setIsOpen(true);
-                // Also ensure sidebar is shown on desktop if it was hidden
-                setShowSidebar(true);
+                // MODIFIED: Do not auto-open on homepage (hero form exists there)
+                if (router.pathname !== '/') {
+                    setIsOpen(true);
+                    setShowSidebar(true);
+                }
             }
         }, 10000); // 10 seconds delay
 
