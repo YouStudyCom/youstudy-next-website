@@ -26,8 +26,12 @@ export default function GlobalInquiryForm() {
         const timer = setTimeout(() => {
             // Re-check conditions inside timeout
             if (!sessionStorage.getItem('formClosed')) {
-                // MODIFIED: Do not auto-open on homepage (hero form exists there)
-                if (router.pathname !== '/') {
+                // MODIFIED: On homepage, only auto-open if scrolled past the hero section (slider/form)
+                // On other pages, auto-open is allowed.
+                const isHomePage = router.pathname === '/';
+                const isScrolledPastHero = typeof window !== 'undefined' && window.scrollY > 700;
+
+                if (!isHomePage || isScrolledPastHero) {
                     setIsOpen(true);
                     setShowSidebar(true);
                 }
