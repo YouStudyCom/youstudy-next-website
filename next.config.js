@@ -62,6 +62,10 @@ const nextConfig = {
                 source: '/:path*',
                 headers: [
                     {
+                        key: 'Strict-Transport-Security',
+                        value: 'max-age=63072000; includeSubDomains; preload'
+                    },
+                    {
                         key: 'X-DNS-Prefetch-Control',
                         value: 'on'
                     },
@@ -71,7 +75,7 @@ const nextConfig = {
                     },
                     {
                         key: 'X-Frame-Options',
-                        value: 'SAMEORIGIN'
+                        value: 'DENY'
                     },
                     {
                         key: 'X-XSS-Protection',
@@ -79,7 +83,16 @@ const nextConfig = {
                     },
                     {
                         key: 'Referrer-Policy',
-                        value: 'origin-when-cross-origin'
+                        value: 'strict-origin-when-cross-origin'
+                    },
+                    {
+                        key: 'Permissions-Policy',
+                        value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
+                    },
+                    {
+                        key: 'Content-Security-Policy',
+                        // Allowing specific domains for scripts and images. Adjust 'unsafe-inline' as needed for Next.js scripts.
+                        value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://cpanelblog.youstudy.com https://images.unsplash.com https://flagcdn.com https://login.youstudy.com https://www.youstudy.com https://youstudy.com http://localhost:8000 http://127.0.0.1:8000; font-src 'self' data:; connect-src 'self' https://cpanelblog.youstudy.com https://login.youstudy.com https://www.google-analytics.com http://localhost:8000 http://127.0.0.1:8000;"
                     }
                 ],
             }

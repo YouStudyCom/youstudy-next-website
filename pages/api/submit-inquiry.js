@@ -1,9 +1,22 @@
 import { UAParser } from 'ua-parser-js';
 import { siteConfig } from '../../data/siteConfig.mjs';
 
+import rateLimit from '../../lib/rateLimit';
+
+const limiter = rateLimit({
+    interval: 60 * 1000, // 60 seconds
+    uniqueTokenPerInterval: 500, // Max 500 users per second
+});
+
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({ message: 'Method not allowed' });
+    }
+
+    try {
+        await limiter.check(res, 5, 'CACHE_TOKEN' + (req.headers['x-forwarded-for'] || req.socket.remoteAddress)); // 5 requests per minute per IP
+    } catch {
+        return res.status(429).json({ error: 'Rate limit exceeded' });
     }
 
     try {
