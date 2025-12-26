@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { FAQPageJsonLd, BreadcrumbJsonLd, OrganizationJsonLd } from 'next-seo';
+import { FAQPageJsonLd, BreadcrumbJsonLd, OrganizationJsonLd, WebSiteJsonLd } from 'next-seo';
 import HeroSlider from '../components/HeroSlider';
 import StepsSection from '../components/StepsSection';
 import StudyDestinations from '../components/StudyDestinations';
@@ -32,6 +32,25 @@ export default function Home(props) {
                 languageAlternates={[
                     { hrefLang: 'en', href: 'https://www.youstudy.com' },
                     { hrefLang: 'ar', href: 'https://www.youstudy.com/ar' },
+                ]}
+            />
+
+            <WebSiteJsonLd
+                siteUrl="https://www.youstudy.com"
+                potentialAction={[
+                    {
+                        target: 'https://www.youstudy.com/search?q={search_term_string}',
+                        queryInput: 'required name=search_term_string',
+                    },
+                ]}
+            />
+            <BreadcrumbJsonLd
+                itemListElements={[
+                    {
+                        position: 1,
+                        name: 'Home',
+                        item: 'https://www.youstudy.com',
+                    },
                 ]}
             />
 

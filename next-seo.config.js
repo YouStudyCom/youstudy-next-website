@@ -1,13 +1,13 @@
 export default {
     openGraph: {
         type: 'website',
-        locale: 'en_IE',
+        locale: 'en_GB', // Defaults to UK English given the company address
         url: 'https://www.youstudy.com/',
         siteName: 'YouStudy',
     },
     twitter: {
-        handle: '@handle',
-        site: '@site',
+        handle: '@YouStudyLimited',
+        site: '@YouStudyLimited',
         cardType: 'summary_large_image',
     },
     additionalLinkTags: [
