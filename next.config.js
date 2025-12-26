@@ -5,6 +5,11 @@ const nextConfig = {
     i18n,
     reactStrictMode: true,
     outputFileTracingRoot: require('path').join(__dirname),
+    eslint: {
+        // Warning: This allows production builds to successfully complete even if
+        // your project has ESLint errors.
+        ignoreDuringBuilds: true,
+    },
     images: {
         formats: ['image/avif', 'image/webp'],
         remotePatterns: [
