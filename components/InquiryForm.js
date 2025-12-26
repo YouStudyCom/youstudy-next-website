@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useVisitorData } from '../hooks/useVisitorData';
@@ -272,9 +273,11 @@ export default function InquiryForm({ className = "" }) {
                         >
                             {formData.mobileCountryCode && countries.find(c => c.id === formData.mobileCountryId)?.code ? (
                                 <div className="flex items-center gap-1">
-                                    <img
+                                    <Image
                                         src={`https://flagcdn.com/w40/${countries.find(c => c.id === formData.mobileCountryId).code.toLowerCase()}.png`}
                                         alt="flag"
+                                        width={20}
+                                        height={14}
                                         className="w-5 h-3.5 object-cover rounded-sm shadow-sm"
                                     />
                                     <span className="text-[10px] text-slate-500">▼</span>
@@ -304,9 +307,11 @@ export default function InquiryForm({ className = "" }) {
                                             className="w-full px-4 py-2 text-left text-sm hover:bg-blue-50 flex items-center gap-3 border-b last:border-0 border-slate-50"
                                         >
                                             {country.code && (
-                                                <img
+                                                <Image
                                                     src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
                                                     alt={country.code}
+                                                    width={20}
+                                                    height={12}
                                                     className="w-5 h-3 object-cover rounded-sm"
                                                 />
                                             )}
@@ -407,7 +412,7 @@ export default function InquiryForm({ className = "" }) {
                 </div>
             )}
 
-            <p className="text-xs text-slate-400 text-center mt-2 px-4 leading-relaxed">
+            <p className="text-xs text-slate-500 text-center mt-2 px-4 leading-relaxed">
                 {locale === 'ar' ? (
                     <>
                         بإرسال معلوماتك، فإنك توافق على <Link href="/terms" target="_blank" className="underline hover:text-blue-500">شروط</Link> و <Link href="/terms" target="_blank" className="underline hover:text-blue-500">سياسة الخصوصية</Link> الخاصة بـYouStudy.

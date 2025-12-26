@@ -6,8 +6,8 @@ export default {
         siteName: 'YouStudy',
     },
     twitter: {
-        handle: '@handle',
-        site: '@site',
+        handle: '@YouStudyLimited',
+        site: '@YouStudyLimited',
         cardType: 'summary_large_image',
     },
     additionalLinkTags: [
