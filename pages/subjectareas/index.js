@@ -109,6 +109,8 @@ export async function getStaticProps({ locale }) {
                 // Map over static subjects and merge with cache if found
                 subjectsData = subjectsData.map(staticSub => {
                     const cachedSub = cachedSubjects.find(cs => cs.slug === staticSub.slug || cs.id === staticSub.id);
+                    let finalSub = { ...staticSub };
+
                     if (cachedSub) {
                         let imgPath = cachedSub.image || staticSub.image;
                         if (imgPath && !imgPath.startsWith('http') && !imgPath.startsWith('/')) {
@@ -116,34 +118,46 @@ export async function getStaticProps({ locale }) {
                         }
 
                         // Merge relevant list fields
-                        return {
+                        finalSub = {
                             ...staticSub,
                             ...cachedSub,
                             title: { ...staticSub.title, ...(cachedSub.title || {}) },
                             seo: { ...staticSub.seo, ...(cachedSub.seo || {}) },
-                            // Use normalized image
                             image: imgPath
                         };
                     }
-                    return staticSub;
+
+                    // OPTIMIZATION: Return only fields needed for the listing page.
+                    // Stripping 'content', 'faq', and other heavy fields to reduce JSON size.
+                    return {
+                        id: finalSub.id,
+                        slug: finalSub.slug,
+                        icon: finalSub.icon, // Ensure icon is preserved if static
+                        image: finalSub.image,
+                        title: finalSub.title,
+                        seo: {
+                            description: finalSub.seo?.description || {}
+                        }
+                    };
                 });
             }
         }
-    } catch (e) {
-        // Ignore cache errors
     }
+    } catch (e) {
+    // Ignore cache errors
+}
 
-    // Since we are modifying the data passed to the component, we need to pass it as props
-    // NOTE: The component currently imports `subjects` directly. 
-    // We should update the component to accept `subjects` as a prop appropriately.
-    // However, since `subjects` is imported at top level, we might have a conflict.
-    // Let's rely on the prop if passed, or import if not.
-    // Actually, to make this work, the Component function header must act on props.
+// Since we are modifying the data passed to the component, we need to pass it as props
+// NOTE: The component currently imports `subjects` directly. 
+// We should update the component to accept `subjects` as a prop appropriately.
+// However, since `subjects` is imported at top level, we might have a conflict.
+// Let's rely on the prop if passed, or import if not.
+// Actually, to make this work, the Component function header must act on props.
 
-    return {
-        props: {
-            subjectsList: subjectsData,
-            ...(await serverSideTranslations(locale, ['common'])),
-        },
-    };
+return {
+    props: {
+        subjectsList: subjectsData,
+        ...(await serverSideTranslations(locale, ['common'])),
+    },
+};
 }
