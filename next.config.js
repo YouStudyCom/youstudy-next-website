@@ -87,7 +87,7 @@ const nextConfig = {
                     },
                     {
                         key: 'Permissions-Policy',
-                        value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
+                        value: 'camera=(), microphone=(), geolocation=(), browsing-topics=(), payment=(), attribution-reporting=(self "https://*.google.com" "https://*.google.com.sa" "https://*.google-analytics.com" "https://*.googletagmanager.com" "https://*.googleadservices.com" "https://*.doubleclick.net"), run-ad-auction=(self "https://*.google.com" "https://*.doubleclick.net")'
                     },
                     {
                         key: 'Content-Security-Policy',

@@ -5,7 +5,7 @@ import rateLimit from '../../lib/rateLimit';
 
 const limiter = rateLimit({
     interval: 60 * 1000, // 60 seconds
-    uniqueTokenPerInterval: 500, // Max 500 users per second
+    uniqueTokenPerInterval: 500000, // Max 500,000 users per minute (High capacity)
 });
 
 export default async function handler(req, res) {
