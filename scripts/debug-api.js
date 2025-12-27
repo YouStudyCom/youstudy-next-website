@@ -1,34 +1,38 @@
-const fs = require('fs');
+// Config mimic
+const baseUrl = 'https://cpanelblog.youstudy.com';
+const slug = 'how-to-choose-your-destination-of-study-in-the-uk';
+const endpoint = `/api/articles/${slug}`;
 
-const BASE_URL = 'http://127.0.0.1:8000';
-// Try one relevant slug from the cache we saw earlier
-const TEST_SLUG = 'study-in-uk';
+async function testApi(locale) {
+    const url = `${baseUrl}${endpoint}`;
+    console.log(`Testing ${locale.toUpperCase()} fetch to: ${url}`);
 
-async function debugArticlesEndpoint() {
-    console.log(`--- Debugging Articles Endpoint for slug: ${TEST_SLUG} ---`);
-    const endpoint = `/api/destinations/${TEST_SLUG}/articles`;
-    const url = `${BASE_URL}${endpoint}`;
-
-    console.log(`Fetching: ${url}`);
     try {
         const res = await fetch(url, {
-            headers: { 'Accept': 'application/json' }
+            headers: {
+                'language': locale,
+                'Accept': 'application/json'
+            }
         });
 
         console.log(`Status: ${res.status} ${res.statusText}`);
-        const text = await res.text();
-
-        fs.writeFileSync('debug-articles-response.html', text);
-        console.log('Saved response to debug-articles-response.html');
 
         if (res.ok) {
-            console.log("Response Body Preview:");
-            console.log(text.substring(0, 500));
+            const data = await res.json();
+            const article = data.data || data;
+            console.log(`Success! Article Title: ${article.title || 'No Title Found'}`);
+        } else {
+            console.error('Fetch failed.');
+            const text = await res.text();
+            console.log('Preview Response:', text.substring(0, 500));
         }
-
     } catch (e) {
-        console.error('Fetch Error:', e.message);
+        console.error('Error:', e.message);
     }
+    console.log('---');
 }
 
-debugArticlesEndpoint();
+(async () => {
+    await testApi('en');
+    await testApi('ar');
+})();

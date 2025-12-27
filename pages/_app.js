@@ -1,4 +1,5 @@
 import { appWithTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { DefaultSeo, OrganizationJsonLd } from 'next-seo';
 import SEO from '../next-seo.config';
@@ -23,15 +24,27 @@ const tajawal = Tajawal({
 function MyApp({ Component, pageProps }) {
     // Initialize visitor detection globally
     const visitorData = useVisitorData();
+    const { locale } = useRouter();
 
     // Log for demonstration (User request: "Provide a structured output")
     if (!visitorData.isLoading && visitorData.country) {
         console.log("📍 Visitor Data Detected:", visitorData);
     }
 
+    // Get localized schema data
+    const schemaData = siteConfig.content[locale]?.schema || siteConfig.content.en.schema;
+
     return (
         <main className={tajawal.variable}>
-            <DefaultSeo {...SEO} />
+            <DefaultSeo
+                {...SEO}
+                additionalMetaTags={[
+                    {
+                        name: 'keywords',
+                        content: siteConfig.content[locale]?.keywords || '',
+                    },
+                ]}
+            />
 
             {/* Optimized GTM Loading (Interaction-based) */}
             <GTMManager gtmId="GTM-KL7RPPMM" />
@@ -40,15 +53,9 @@ function MyApp({ Component, pageProps }) {
                 type="EducationalOrganization"
                 id="https://www.youstudy.com/#organization"
                 logo="https://www.youstudy.com/logo.png"
-                legalName="YouStudy.com"
-                name="YouStudy"
-                address={{
-                    streetAddress: '123 Education St',
-                    addressLocality: 'London',
-                    addressRegion: 'Greater London',
-                    postalCode: 'SW1A 1AA',
-                    addressCountry: 'GB',
-                }}
+                legalName={schemaData.legalName}
+                name={schemaData.name}
+                address={schemaData.address}
                 contactPoint={[
                     {
                         telephone: siteConfig.contact.phone,

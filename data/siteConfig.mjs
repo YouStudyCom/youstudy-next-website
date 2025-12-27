@@ -65,6 +65,18 @@ export const siteConfig = {
     ],
     content: {
         en: {
+            keywords: 'Study Abroad',
+            schema: {
+                name: 'YouStudy',
+                legalName: 'YouStudy.com',
+                address: {
+                    streetAddress: '123 Education St',
+                    addressLocality: 'London',
+                    addressRegion: 'Greater London',
+                    postalCode: 'SW1A 1AA',
+                    addressCountry: 'GB',
+                }
+            },
             description: "YouStudy is your trusted guide to studying abroad. We help students find the best universities and programs worldwide.",
             quickLinksTitle: "Quick Links",
             contactTitle: "Contact Us",
@@ -88,6 +100,18 @@ export const siteConfig = {
             }
         },
         ar: {
+            keywords: 'الدراسة في الخارج',
+            schema: {
+                name: 'يوستدي',
+                legalName: 'YouStudy.com',
+                address: {
+                    streetAddress: '123 Education St',
+                    addressLocality: 'لندن',
+                    addressRegion: 'لندن الكبرى',
+                    postalCode: 'SW1A 1AA',
+                    addressCountry: 'GB',
+                }
+            },
             description: "يوستدي هو دليلك الموثوق للدراسة في الخارج. نساعد الطلاب في العثور على أفضل الجامعات والبرامج الدراسية حول العالم.",
             quickLinksTitle: "روابط سريعة",
             contactTitle: "تواصل معنا",

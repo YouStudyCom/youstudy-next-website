@@ -232,7 +232,10 @@ export async function getStaticProps({ params, locale }) {
 
         // 1. Fetch Main Article
         const res = await fetch(apiUrl, {
-            headers: { 'language': locale },
+            headers: {
+                'language': locale,
+                'Accept': 'application/json'
+            },
         });
 
         if (res.ok) {
@@ -251,6 +254,7 @@ export async function getStaticProps({ params, locale }) {
                 const resEn = await fetch(apiUrl, {
                     headers: {
                         'language': 'en', // Force English check
+                        'Accept': 'application/json'
                     },
                 });
 
@@ -277,6 +281,15 @@ export async function getStaticProps({ params, locale }) {
 
     } catch (error) {
         console.warn(`Failed to fetch article from API: ${error.message}.`);
+    }
+
+    // Fallback: Use local cache if API failed
+    if (!article && Array.isArray(articlesCache)) {
+        console.log(`[Resilience] Using local cache for article: ${articleSlug}`);
+        const cachedArticle = articlesCache.find(a => a.slug === articleSlug);
+        if (cachedArticle) {
+            article = cachedArticle;
+        }
     }
 
     if (!article || !destination) {

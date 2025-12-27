@@ -1,3 +1,5 @@
+
+
 export default {
     openGraph: {
         type: 'website',

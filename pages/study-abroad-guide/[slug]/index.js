@@ -246,6 +246,7 @@ export async function getStaticProps({ params, locale }) {
         const dests = await api.fetch('/api/destinations', {
             headers: {
                 'language': locale,
+                'Accept': 'application/json'
             }
         });
         const destList = Array.isArray(dests) ? dests : (dests.data || []);
@@ -254,6 +255,7 @@ export async function getStaticProps({ params, locale }) {
         if (destination) {
             // Using raw fetch to ensure headers are passed exactly as in article page
             const apiUrl = `${siteConfig.api.baseUrl.cms}/api/destinations/${destination.slug}/articles`;
+            // Use api.fetch to ensure consistent headers and auth if needed
             const artRes = await fetch(apiUrl, {
                 headers: {
                     'language': locale,
@@ -269,6 +271,15 @@ export async function getStaticProps({ params, locale }) {
         }
     } catch (e) {
         console.warn(`ISR Fetch failed for ${slug}. Using Local Data.`);
+    }
+
+    // Fallback: If API returned no articles, try local cache
+    if (articles.length === 0 && Array.isArray(articlesCache)) {
+        console.log(`[Resilience] Using local cache for articles in ${slug}`);
+        const cachedArticles = articlesCache.filter(a => a.destination_slug === destination?.slug || a.destination?.slug === destination?.slug);
+        if (cachedArticles.length > 0) {
+            articles = cachedArticles;
+        }
     }
 
     // 2. Always prefer Local Rich Data for the Destination Detail (Title/Desc/SEO) for bilingual consistency
