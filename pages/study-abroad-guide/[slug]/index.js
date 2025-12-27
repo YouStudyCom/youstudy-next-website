@@ -282,33 +282,48 @@ export async function getStaticProps({ params, locale }) {
         }
     }
 
-    // Filter articles ensuring sufficient content depth for current locale (>30 chars)
-    // This prevents showing stubs/placeholders or single-language articles in the wrong locale list.
+    // Filter articles ensuring sufficient content depth for current locale (>15 chars)
+    // Relaxed from 30 to 15 to catch short valid descriptions, and added robust key checking.
     articles = articles.filter(article => {
         let content = article.content;
         if (!content) return false;
 
         let text = '';
         if (typeof content === 'string') {
-            if (content.trim().startsWith('{')) {
+            const trimmed = content.trim();
+            if (trimmed.startsWith('{') && trimmed.endsWith('}')) {
                 try {
-                    const parsed = JSON.parse(content);
-                    text = parsed[locale] || '';
+                    const parsed = JSON.parse(trimmed);
+                    // 1. Try exact locale
+                    // 2. Try partial locale (e.g. 'ar' for 'ar-SA') if exact fails
+                    text = parsed[locale] || parsed[locale.split('-')[0]];
+
+                    // 3. Fallback: Check for case-insensitive keys (e.g. 'Ar', 'Arabic')
+                    if (!text && typeof parsed === 'object') {
+                        const matchKey = Object.keys(parsed).find(k => k.toLowerCase() === locale.toLowerCase() || k.toLowerCase().startsWith(locale.toLowerCase()));
+                        if (matchKey) text = parsed[matchKey];
+                    }
                 } catch (e) {
-                    text = content;
+                    text = content; // Parse failed, assumes string content
                 }
             } else {
                 text = content;
             }
         } else if (typeof content === 'object') {
-            text = content[locale] || '';
+            // Handle if content is already an object
+            text = content[locale] || content[locale.split('-')[0]] || '';
+            if (!text) {
+                const matchKey = Object.keys(content).find(k => k.toLowerCase() === locale.toLowerCase() || k.toLowerCase().startsWith(locale.toLowerCase()));
+                if (matchKey) text = content[matchKey];
+            }
         }
 
-        // Strip basic HTML to check actual text length (optional but recommended if content has tags)
-        // Simple regex replace for tags
-        text = text.replace(/<[^>]*>?/gm, '');
+        if (!text) return false;
 
-        return text && text.length >= 30;
+        // Strip HTML tags to check real text length
+        const cleanText = text.replace(/<[^>]*>?/gm, '').trim();
+        // Use 15 chars as a safer lower limit
+        return cleanText.length >= 15;
     });
 
     // 2. Always prefer Local Rich Data for the Destination Detail (Title/Desc/SEO) for bilingual consistency
