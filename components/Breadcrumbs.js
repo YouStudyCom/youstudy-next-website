@@ -2,20 +2,34 @@ import Link from 'next/link';
 import { BreadcrumbJsonLd } from 'next-seo';
 import { useTranslation } from 'next-i18next';
 
+import { useRouter } from 'next/router';
+
 export default function Breadcrumbs({ items }) {
     const { t } = useTranslation('common');
+    const router = useRouter();
 
     // Filter valid items (ensure they have labels)
     const validItems = items.filter(item => item.label);
 
     // Prepare Schema Items
     const SITE_URL = 'https://www.youstudy.com';
+    // Get current path for fallback, removing query params for cleaner canonical-like ID
+    const currentPath = router.asPath ? router.asPath.split('?')[0] : '';
 
-    const schemaItems = validItems.map((item, index) => ({
-        position: index + 1,
-        name: item.label,
-        item: item.href ? (item.href.startsWith('http') ? item.href : `${SITE_URL}${item.href}`) : undefined,
-    }));
+    const schemaItems = validItems.map((item, index) => {
+        let itemHref = item.href;
+
+        // Auto-fill href for the last item if missing (common for "current page" items)
+        if (!itemHref && index === validItems.length - 1) {
+            itemHref = currentPath;
+        }
+
+        return {
+            position: index + 1,
+            name: item.label,
+            item: itemHref ? (itemHref.startsWith('http') ? itemHref : `${SITE_URL}${itemHref}`) : undefined,
+        };
+    });
 
     if (!validItems.length) return null;
 
