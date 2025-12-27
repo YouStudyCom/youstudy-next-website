@@ -297,7 +297,8 @@ export async function getStaticProps({ params, locale }) {
                         console.log(`[SmartRedirect] Article ${articleSlug} missing in ${locale} but found in EN. Redirecting.`);
                         return {
                             redirect: {
-                                destination: `/study-abroad-guide/${destination.slug}`,
+                                destination: `/study-abroad-guide/${destination.slug}/${articleEn.slug || articleSlug}`,
+                                locale: 'en',
                                 permanent: false,
                             },
                         };
@@ -321,10 +322,30 @@ export async function getStaticProps({ params, locale }) {
         }
     }
 
+    // If article is still not found after all attempts (API, En-fallback, Cache), 
+    // but the destination is valid, redirect to the destination's main page instead of 404.
+    if (!article && destination) {
+        console.log(`[SmartRedirect] Article ${articleSlug} not found in ${locale} (and no suitable fallback). Redirecting to destination.`);
+        return {
+            redirect: {
+                destination: `/study-abroad-guide/${destination.slug}`,
+                permanent: false,
+            },
+        };
+    }
+
     if (!article || !destination) {
-        // ... (404 logic remains) ...
-        if (article && article.destination_slug && article.destination_slug !== slug) return { notFound: true }; // existing check
-        if (!article) return { notFound: true };
+        console.warn(`[ArticlePage] 404 triggered. Article: ${!!article}, Destination: ${!!destination}`);
+        // If destination mismatch (rare if we found it by slug, but potential data issue)
+        // If destination mismatch (rare if we found it by slug, but potential data issue)
+        // Case-insensitive check for destination_slug
+        if (article && article.destination_slug && article.destination_slug.toLowerCase() !== slug.toLowerCase()) {
+            console.warn(`[ArticlePage] Destination mismatch. Article Dest: ${article.destination_slug}, URL Slug: ${slug}`);
+            return { notFound: true };
+        }
+
+        // If destination is invalid (and no article), return 404
+        return { notFound: true };
     }
 
     return {
