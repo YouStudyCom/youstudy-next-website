@@ -195,7 +195,7 @@ export default function DestinationLandingPage({ destination, articles, locale: 
                     items={[
                         { label: t('breadcrumbs.home'), href: '/' },
                         { label: t('breadcrumbs.study_abroad_guide'), href: '/study-abroad-guide' },
-                        { label: destName, isCurrent: true }
+                        { label: destName, href: canonicalUrl, isCurrent: true }
                     ]}
                 />
 
