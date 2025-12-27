@@ -313,7 +313,17 @@ export async function getStaticProps({ params, locale }) {
         });
         const destList = Array.isArray(dests) ? dests : (dests.data || []);
         destination = destList.find(d => d.slug?.toLowerCase() === slug.toLowerCase());
+    } catch (e) {
+        console.warn(`ISR Fetch failed for ${slug}. Using Local Data.`);
+    }
 
+    // 2. Fallback: If API failed to find destination, look it up in local rich data
+    if (!destination) {
+        destination = destinations.find(d => d.slug.toLowerCase() === slug.toLowerCase());
+    }
+
+    // 3. Fetch Articles (ISR) if destination is known (either from API or Local)
+    try {
         if (destination) {
             // Using raw fetch to ensure headers are passed exactly as in article page
             const apiUrl = `${siteConfig.api.baseUrl.cms}/api/destinations/${destination.slug}/articles`;
@@ -332,7 +342,7 @@ export async function getStaticProps({ params, locale }) {
             }
         }
     } catch (e) {
-        console.warn(`ISR Fetch failed for ${slug}. Using Local Data.`);
+        console.warn(`ISR Fetch failed for articles. Using Local Data.`);
     }
 
     // Fallback: If API returned no articles, try local cache
