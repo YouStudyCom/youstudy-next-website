@@ -234,9 +234,9 @@ export default function DestinationLandingPage({ destination, articles, locale: 
                                             <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3 leading-tight">
                                                 {getName(article.title)}
                                             </h3>
-                                            {/* Added min-height to reduce layout shift if excerpts vary */}
+                                            {/* Added min-height, fallback to content if excerpt absent */}
                                             <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1 line-clamp-3 min-h-[4.5rem]">
-                                                {getDescription(article.excerpt)}
+                                                {getDescription(article.excerpt) || (getName(article.content) ? getName(article.content).replace(/<[^>]*>?/gm, '').substring(0, 150) + '...' : '')}
                                             </p>
                                             <div className="mt-auto flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
                                                 {locale === 'ar' ? 'اقرأ المزيد' : 'Read Article'}
