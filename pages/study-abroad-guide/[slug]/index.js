@@ -282,6 +282,35 @@ export async function getStaticProps({ params, locale }) {
         }
     }
 
+    // Filter articles ensuring sufficient content depth for current locale (>30 chars)
+    // This prevents showing stubs/placeholders or single-language articles in the wrong locale list.
+    articles = articles.filter(article => {
+        let content = article.content;
+        if (!content) return false;
+
+        let text = '';
+        if (typeof content === 'string') {
+            if (content.trim().startsWith('{')) {
+                try {
+                    const parsed = JSON.parse(content);
+                    text = parsed[locale] || '';
+                } catch (e) {
+                    text = content;
+                }
+            } else {
+                text = content;
+            }
+        } else if (typeof content === 'object') {
+            text = content[locale] || '';
+        }
+
+        // Strip basic HTML to check actual text length (optional but recommended if content has tags)
+        // Simple regex replace for tags
+        text = text.replace(/<[^>]*>?/gm, '');
+
+        return text && text.length >= 30;
+    });
+
     // 2. Always prefer Local Rich Data for the Destination Detail (Title/Desc/SEO) for bilingual consistency
     // The API might return non-localized strings depending on backend state, but our file is authoritative for UI text.
     const richDestination = destinations.find(d => d.slug.toLowerCase() === slug.toLowerCase());

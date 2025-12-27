@@ -244,7 +244,35 @@ export async function getStaticProps({ params, locale }) {
             if (freshArticle && (freshArticle.title || freshArticle.id)) {
                 article = freshArticle;
 
+                // Validate Content Availability for Current Locale
+                // Checks if title/content are JSON strings that missing current locale AND 'en' fallback
+                const hasUsableContent = (field) => {
+                    if (!field) return false;
+                    if (typeof field === 'string' && field.trim().startsWith('{')) {
+                        try {
+                            const parsed = JSON.parse(field);
+                            // If current locale exists, it's good.
+                            if (parsed[locale]) return true;
+                            // If 'en' fallback exists, it's good (standard fallback policy).
+                            if (parsed['en']) return true;
+                            // Otherwise, it's unusable (e.g. only 'ar' content when viewing 'en')
+                            return false;
+                        } catch (e) {
+                            return true; // Assume plain string
+                        }
+                    }
+                    return true; // Plain string or object
+                };
 
+                if (!hasUsableContent(article.title) && !hasUsableContent(article.content)) {
+                    console.log(`[SmartRedirect] Article ${articleSlug} has unusable content for ${locale}. Redirecting.`);
+                    return {
+                        redirect: {
+                            destination: `/study-abroad-guide/${destination?.slug || 'study-abroad'}`,
+                            permanent: false,
+                        },
+                    };
+                }
             }
         }
 
