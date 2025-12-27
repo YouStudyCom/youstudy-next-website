@@ -63,6 +63,24 @@ const nextConfig = {
                 ],
             },
             {
+                // CORS Headers for CMS and external tools
+                source: '/:path*',
+                headers: [
+                    {
+                        key: 'Access-Control-Allow-Origin',
+                        value: 'https://cpanelblog.youstudy.com',
+                    },
+                    {
+                        key: 'Access-Control-Allow-Methods',
+                        value: 'GET,POST,PUT,DELETE,OPTIONS',
+                    },
+                    {
+                        key: 'Access-Control-Allow-Headers',
+                        value: 'X-Requested-With, Content-Type, Authorization',
+                    },
+                ],
+            },
+            {
                 // Security headers for all routes
                 source: '/:path*',
                 headers: [
