@@ -265,14 +265,14 @@ export async function getStaticProps({ params, locale }) {
                     return true; // Plain string or object
                 };
 
-                if (!hasUsableContent(article.title) && !hasUsableContent(article.content)) {
-                    console.log(`[SmartRedirect] Article ${articleSlug} has unusable content for ${locale}. Redirecting.`);
-                    return {
-                        redirect: {
-                            destination: `/study-abroad-guide/${destination?.slug || 'study-abroad'}`,
-                            permanent: false,
-                        },
-                    };
+                // Stricter check: If content is missing/unusable, treat article as not found 
+                // so we can trigger the standard fallback logic (check English or redirect to destination).
+                // We use OR logic here: if EITHER title OR content is unusable, we consider the article invalid for this view.
+                if (!hasUsableContent(article.title) || !hasUsableContent(article.content)) {
+                    console.log(`[SmartRedirect] Article ${articleSlug} has unusable content for ${locale}. Triggering fallbacks.`);
+                    article = null;
+                    // Do NOT return redirect here; let it fall through to the logic below 
+                    // which checks for English version (if we are in non-En) or eventually redirects to destination.
                 }
             }
         }
