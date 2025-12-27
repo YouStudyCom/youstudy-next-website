@@ -125,9 +125,17 @@ export default function DestinationLandingPage({ destination, articles, locale: 
         "description": seoDesc,
         "url": canonicalUrl,
         "image": imagePath ? (imagePath.startsWith('http') ? imagePath : `https://www.youstudy.com${imagePath}`) : undefined,
-        "containsPlace": articles.map(a => ({
+        "subjectOf": articles.map(a => ({
             "@type": "Article",
+            "headline": a.title,
             "name": a.title,
+            "image": a.image ? (a.image.startsWith('http') ? a.image : `https://www.youstudy.com${getImagePath(a.image)}`) : (imagePath ? (imagePath.startsWith('http') ? imagePath : `https://www.youstudy.com${imagePath}`) : undefined),
+            "datePublished": a.publishDate,
+            "author": {
+                "@type": "Organization",
+                "name": "YouStudy",
+                "url": "https://www.youstudy.com"
+            },
             "url": `https://www.youstudy.com/study-abroad-guide/${destination.slug}/${a.slug}`
         }))
     };

@@ -116,18 +116,35 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                     ],
                 }}
             />
-            <ArticleJsonLd
-                url={articleUrl}
-                title={articleTitle}
-                images={[
-                    resolveImagePath(article.image || destination?.image) || ''
-                ]}
-                datePublished={article.publishDate}
-                authorName={[siteConfig.metadata.siteName]}
-                publisherName={siteConfig.metadata.siteName}
-                publisherLogo={`${siteConfig.metadata.siteUrl}/logo.png`}
-                description={articleExcerpt}
-                isAccessibleForFree={true}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "headline": articleTitle,
+                        "image": [
+                            resolveImagePath(article.image || destination?.image) || ''
+                        ],
+                        "datePublished": article.publishDate,
+                        "dateModified": article.lastModified || article.publishDate,
+                        "author": {
+                            "@type": "Organization",
+                            "name": siteConfig.metadata.siteName,
+                            "url": siteConfig.metadata.siteUrl
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": siteConfig.metadata.siteName,
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": `${siteConfig.metadata.siteUrl}/logo.png`
+                            }
+                        },
+                        "description": articleExcerpt,
+                        "isAccessibleForFree": true,
+                    })
+                }}
             />
 
 
