@@ -63,7 +63,7 @@ export default function Destinations() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {destinations.map((dest, index) => (
+                    {destinations.filter(d => d.id !== 0 && d.id !== 3 && d.slug !== 'study-abroad').map((dest, index) => (
                         <article
                             key={dest.id}
                             className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 flex flex-col group"

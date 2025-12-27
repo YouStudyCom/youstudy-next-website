@@ -297,7 +297,7 @@ export async function getStaticProps({ params, locale }) {
                         console.log(`[SmartRedirect] Article ${articleSlug} missing in ${locale} but found in EN. Redirecting.`);
                         return {
                             redirect: {
-                                destination: `/study-abroad-guide/${destination.slug}/${articleEn.slug || articleSlug}`,
+                                destination: `/study-abroad-guide/${articleEn.destination?.slug || destination?.slug}/${articleEn.slug || articleSlug}`,
                                 locale: 'en',
                                 permanent: false,
                             },
@@ -337,12 +337,21 @@ export async function getStaticProps({ params, locale }) {
     if (!article || !destination) {
         console.warn(`[ArticlePage] 404 triggered. Article: ${!!article}, Destination: ${!!destination}`);
         // If destination mismatch (rare if we found it by slug, but potential data issue)
-        // If destination mismatch (rare if we found it by slug, but potential data issue)
         // Case-insensitive check for destination_slug
-        if (article && article.destination_slug && article.destination_slug.toLowerCase() !== slug.toLowerCase()) {
-            console.warn(`[ArticlePage] Destination mismatch. Article Dest: ${article.destination_slug}, URL Slug: ${slug}`);
-            return { notFound: true };
+        const articleDestSlug = article?.destination_slug || article?.destination?.slug;
+        if (article && articleDestSlug && articleDestSlug.toLowerCase() !== slug.toLowerCase()) {
+            console.warn(`[ArticlePage] Destination mismatch. Article Dest: ${articleDestSlug}, URL Slug: ${slug}`);
+            // If mismatch is found, we should ideally redirect to the correct URL for this article
+            return {
+                redirect: {
+                    destination: `/study-abroad-guide/${articleDestSlug}/${article.slug}`,
+                    permanent: false,
+                }
+            };
         }
+
+        // If destination is invalid (and no article), return 404
+        return { notFound: true };
 
         // If destination is invalid (and no article), return 404
         return { notFound: true };

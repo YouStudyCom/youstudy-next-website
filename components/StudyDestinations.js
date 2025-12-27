@@ -9,7 +9,7 @@ export default function StudyDestinations({ destinations: propsDestinations }) {
     const { t } = useTranslation('common');
     const router = useRouter();
     const routerLocale = router.locale || 'en';
-    const finalDestinations = propsDestinations || destinations;
+    const finalDestinations = (propsDestinations || destinations).filter(d => d.id !== 3 && d.slug !== 'study-abroad');
     const locale = routerLocale;
 
     const getName = (data) => {

@@ -219,7 +219,7 @@ export default function DestinationLandingPage({ destination, articles, locale: 
                                 {visibleArticles.map((article) => (
                                     <Link
                                         key={article.id}
-                                        href={`/study-abroad-guide/${destination.slug}/${article.slug}`}
+                                        href={`/study-abroad-guide/${article.destination.slug}/${article.slug}`}
                                         className="block group bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full"
                                     >
                                         <article className="flex-1 flex flex-col">
@@ -338,7 +338,12 @@ export async function getStaticProps({ params, locale }) {
             if (artRes.ok) {
                 const artData = await artRes.json();
                 const artList = Array.isArray(artData) ? artData : (artData.articles || artData.data || []);
-                articles = artList.map(a => ({ ...a, destination_slug: destination.slug }));
+                // Ensure article.destination exists for the UI link
+                articles = artList.map(a => ({
+                    ...a,
+                    destination: a.destination || { slug: destination.slug },
+                    destination_slug: destination.slug
+                }));
             }
         }
     } catch (e) {

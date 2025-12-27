@@ -1,5 +1,36 @@
 export const destinations = [
     {
+        id: 3,
+        slug: 'study-abroad',
+        name: {
+            en: 'Study Abroad Guide',
+            ar: 'دليل الدراسة في الخارج',
+        },
+        image: '/images/destinations/general-study-abroad.jpg', // Ensure this image exists or is handled gracefully
+        description: {
+            en: '<p><strong>Study Abroad</strong> opens up a world of opportunities. improved language skills, and a global perspective. Explore our comprehensive guides to make your journey a success.</p>',
+            ar: '<p><strong>الدراسة في الخارج</strong> تفتح لك عالماً من الفرص، تطور مهاراتك اللغوية، وتمنحك منظوراً عالمياً. اكتشف أدلتنا الشاملة لضمان نجاح رحلتك.</p>',
+        },
+        seo: {
+            title: {
+                en: 'Study Abroad Guide – Tips, Advice & Essential Information',
+                ar: 'دليل الدراسة في الخارج – نصائح ومعلومات أساسية',
+            },
+            description: {
+                en: 'Your ultimate guide to studying abroad. Find expert advice on choosing a destination, student visas, scholarships, application processes, and adapting to life in a new country.',
+                ar: 'دليلك الشامل للدراسة في الخارج. احصل على نصائح الخبراء حول اختيار الوجهة، تأشيرات الطلاب، المنح الدراسية، إجراءات التقديم، والتكيف مع الحياة في بلد جديد.',
+            },
+            keywords: {
+                en: 'study abroad guide, international education, student travel, study abroad tips',
+                ar: 'دليل الدراسة في الخارج, تعليم دولي, سفر الطلاب, نصائح الدراسة في الخارج',
+            },
+        },
+        meta: {
+            createdAt: '2023-01-01 00:00:00',
+            updatedAt: '2023-01-01 00:00:00',
+        },
+    },
+    {
         id: 1,
         slug: 'study-in-uk',
         name: {
