@@ -11,6 +11,8 @@ import GlobalInquiryForm from '../components/GlobalInquiryForm';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { useVisitorData } from '../hooks/useVisitorData';
 import GTMManager from '../components/GTMManager';
+import LoadingSpinner from '../components/LoadingSpinner'; // Brand loader
+import React from 'react';
 
 import { Tajawal } from 'next/font/google';
 
@@ -24,7 +26,23 @@ const tajawal = Tajawal({
 function MyApp({ Component, pageProps }) {
     // Initialize visitor detection globally
     const visitorData = useVisitorData();
-    const { locale } = useRouter();
+    const { locale, events } = useRouter();
+    const [loading, setLoading] = React.useState(false);
+
+    React.useEffect(() => {
+        const handleStart = () => setLoading(true);
+        const handleComplete = () => setLoading(false);
+
+        events.on('routeChangeStart', handleStart);
+        events.on('routeChangeComplete', handleComplete);
+        events.on('routeChangeError', handleComplete);
+
+        return () => {
+            events.off('routeChangeStart', handleStart);
+            events.off('routeChangeComplete', handleComplete);
+            events.off('routeChangeError', handleComplete);
+        };
+    }, [events]);
 
     // Log for demonstration (User request: "Provide a structured output")
     if (!visitorData.isLoading && visitorData.country) {
@@ -69,6 +87,7 @@ function MyApp({ Component, pageProps }) {
             />
 
             <Navbar />
+            {loading && <LoadingSpinner />}
             <Component {...pageProps} />
             <GlobalInquiryForm />
             <WhatsAppButton />

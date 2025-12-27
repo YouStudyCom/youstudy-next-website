@@ -12,6 +12,7 @@ import { siteConfig } from '../../../data/siteConfig.mjs';
 import ReadyToStudyAbroad from '../../../components/ReadyToStudyAbroad';
 import { useTranslation } from 'next-i18next';
 import { cleanHtml } from '../../../lib/cleanHtml';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 
 
@@ -23,7 +24,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
     const locale = serverLocale || router.locale;
 
     if (router.isFallback) {
-        return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+        return <LoadingSpinner />;
     }
 
     if (!article) {

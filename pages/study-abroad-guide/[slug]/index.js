@@ -10,6 +10,8 @@ import articlesCache from '../../../data/articles-cache.json';
 import { useTranslation } from 'next-i18next';
 import { siteConfig } from '../../../data/siteConfig.mjs';
 import ReadyToStudyAbroad from '../../../components/ReadyToStudyAbroad';
+import LoadingSpinner from '../../../components/LoadingSpinner';
+import { useState, useEffect, useRef } from 'react';
 
 export default function DestinationLandingPage({ destination, articles, locale: serverLocale }) {
     const router = useRouter();
@@ -17,9 +19,43 @@ export default function DestinationLandingPage({ destination, articles, locale: 
     const locale = serverLocale || router.locale;
     const faqData = t('faq', { returnObjects: true });
 
+    // Infinite Scroll State
+    const [visibleCount, setVisibleCount] = useState(15);
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
+    const observerTarget = useRef(null);
+
+    const visibleArticles = articles.slice(0, visibleCount);
+    const hasMore = visibleCount < articles.length;
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            entries => {
+                if (entries[0].isIntersecting && hasMore && !isLoadingMore) {
+                    setIsLoadingMore(true);
+                    // Simulate a small delay for better UX (optional) or just load instantly
+                    setTimeout(() => {
+                        setVisibleCount(prev => prev + 10);
+                        setIsLoadingMore(false);
+                    }, 500);
+                }
+            },
+            { threshold: 1.0 }
+        );
+
+        if (observerTarget.current) {
+            observer.observe(observerTarget.current);
+        }
+
+        return () => {
+            if (observerTarget.current) {
+                observer.unobserve(observerTarget.current);
+            }
+        };
+    }, [hasMore, isLoadingMore]);
+
     // Fallback for isFallback state
     if (router.isFallback) {
-        return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+        return <LoadingSpinner />;
     }
 
     if (!destination) {
@@ -178,38 +214,64 @@ export default function DestinationLandingPage({ destination, articles, locale: 
                     </h2>
 
                     {articles.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {articles.map((article) => (
-                                <Link
-                                    key={article.id}
-                                    href={`/study-abroad-guide/${destination.slug}/${article.slug}`}
-                                    className="block group bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full"
-                                >
-                                    <article className="flex-1 flex flex-col">
-                                        <div className="flex items-center gap-2 mb-3 text-xs font-bold text-blue-600 uppercase tracking-wider">
-                                            <span className="bg-blue-50 px-2 py-1 rounded">
-                                                {article.category}
+                        <>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {visibleArticles.map((article) => (
+                                    <Link
+                                        key={article.id}
+                                        href={`/study-abroad-guide/${destination.slug}/${article.slug}`}
+                                        className="block group bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full"
+                                    >
+                                        <article className="flex-1 flex flex-col">
+                                            <div className="flex items-center gap-2 mb-3 text-xs font-bold text-blue-600 uppercase tracking-wider">
+                                                <span className="bg-blue-50 px-2 py-1 rounded">
+                                                    {article.category}
+                                                </span>
+                                                <time dateTime={article.publishDate} className="text-slate-400 font-normal">
+                                                    {article.publishDate}
+                                                </time>
+                                            </div>
+                                            <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3 leading-tight">
+                                                {getName(article.title)}
+                                            </h3>
+                                            {/* Added min-height to reduce layout shift if excerpts vary */}
+                                            <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1 line-clamp-3 min-h-[4.5rem]">
+                                                {getDescription(article.excerpt)}
+                                            </p>
+                                            <div className="mt-auto flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                                                {locale === 'ar' ? 'اقرأ المزيد' : 'Read Article'}
+                                                <svg className={`w-4 h-4 ${locale === 'ar' ? 'mr-1 rotate-180' : 'ml-1'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </div>
+                                        </article>
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {/* Infinite Scroll Loader & Sentinel */}
+                            {hasMore && (
+                                <div ref={observerTarget} className="mt-12 flex justify-center py-4">
+                                    {isLoadingMore ? (
+                                        <div className="flex flex-col items-center space-y-2">
+                                            {/* Inline Spinner matching Professional Brand */}
+                                            <div className="w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                                            <span className="text-sm text-slate-500 font-medium">
+                                                {locale === 'ar' ? 'جارٍ تحميل المزيد...' : 'Loading more articles...'}
                                             </span>
-                                            <time dateTime={article.publishDate} className="text-slate-400 font-normal">
-                                                {article.publishDate}
-                                            </time>
                                         </div>
-                                        <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3 leading-tight">
-                                            {getName(article.title)}
-                                        </h3>
-                                        <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">
-                                            {getDescription(article.excerpt)}
-                                        </p>
-                                        <div className="mt-auto flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-                                            {locale === 'ar' ? 'اقرأ المزيد' : 'Read Article'}
-                                            <svg className={`w-4 h-4 ${locale === 'ar' ? 'mr-1 rotate-180' : 'ml-1'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                            </svg>
-                                        </div>
-                                    </article>
-                                </Link>
-                            ))}
-                        </div>
+                                    ) : (
+                                        <div className="h-4"></div> // Trigger area
+                                    )}
+                                </div>
+                            )}
+
+                            {!hasMore && articles.length > 0 && (
+                                <div className="mt-12 text-center text-slate-400 text-sm italic">
+                                    {locale === 'ar' ? 'لقد شاهدت جميع المقالات' : 'You have viewed all articles.'}
+                                </div>
+                            )}
+                        </>
                     ) : (
                         <div className="text-center py-12 bg-white rounded-xl border border-dashed border-slate-300 text-slate-500">
                             {locale === 'ar' ? 'لا توجد مقالات متاحة حالياً.' : 'No articles available yet.'}
