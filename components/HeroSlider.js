@@ -109,7 +109,7 @@ export default function HeroSlider() {
                     </h1>
 
                     {/* Subtitle - Better hierarchy */}
-                    <p className={`text-base md:text-lg font-medium mb-8 max-w-2xl text-blue-50/90 drop-shadow-md ${locale === 'ar' ? 'leading-relaxed' : 'leading-snug'}`}>
+                    <p className={`text-base md:text-lg font-medium mb-8 max-w-2xl text-white drop-shadow-md ${locale === 'ar' ? 'leading-relaxed' : 'leading-snug'}`}>
                         {t('hero.subtitle', 'Free guidance to choose courses, prepare applications, and receive your admission offer.')}
                     </p>
 
