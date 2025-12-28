@@ -58,12 +58,43 @@ export default async function handler(req, res) {
         const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : null;
 
         // Meta Data for Note
+        // Meta Data for Note
         const userAgent = req.headers['user-agent'] || 'Unknown';
-        const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+        const ip = req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
+
+        let detectedCountryName = visitorData?.country || 'Unknown';
+        let detectedCountryCode = visitorData?.countryCode || 'N/A';
+
+        // Server-Side Fallback for Geolocation if client failed
+        if ((!detectedCountryName || detectedCountryName === 'Unknown' || detectedCountryName === 'N/A') && ip && ip.length > 6) {
+            try {
+                // Using freeipapi.com (allows commercial use, limit 60/min)
+                const geoRes = await fetch(`https://freeipapi.com/api/json/${ip}`);
+                if (geoRes.ok) {
+                    const geoData = await geoRes.json();
+                    if (geoData.countryName) {
+                        detectedCountryName = geoData.countryName;
+                        detectedCountryCode = geoData.countryCode; // ISO2
+
+                        // Save to Cookie for future requests (Server-side Set-Cookie)
+                        // Expires in 30 days (2592000 seconds)
+                        // We must encode the JSON value
+                        const cookieValue = JSON.stringify({
+                            country: detectedCountryName,
+                            countryCode: detectedCountryCode
+                        });
+                        res.setHeader('Set-Cookie', `visitor_location=${encodeURIComponent(cookieValue)}; Path=/; Max-Age=2592000; SameSite=Lax`);
+                    }
+                }
+            } catch (e) {
+                console.warn('Server-side IP lookup failed:', e.message);
+            }
+        }
 
         const noteMetaData = {
             "page": pageUrl || 'unknown',
-            "detected_country_name": visitorData?.country || 'N/A',
+            "detected_country_name": detectedCountryName,
+            "detected_country_code": detectedCountryCode,
             "detected_ip": ip
         };
 
