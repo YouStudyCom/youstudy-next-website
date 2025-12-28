@@ -100,7 +100,7 @@ export default function Navbar() {
                                     className="object-cover"
                                 />
                             </div>
-                            <span className="font-bold text-sm">
+                            <span className="font-bold text-sm min-w-[60px] text-center inline-block">
                                 {locale === 'en' ? 'العربية' : 'English'}
                             </span>
                         </button>
