@@ -177,6 +177,7 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                                     src={resolveImagePath(article.image || destination?.image)}
                                     alt={articleTitle}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 768px"
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                                     priority
                                 />
