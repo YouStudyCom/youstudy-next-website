@@ -27,7 +27,7 @@ Allow: /
 
 # General settings for all other good crawlers
 User-agent: *
-Content-signal: search=yes,ai-train=no
+
 Allow: /
 
 # ===============================================
