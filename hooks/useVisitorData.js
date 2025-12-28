@@ -27,17 +27,20 @@ export const useVisitorData = () => {
             if (cachedLocation) {
                 try {
                     const parsed = JSON.parse(cachedLocation);
-                    setVisitorData({
-                        country: parsed.country,
-                        countryCode: parsed.countryCode,
-                        city: null,
-                        ip: null,
-                        device: deviceType,
-                        browser: result.browser.name,
-                        os: result.os.name,
-                        isLoading: false
-                    });
-                    return; // Stop here, no API call needed
+                    // Only use cache if it's valid (not Unknown)
+                    if (parsed.country && parsed.country !== 'Unknown') {
+                        setVisitorData({
+                            country: parsed.country,
+                            countryCode: parsed.countryCode,
+                            city: null,
+                            ip: null,
+                            device: deviceType,
+                            browser: result.browser.name,
+                            os: result.os.name,
+                            isLoading: false
+                        });
+                        return; // Valid cache found
+                    }
                 } catch (e) {
                     // Cookie corrupted, proceed to fetch
                 }
