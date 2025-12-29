@@ -11,7 +11,7 @@ import GlobalInquiryForm from '../components/GlobalInquiryForm';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { useVisitorData } from '../hooks/useVisitorData';
 import GTMManager from '../components/GTMManager';
-import FacebookPixel from '../components/FacebookPixel';
+
 import LoadingSpinner from '../components/LoadingSpinner'; // Brand loader
 import React from 'react';
 
@@ -68,8 +68,7 @@ function MyApp({ Component, pageProps }) {
             {/* Optimized GTM Loading (Interaction-based) */}
             <GTMManager gtmId="GTM-KL7RPPMM" />
 
-            {/* Direct Facebook Pixel Tracking */}
-            <FacebookPixel />
+
 
             <OrganizationJsonLd
                 type="EducationalOrganization"

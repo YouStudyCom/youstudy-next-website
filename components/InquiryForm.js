@@ -170,19 +170,28 @@ export default function InquiryForm({ className = "" }) {
                 throw new Error(errorData.message || 'Submission failed');
             }
 
-            // Trigger Meta Pixel Lead Event (Client-side)
-            if (typeof window !== 'undefined' && window.fbq) {
+            // Trigger GTM Lead Event (DataLayer)
+            if (typeof window !== 'undefined') {
+                window.dataLayer = window.dataLayer || [];
                 // Find readable names for parameters
                 const nationalityObj = countries.find(c => c.id == selectedCountry);
                 const studyLevelObj = studyLevels.find(l => l.id == formData.studyLevel);
 
-                window.fbq('track', 'Lead', {
-                    content_name: 'Free Consultation Request',
-                    source: "Free Consultation Form",
-                    study_level: studyLevelObj ? studyLevelObj.en : formData.studyLevel,
-                    nationality: nationalityObj ? nationalityObj.name.en : selectedCountry,
-                    page_path: window.location.pathname
-                }, { eventID: event_id });
+                window.dataLayer.push({
+                    'event': 'lead',
+                    'eventCategory': 'Lead',
+                    'eventAction': 'Submit',
+                    'eventLabel': 'Free Consultation Form',
+                    'revenue': 0, // Leads usually 0
+                    'leadData': {
+                        'content_name': 'Free Consultation Request',
+                        'source': "Free Consultation Form",
+                        'study_level': studyLevelObj ? studyLevelObj.en : formData.studyLevel,
+                        'nationality': nationalityObj ? nationalityObj.name.en : selectedCountry,
+                        'page_path': window.location.pathname,
+                        'eventID': event_id
+                    }
+                });
             }
 
             setStatus('success');
