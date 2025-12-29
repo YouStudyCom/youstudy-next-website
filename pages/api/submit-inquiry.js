@@ -1,5 +1,6 @@
 import { UAParser } from 'ua-parser-js';
 import { siteConfig } from '../../data/siteConfig.mjs';
+import { countries } from '../../data/countries';
 
 import rateLimit from '../../lib/rateLimit';
 
@@ -20,7 +21,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { name, email, mobile, message, pageUrl, selectedCountry, residenceCountry, studyLevel, visitorData, sourceId, referrerId, schoolId } = req.body;
+        const { name, email, mobile, message, pageUrl, selectedCountry, residenceCountry, studyLevel, visitorData, sourceId, referrerId, schoolId, event_id } = req.body;
 
         // 1. Authenticate to get Token
         // NOTE: In a real production environment, we should cache this token
@@ -110,7 +111,15 @@ export default async function handler(req, res) {
             "gender_id": 0,
             "birth_date": "2000-01-01",
             "source_id": sourceId || 4,
-            "residence_id": residenceCountry || 20,
+            // LOGIC: Use detected country code to find residence_id.
+            // If unknown, fallback to selected nationality (selectedCountry).
+            "residence_id": (() => {
+                if (detectedCountryCode && detectedCountryCode !== 'N/A') {
+                    const matched = countries.find(c => c.code === detectedCountryCode);
+                    if (matched) return matched.id;
+                }
+                return selectedCountry || 4; // Fallback to nationality or default (Afghanistan/4)
+            })(),
             "english_level_id": null,
             "inquiryType": 0,
             "withInquiry": true,

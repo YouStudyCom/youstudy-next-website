@@ -140,11 +140,15 @@ export default function InquiryForm({ className = "" }) {
 
             if (!cleanMobile) finalMobile = rawMobile; // Safety fallback
 
+            // Generate unique event ID for deduplication
+            const event_id = `lead_${Date.now()}`;
+
             const res = await fetch(siteConfig.api.endpoints.submitInquiry, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     ...formData,
+                    event_id, // Sent for CAPI deduplication
                     mobile: finalMobile,
                     whatsapp: finalMobile,
                     selectedCountry,
@@ -164,6 +168,21 @@ export default function InquiryForm({ className = "" }) {
             if (!res.ok) {
                 const errorData = await res.json();
                 throw new Error(errorData.message || 'Submission failed');
+            }
+
+            // Trigger Meta Pixel Lead Event (Client-side)
+            if (typeof window !== 'undefined' && window.fbq) {
+                // Find readable names for parameters
+                const nationalityObj = countries.find(c => c.id == selectedCountry);
+                const studyLevelObj = studyLevels.find(l => l.id == formData.studyLevel);
+
+                window.fbq('track', 'Lead', {
+                    content_name: 'Free Consultation Request',
+                    source: "Free Consultation Form",
+                    study_level: studyLevelObj ? studyLevelObj.en : formData.studyLevel,
+                    nationality: nationalityObj ? nationalityObj.name.en : selectedCountry,
+                    page_path: window.location.pathname
+                }, { eventID: event_id });
             }
 
             setStatus('success');
