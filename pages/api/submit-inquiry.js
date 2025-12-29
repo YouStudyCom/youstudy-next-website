@@ -14,9 +14,12 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Method not allowed' });
     }
 
+    // Get IP (Prioritize Cloudflare)
+    const ip = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
+
     // Rate Limiting (20 requests per minute per IP - Relaxed for Carrier NAT)
     try {
-        await limiter.check(res, 20, 'CACHE_TOKEN' + (req.headers['x-forwarded-for'] || req.socket.remoteAddress));
+        await limiter.check(res, 20, 'CACHE_TOKEN' + ip);
     } catch {
         return res.status(429).json({ error: 'Rate limit exceeded' });
     }
@@ -62,7 +65,6 @@ export default async function handler(req, res) {
         // Meta Data for Note
         // Meta Data for Note
         const userAgent = req.headers['user-agent'] || 'Unknown';
-        const ip = req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
 
         let detectedCountryName = visitorData?.country || 'Unknown';
         let detectedCountryCode = visitorData?.countryCode || 'N/A';
