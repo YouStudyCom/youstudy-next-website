@@ -14,8 +14,9 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Method not allowed' });
     }
 
+    // Rate Limiting (20 requests per minute per IP - Relaxed for Carrier NAT)
     try {
-        await limiter.check(res, 5, 'CACHE_TOKEN' + (req.headers['x-forwarded-for'] || req.socket.remoteAddress)); // 5 requests per minute per IP
+        await limiter.check(res, 20, 'CACHE_TOKEN' + (req.headers['x-forwarded-for'] || req.socket.remoteAddress));
     } catch {
         return res.status(429).json({ error: 'Rate limit exceeded' });
     }
