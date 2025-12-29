@@ -48,13 +48,13 @@ export const useVisitorData = () => {
 
             // 3. Get Location Data (Privacy-friendly IP lookup)
             try {
-                // Using freeipapi.com (allows commercial use)
-                const response = await fetch('https://freeipapi.com/api/json');
+                // Use internal proxy to avoid AdBlockers/CSP issues
+                const response = await fetch('/api/detect-location');
                 if (response.ok) {
                     const data = await response.json();
 
-                    if (data.countryName) {
-                        const countryName = data.countryName;
+                    if (data.country && data.country !== 'Unknown') {
+                        const countryName = data.country;
                         const countryCode = data.countryCode;
 
                         // Save to Cookie (30 days)
@@ -66,8 +66,8 @@ export const useVisitorData = () => {
                         setVisitorData({
                             country: countryName,
                             countryCode: countryCode,
-                            city: data.cityName || null,
-                            ip: data.ipAddress || null,
+                            city: data.city || null,
+                            ip: data.ip || null,
                             device: deviceType,
                             browser: result.browser.name,
                             os: result.os.name,
