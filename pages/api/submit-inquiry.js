@@ -92,14 +92,29 @@ export default async function handler(req, res) {
             }
         }
 
-        const noteMetaData = {
-            "page": pageUrl || 'unknown',
-            "detected_country_name": detectedCountryName,
-            "detected_country_code": detectedCountryCode,
-            "detected_ip": ip
-        };
+        // HTML Formatted Note for CRM
+        const noteMetaData = `
+                <br>
+                <br>
+                <div style="font-family: sans-serif; font-size: 14px; color: #333;">                    
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li style="margin-bottom: 5px;">
+                            <strong>Page:</strong> 
+                            <a href="${pageUrl}" style="color: #2563eb; text-decoration: none;">${pageUrl || 'unknown'}</a>
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <strong>Location:</strong> ${detectedCountryName} <span style="color: #666;">(${detectedCountryCode})</span>
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <strong>IP Addr:</strong> <code>${ip}</code>
+                        </li>
+                    </ul>
+                </div>                
+                `;
 
-        const finalNote = `${message || ''}\n\n${JSON.stringify(noteMetaData)}`;
+        // Preserve user message line breaks by converting \n to <br>
+        const userMessageHtml = message ? message.replace(/\n/g, '<br>') : '';
+        const finalNote = `${userMessageHtml}${noteMetaData}`;
 
         const payload = {
             "enFirstName": firstName,
