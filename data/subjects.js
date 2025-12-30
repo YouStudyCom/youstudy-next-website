@@ -284,4 +284,61 @@ export const subjects = [
             },
         },
     },
+    {
+        id: 'accounting-and-finance',
+        slug: 'accounting-and-finance',
+        icon: '📊',
+        title: {
+            en: 'Accounting and Finance',
+            ar: 'المحاسبة والادارة المالية',
+        },
+        seo: {
+            description: {
+                en: 'Accounting and finance are two different career fields. Accounting is the art of methodically organizing records and reports and the continued assessment of financial deals in an organization. Accounting also deals with preparing statements, making declarations concerning assets and liabilities.',
+                ar: 'يعتبر كلاً من تخصص المحاسبة والادارة المالية من التخصصات الجامعية الأكثر شعبية. تنطوي الوظائف المحاسبية على تحليل واستخدام المعلومات المالية لتقييم الوضع المالي للمنشأة، إدارة بيانات الدخل والنفقات والميزانية العامّة.',
+            },
+            keywords: {
+                en: 'accounting, finance, financial management, auditing, business analysis, cpa, economics, assets, liabilities',
+                ar: 'المحاسبة, الإدارة المالية, التمويل, تحليل البيانات, التدقيق, الأعمال, المحاسب القانوني, إدارة الأموال',
+            },
+        },
+    },
+    {
+        id: 'creative-arts-and-design',
+        slug: 'creative-arts-and-design',
+        icon: '🎨',
+        title: {
+            en: 'Creative Arts and Design',
+            ar: 'الفنون الإبداعية والتصميم',
+        },
+        seo: {
+            description: {
+                en: 'Explore the world of creative arts and design. Study fine arts, graphic design, fashion, and visual storytelling to build an inspiring and innovative career.',
+                ar: 'ادرس الفنون الإبداعية والتصميم. اكتشف مجالات الفنون الجميلة، التصميم الجرافيكي، والأزياء. طوّر مهاراتك الفنية لبناء مسار مهني ملهم ومبتكر.',
+            },
+            keywords: {
+                en: 'creative arts, design, fine arts, graphic design, fashion design, visual arts, creative career',
+                ar: 'الفنون الإبداعية, التصميم, الفنون الجميلة, التصميم الجرافيكي, تصميم الأزياء, الفنون البصرية, مهنة إبداعية',
+            },
+        },
+    },
+    {
+        id: 'english-language',
+        slug: 'english-language',
+        icon: '🗣️',
+        title: {
+            en: 'English Language',
+            ar: 'اللغة الانجليزية',
+        },
+        seo: {
+            description: {
+                en: 'English is utilized for these reasons in many nations. English is viewed as the business language. English is the official language of the United Nations. English is likewise the official language of aircraft and airplane terminals.',
+                ar: 'وفقاً للعديد من الإحصاءات فإنّ واحداً من بين كل 5 أشخاص يستطيع تحدّث أو فهم اللغة الإنجليزية. ولأنها اللغة الرسمية في 53 بلداً واللغة الأم لأكثر من 400 مليون شخص، فإنّ الملايين من الطلّاب يتجهوّن سنوياً لدراسة اللغة الإنجليزية أكاديمياً.',
+            },
+            keywords: {
+                en: 'english language, english literature, linguistics, communication skills, study abroad, tesol, business english',
+                ar: 'اللغة الإنجليزية, تعلم الإنجليزية, الأدب الإنجليزي, اللغويات, مهارات الاتصال, الدراسة في الخارج, اللغة العالمية',
+            },
+        },
+    },
 ];
