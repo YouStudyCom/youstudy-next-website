@@ -52,30 +52,19 @@ const AboutSection = () => {
 
                         {/* Professional Icon / Visual */}
                         <div className="flex-1 order-1 md:order-2 flex justify-center">
-                            <div className="relative w-72 h-72 md:w-96 md:h-96">
-                                {/* Animated Circles */}
-                                <div className="absolute inset-0 bg-blue-100 rounded-full animate-pulse opacity-50"></div>
-                                <div className="absolute inset-4 bg-white rounded-full shadow-2xl flex items-center justify-center p-8 transform transition-transform hover:scale-105 duration-500 overflow-hidden">
-                                    {/* Main Image: Logo instead of drawing */}
-                                    {/* Using the logo icon as requested */}
+                            <div className="relative w-64 h-64 md:w-80 md:h-80">
+                                {/* Animated Background Blob - Soft Rounded Square */}
+                                <div className="absolute inset-0 bg-blue-100 rounded-[3rem] animate-pulse opacity-50 rotate-6 transform"></div>
+
+                                {/* Main Card - Phone App Icon Style */}
+                                <div className="absolute inset-0 bg-white rounded-[2.5rem] shadow-2xl flex items-center justify-center p-12 transform transition-transform hover:scale-105 duration-500 overflow-hidden border border-blue-50">
+                                    {/* Main Image: Logo */}
+                                    {/* Added p-4 to logo itself for breathing room */}
                                     <img
                                         src="/android-chrome-512x512.png"
                                         alt="YouStudy"
-                                        className="w-full h-full object-contain drop-shadow-sm"
+                                        className="w-full h-full object-contain drop-shadow-sm p-2"
                                     />
-
-                                    {/* Floating Badges */}
-                                    {/* "drawing one make instead of colored small one" -> Replaced emoji with the SVG */}
-                                    <div className="absolute -top-4 -right-4 bg-white p-3 rounded-lg shadow-lg animate-bounce-subtle border border-gray-100 w-16 h-16 flex items-center justify-center">
-                                        <svg className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                        </svg>
-                                    </div>
-                                    <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg animate-bounce-subtle delay-700 border border-gray-100">
-                                        <span className="text-2xl">🌍</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
