@@ -1,7 +1,11 @@
 export default async function handler(req, res) {
     // get IP from headers (Next.js / Vercel / Nginx standard)
     // get IP from headers (Prioritize Cloudflare, then X-Forwarded-For, then Remote)
-    const ip = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
+    // get IP from headers (Prioritize Cloudflare, then Real IP, then X-Forwarded-For, then Remote)
+    const ip = req.headers['cf-connecting-ip'] ||
+        req.headers['x-real-ip'] ||
+        req.headers['x-forwarded-for']?.split(',')[0] ||
+        req.socket.remoteAddress;
 
     try {
         // Fetch from freeipapi.com (Server-to-Server)

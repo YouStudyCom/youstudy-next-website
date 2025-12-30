@@ -14,8 +14,11 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Method not allowed' });
     }
 
-    // Get IP (Prioritize Cloudflare)
-    const ip = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
+    // Get IP (Prioritize Cloudflare, then Real IP, then Forwarded, then Remote)
+    const ip = req.headers['cf-connecting-ip'] ||
+        req.headers['x-real-ip'] ||
+        req.headers['x-forwarded-for']?.split(',')[0] ||
+        req.socket.remoteAddress;
 
     // Rate Limiting (20 requests per minute per IP - Relaxed for Carrier NAT)
     try {
