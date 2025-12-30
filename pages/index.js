@@ -80,10 +80,10 @@ export default function Home(props) {
             )}
 
             <HeroSlider />
-            <AboutSection />
             <StepsSection />
             <StudyDestinations destinations={props.destinations} />
             <SubjectAreas />
+            <AboutSection />
             <Testimonials />
         </>
     );
