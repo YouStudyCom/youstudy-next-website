@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { FAQPageJsonLd, OrganizationJsonLd } from 'next-seo';
+import AboutSection from '../components/AboutSection';
 import HeroSlider from '../components/HeroSlider';
 import StepsSection from '../components/StepsSection';
 import StudyDestinations from '../components/StudyDestinations';
@@ -79,6 +80,7 @@ export default function Home(props) {
             )}
 
             <HeroSlider />
+            <AboutSection />
             <StepsSection />
             <StudyDestinations destinations={props.destinations} />
             <SubjectAreas />

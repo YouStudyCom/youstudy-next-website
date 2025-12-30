@@ -98,5 +98,13 @@
         "hero_title": "Find Your Path",
         "hero_subtitle": "Explore our comprehensive guide to academic disciplines. Whether you're creative, analytical, or scientific, there's a world of opportunity waiting.",
         "explore_programs": "Explore Programs"
+    },
+    "about_section": {
+        "title": "Why Choose YouStudy?",
+        "subtitle": "Your Trusted Partner for Global Education",
+        "description": "At YouStudy, we are dedicated to helping ambitious students like you achieve their dreams of studying abroad. With years of experience and a network of over 500 partner universities across the UK, USA, Canada, Australia, and beyond, we provide comprehensive support at every stage of your journey.",
+        "content_p1": "Our team of certified education counsellors offers personalized guidance, from selecting the right course and university to handling your application and visa process. We understand that every student is unique, which is why we tailor our services to meet your specific academic goals and financial requirements.",
+        "content_p2": "We pride ourselves on our high success rate and transparent processes. Whether you are looking for undergraduate degrees, postgraduate masters, or English language courses, YouStudy is here to ensure your transition to international education is smooth, stress-free, and successful. Join thousands of students who have trusted us to build their future.",
+        "cta": "Learn More About Us"
     }
 }

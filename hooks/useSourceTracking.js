@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 
-const SUPPORTED_CHANNELS = ['youtube', 'inquiry', 'facebook', 'twitter', 'whatsapp'];
+const SUPPORTED_CHANNELS = ['youtube', 'inquiry', 'facebook', 'twitter', 'whatsapp', 'advertisementfb'];
 const COOKIE_NAME_SOURCE_ID = 'source_id';
 const COOKIE_NAME_CHANNEL = 'source_channel';
 const DEFAULT_SOURCE_ID = 4; // Fallback default (e.g. "Website/Direct")
@@ -21,12 +21,16 @@ export function useSourceTracking() {
         let foundChannel = null;
         let newSourceId = null;
 
-        // 1. Check URL parameters for supported channels
-        for (const channel of SUPPORTED_CHANNELS) {
-            if (query[channel] !== undefined) {
-                const val = parseInt(query[channel], 10);
+        // 1. Check URL parameters for supported channels (Case Insensitive)
+        const queryKeys = Object.keys(query);
+        for (const key of queryKeys) {
+            const lowerKey = key.toLowerCase();
+            const matchedChannel = SUPPORTED_CHANNELS.find(ch => ch.toLowerCase() === lowerKey);
+
+            if (matchedChannel) {
+                const val = parseInt(query[key], 10);
                 if (!isNaN(val)) {
-                    foundChannel = channel;
+                    foundChannel = matchedChannel;
                     newSourceId = val;
                     break; // Priority: take the first valid match
                 }
