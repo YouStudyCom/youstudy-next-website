@@ -58,6 +58,10 @@ export default function InquiryForm({ className = "" }) {
                     mobileCountryCode: !prev.mobileCountryCode ? matchedCountry.dialCode : prev.mobileCountryCode,
                     mobileCountryId: !prev.mobileCountryId ? matchedCountry.id : prev.mobileCountryId
                 }));
+                // Auto-select Nationality if not set
+                if (!selectedCountry) {
+                    setSelectedCountry(matchedCountry.id);
+                }
             }
         }
     }, [visitorData]);

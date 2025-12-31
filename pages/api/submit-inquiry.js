@@ -98,6 +98,36 @@ export default async function handler(req, res) {
             }
         }
 
+        // Helper to debug valid IDs
+        const calculateResidenceId = () => {
+            let usedCode = 'N/A';
+            let calcId = 4; // Default
+            let method = 'default';
+
+            // 1. Trust Client 'residenceCountry' if provided (and valid)
+            if (residenceCountry && !isNaN(parseInt(residenceCountry)) && parseInt(residenceCountry) > 0) {
+                return { id: parseInt(residenceCountry), method: 'client_payload' };
+            }
+
+            // 2. Try Detected Code (Server-side IP lookup)
+            if (detectedCountryCode && detectedCountryCode !== 'N/A') {
+                const normalizedCode = detectedCountryCode.trim().toUpperCase();
+                const matched = countries.find(c => c.code === normalizedCode);
+                if (matched) {
+                    return { id: matched.id, method: `detected(${normalizedCode})` };
+                }
+            }
+
+            // 3. Fallback to Nationality (Selected Country)
+            if (selectedCountry) {
+                return { id: parseInt(selectedCountry), method: 'nationality_fallback' };
+            }
+
+            return { id: 4, method: 'default' };
+        };
+
+        const residenceResult = calculateResidenceId();
+
         // HTML Formatted Note for CRM
         const noteMetaData = `
                 <br>
@@ -114,6 +144,9 @@ export default async function handler(req, res) {
                         <li style="margin-bottom: 5px;">
                             <strong>IP Addr:</strong> <code>${ip}</code>
                         </li>
+                        <li style="margin-bottom: 5px; font-size: 10px; color: #999;">
+                            <strong>Debug:</strong> ResID:${residenceResult.id} (${residenceResult.method})
+                        </li>
                     </ul>
                 </div>                
                 `;
@@ -128,23 +161,15 @@ export default async function handler(req, res) {
             "email": email,
             "mobile": mobile,
             "whatsapp": mobile, // Mapping rule: whatsapp = mobile
-            "nationality_id": selectedCountry || 4,
+            "nationality_id": selectedCountry ? parseInt(selectedCountry) : 4,
             "gender_id": 0,
             "birth_date": "2000-01-01",
             "source_id": sourceId || 4,
-            // LOGIC: Use detected country code to find residence_id.
-            // If unknown, fallback to selected nationality (selectedCountry).
-            "residence_id": (() => {
-                if (detectedCountryCode && detectedCountryCode !== 'N/A') {
-                    const matched = countries.find(c => c.code === detectedCountryCode);
-                    if (matched) return matched.id;
-                }
-                return selectedCountry || 4; // Fallback to nationality or default (Afghanistan/4)
-            })(),
+            "residence_id": residenceResult.id,
             "english_level_id": null,
             "inquiryType": 0,
             "withInquiry": true,
-            "study_level_id": studyLevel || 2,
+            "study_level_id": studyLevel ? parseInt(studyLevel) : 2,
             "subject_areas": null,
             "study_budget": 0,
             "planned_start_date": null,
