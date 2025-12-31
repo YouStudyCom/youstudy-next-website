@@ -98,6 +98,18 @@ export default async function handler(req, res) {
             }
         }
 
+        // 3. Fallback: Infer from Mobile Code (e.g. +966 -> Saudi Arabia)
+        // Useful for Localhost/VPN where IP lookup fails but user selected a code
+        if ((!detectedCountryName || detectedCountryName === 'Unknown') && req.body.mobileCountryCode) {
+            const rawCode = req.body.mobileCountryCode.trim(); // e.g. "+966"
+            // Find country with this dial code
+            const matchedStats = countries.find(c => c.dialCode === rawCode);
+            if (matchedStats) {
+                detectedCountryName = matchedStats.name.en;
+                detectedCountryCode = matchedStats.code; // e.g. "SA"
+            }
+        }
+
         // Helper to debug valid IDs
         const calculateResidenceId = () => {
             let usedCode = 'N/A';
