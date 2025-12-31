@@ -88,8 +88,10 @@ export default function ArticlePage({ article, destination, locale: serverLocale
         return `/gallery/blog/post/${raw}`;
     };
 
-    const articleUrl = `https://www.youstudy.com/study-abroad-guide/${destination?.slug}/${article.slug}`;
-    const destinationUrl = `https://www.youstudy.com/study-abroad-guide/${destination?.slug}`;
+    const baseUrl = 'https://www.youstudy.com';
+    const localePrefix = locale === 'ar' ? '/ar' : '';
+    const articleUrl = `${baseUrl}${localePrefix}/study-abroad-guide/${destination?.slug}/${article.slug}`;
+    const destinationUrl = `${baseUrl}${localePrefix}/study-abroad-guide/${destination?.slug}`;
 
     return (
         <div className="min-h-screen bg-white font-sans text-slate-900">

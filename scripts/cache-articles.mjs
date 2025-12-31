@@ -41,7 +41,7 @@ async function cacheArticles() {
     if (fetchedFromApi && destinations.length > 0) {
         console.log(`Fetching articles for each destination...`);
         for (const d of destinations) {
-            if (!d.slug) continue;
+            if (!d.slug || d.slug === 'study-abroad') continue;
 
             const endpoint = `/api/destinations/${d.slug}/articles`;
             console.log(`Fetching ${endpoint}...`);

@@ -111,7 +111,15 @@ export default function DestinationLandingPage({ destination, articles, locale: 
     const imagePath = getImagePath(destination.image);
 
     // Safely access SEO or fallback to main content
-    const seoTitle = destination.seo ? getName(destination.seo.title) : destName;
+    const rawSeoTitle = destination.seo ? getName(destination.seo.title) : destName;
+
+    // Enhance Title if it's too short or just the name (SEO Optimization)
+    let seoTitle = rawSeoTitle;
+    if (rawSeoTitle === destName || rawSeoTitle.length < 20) {
+        seoTitle = locale === 'ar'
+            ? `الدراسة في ${destName} - الدليل الشامل للطلاب الدوليين | يوستدي`
+            : `Study in ${destName} - Complete Guide for International Students | YouStudy`;
+    }
     const seoDesc = destination.seo ? getDescription(destination.seo.description) : destDescription.substring(0, 160);
     const seoKeywords = destination.seo ? getName(destination.seo.keywords) : '';
 
@@ -247,7 +255,8 @@ export default function DestinationLandingPage({ destination, articles, locale: 
                                                 {getDescription(article.excerpt) || (getName(article.content) ? getName(article.content).replace(/<[^>]*>?/gm, '').substring(0, 150) + '...' : '')}
                                             </p>
                                             <div className="mt-auto flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-                                                {locale === 'ar' ? 'اقرأ المزيد' : 'Read Article'}
+                                                {locale === 'ar' ? 'اقرأ الدليل' : 'Read Guide'}
+                                                <span className="sr-only"> {locale === 'ar' ? 'حول' : 'about'} {getName(article.title)}</span>
                                                 <svg className={`w-4 h-4 ${locale === 'ar' ? 'mr-1 rotate-180' : 'ml-1'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                                 </svg>

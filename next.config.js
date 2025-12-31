@@ -49,6 +49,16 @@ const nextConfig = {
         ignoreDuringBuilds: true,
     },
 
+    async redirects() {
+        return [
+            {
+                source: '/article/:slug*',
+                destination: '/study-abroad-guide',
+                permanent: true,
+            },
+        ];
+    },
+
     async headers() {
         return [
 

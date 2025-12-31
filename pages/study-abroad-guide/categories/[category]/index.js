@@ -166,7 +166,8 @@ export default function CategoryPage({ category, articles, locale: serverLocale 
                                             {getDescription(article.excerpt || article.seo_description)}
                                         </p>
                                         <div className="mt-auto flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-                                            {locale === 'ar' ? 'اقرأ المزيد' : 'Read Article'}
+                                            {locale === 'ar' ? 'اقرأ الدليل' : 'Read Guide'}
+                                            <span className="sr-only"> {t('about', 'about')} {getName(article.title)}</span>
                                             <svg className={`w-4 h-4 ${locale === 'ar' ? 'mr-1 rotate-180' : 'ml-1'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>

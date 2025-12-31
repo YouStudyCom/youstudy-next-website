@@ -119,10 +119,15 @@ export default function SubjectDetailPage({ subject, locale: serverLocale }) {
         ...(subject.image && { "image": subject.image })
     };
 
+    // Optimized SEO Title
+    const seoTitle = locale === 'ar'
+        ? `دراسة ${subjectTitle} في الخارج - دليل التخصصات والجامعات | يوستدي`
+        : `Study ${subjectTitle} Abroad - Best Degrees & Universities | YouStudy`;
+
     return (
         <div className="min-h-screen bg-white font-sans">
             <SEO
-                title={subjectTitle}
+                title={seoTitle}
                 description={descriptionText}
                 keywords={keywordsText}
                 canonical={canonicalUrl}
