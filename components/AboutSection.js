@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const AboutSection = () => {
     const { t } = useTranslation('common');
@@ -60,10 +61,13 @@ const AboutSection = () => {
                                 <div className="absolute inset-0 bg-white rounded-[2.5rem] shadow-2xl flex items-center justify-center p-12 transform transition-transform hover:scale-105 duration-500 overflow-hidden border border-blue-50">
                                     {/* Main Image: Logo */}
                                     {/* Added p-4 to logo itself for breathing room */}
-                                    <img
+                                    <Image
                                         src="/android-chrome-512x512.png"
                                         alt="YouStudy"
+                                        width={512}
+                                        height={512}
                                         className="w-full h-full object-contain drop-shadow-sm p-2"
+                                        quality={75}
                                     />
                                 </div>
                             </div>

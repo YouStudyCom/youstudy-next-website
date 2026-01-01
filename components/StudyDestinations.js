@@ -64,6 +64,8 @@ export default function StudyDestinations({ destinations: propsDestinations }) {
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    quality={60}
+                                    loading="lazy"
                                 />
                                 <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-4">
                                     <span className="text-white text-xs font-bold uppercase tracking-wider bg-[#187EBE] px-2 py-1 rounded inline-block">
