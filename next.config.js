@@ -56,6 +56,22 @@ const nextConfig = {
                 destination: '/study-abroad-guide',
                 permanent: true,
             },
+            {
+                source: '/center/:path*',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                // Catch both /search and /home/search
+                source: '/search',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                source: '/home/search',
+                destination: '/',
+                permanent: true,
+            },
         ];
     },
 
