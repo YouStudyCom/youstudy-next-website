@@ -117,8 +117,8 @@ export default function DestinationLandingPage({ destination, articles, locale: 
     let seoTitle = rawSeoTitle;
     if (rawSeoTitle === destName || rawSeoTitle.length < 20) {
         seoTitle = locale === 'ar'
-            ? `الدراسة في ${destName} - الدليل الشامل للطلاب الدوليين | يوستدي`
-            : `Study in ${destName} - Complete Guide for International Students | YouStudy`;
+            ? `الدراسة في ${destName} - الدليل الشامل للطلاب الدوليين`
+            : `Study in ${destName} - Complete Guide for International Students`;
     }
     const seoDesc = destination.seo ? getDescription(destination.seo.description) : destDescription.substring(0, 160);
     const seoKeywords = destination.seo ? getName(destination.seo.keywords) : '';
