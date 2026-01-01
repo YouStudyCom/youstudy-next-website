@@ -93,6 +93,8 @@ export default function InquiryForm({ className = "" }) {
         // Mobile
         if (!formData.mobile.trim()) {
             newErrors.mobile = locale === 'ar' ? 'رقم الهاتف مطلوب' : 'Mobile number is required';
+        } else if (!formData.mobileCountryCode && !formData.mobile.startsWith('+')) {
+            newErrors.mobile = locale === 'ar' ? 'يرجى اختيار رمز الدولة' : 'Please select country code';
         }
 
         // Nationality

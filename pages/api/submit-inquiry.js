@@ -15,10 +15,21 @@ export default async function handler(req, res) {
     }
 
     // Get IP (Prioritize Cloudflare, then Real IP, then Forwarded, then Remote)
-    const ip = req.headers['cf-connecting-ip'] ||
-        req.headers['x-real-ip'] ||
-        req.headers['x-forwarded-for']?.split(',')[0] ||
-        req.socket.remoteAddress;
+    let ip = req.headers['cf-connecting-ip'];
+    let ipSource = 'cf-connecting-ip';
+
+    if (!ip) {
+        ip = req.headers['x-real-ip'];
+        ipSource = 'x-real-ip';
+    }
+    if (!ip) {
+        ip = req.headers['x-forwarded-for']?.split(',')[0];
+        ipSource = 'x-forwarded-for';
+    }
+    if (!ip) {
+        ip = req.socket.remoteAddress;
+        ipSource = 'remoteAddress';
+    }
 
     // Rate Limiting (20 requests per minute per IP - Relaxed for Carrier NAT)
     try {
@@ -113,7 +124,7 @@ export default async function handler(req, res) {
         // Helper to debug valid IDs
         const calculateResidenceId = () => {
             let usedCode = 'N/A';
-            let calcId = 4; // Default
+            let calcId = 682; // Default to Saudi Arabia (id: 682) instead of 4
             let method = 'default';
 
             // 1. Trust Client 'residenceCountry' if provided (and valid)
@@ -135,12 +146,20 @@ export default async function handler(req, res) {
                 return { id: parseInt(selectedCountry), method: 'nationality_fallback' };
             }
 
-            return { id: 4, method: 'default' };
+            return { id: 682, method: 'default' };
         };
 
         const residenceResult = calculateResidenceId();
 
-        // HTML Formatted Note for CRM
+        // Check if detected country differs from Mobile Country (VPN/Proxy Check)
+        let mobileLocationNote = '';
+        if (req.body.mobileCountryCode) {
+            const mCode = countries.find(c => c.dialCode === req.body.mobileCountryCode.trim());
+            if (mCode && mCode.code !== detectedCountryCode) {
+                mobileLocationNote = `<br><span style="color: #eab308; font-size: 11px;">⚠️ IP (${detectedCountryCode}) ≠ Mobile (${mCode.code})</span>`;
+            }
+        }
+
         const noteMetaData = `
                 <br>
                 <br>
@@ -152,9 +171,10 @@ export default async function handler(req, res) {
                         </li>
                         <li style="margin-bottom: 5px;">
                             <strong>Location:</strong> ${detectedCountryName} <span style="color: #666;">(${detectedCountryCode})</span>
+                            ${mobileLocationNote}
                         </li>
                         <li style="margin-bottom: 5px;">
-                            <strong>IP Addr:</strong> <code>${ip}</code>
+                            <strong>IP Addr:</strong> <code>${ip}</code> <span style="font-size:10px; color:#999;">(via ${ipSource})</span>
                         </li>
                         <li style="margin-bottom: 5px; font-size: 10px; color: #999;">
                             <strong>Debug:</strong> ResID:${residenceResult.id} (${residenceResult.method})
@@ -173,7 +193,7 @@ export default async function handler(req, res) {
             "email": email,
             "mobile": mobile,
             "whatsapp": mobile, // Mapping rule: whatsapp = mobile
-            "nationality_id": selectedCountry ? parseInt(selectedCountry) : 4,
+            "nationality_id": selectedCountry ? parseInt(selectedCountry) : 682,
             "gender_id": 0,
             "birth_date": "2000-01-01",
             "source_id": sourceId || 4,

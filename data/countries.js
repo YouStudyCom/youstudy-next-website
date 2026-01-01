@@ -74,6 +74,7 @@ export const countries = [
     { id: 620, name: { en: "Portugal", ar: "البرتغال" }, dialCode: "+351", code: "PT" },
     { id: 642, name: { en: "Romania", ar: "رومانيا" }, dialCode: "+40", code: "RO" },
     { id: 643, name: { en: "Russian Federation", ar: "روسيا" }, dialCode: "+7", code: "RU" },
+    { id: 702, name: { en: "Singapore", ar: "سنغافورة" }, dialCode: "+65", code: "SG" },
     { id: 710, name: { en: "South Africa", ar: "جنوب أفريقيا" }, dialCode: "+27", code: "ZA" },
     { id: 724, name: { en: "Spain", ar: "إسبانيا" }, dialCode: "+34", code: "ES" },
     { id: 752, name: { en: "Sweden", ar: "السويد" }, dialCode: "+46", code: "SE" },
