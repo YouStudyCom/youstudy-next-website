@@ -84,28 +84,45 @@ export default async function handler(req, res) {
         let detectedCountryCode = visitorData?.countryCode || 'N/A';
 
         // Server-Side Fallback for Geolocation if client failed
-        if ((!detectedCountryName || detectedCountryName === 'Unknown' || detectedCountryName === 'N/A') && ip && ip.length > 6) {
-            try {
-                // Using freeipapi.com (allows commercial use, limit 60/min)
-                const geoRes = await fetch(`https://freeipapi.com/api/json/${ip}`);
-                if (geoRes.ok) {
-                    const geoData = await geoRes.json();
-                    if (geoData.countryName) {
-                        detectedCountryName = geoData.countryName;
-                        detectedCountryCode = geoData.countryCode; // ISO2
+        if (!detectedCountryName || detectedCountryName === 'Unknown' || detectedCountryName === 'N/A') {
 
-                        // Save to Cookie for future requests (Server-side Set-Cookie)
-                        // Expires in 30 days (2592000 seconds)
-                        // We must encode the JSON value
-                        const cookieValue = JSON.stringify({
-                            country: detectedCountryName,
-                            countryCode: detectedCountryCode
-                        });
-                        res.setHeader('Set-Cookie', `visitor_location=${encodeURIComponent(cookieValue)}; Path=/; Max-Age=2592000; SameSite=Lax`);
-                    }
+            // 1. Try Cloudflare Header (Fastest & Most Accurate)
+            const cfCountry = req.headers['cf-ipcountry'];
+            if (cfCountry && cfCountry.length === 2 && cfCountry !== 'XX') {
+                const normalizedCode = cfCountry.toUpperCase();
+                const matched = countries.find(c => c.code === normalizedCode);
+                if (matched) {
+                    detectedCountryName = matched.name.en;
+                    detectedCountryCode = matched.code;
+                } else {
+                    detectedCountryCode = normalizedCode; // Use code even if name not found
                 }
-            } catch (e) {
-                console.warn('Server-side IP lookup failed:', e.message);
+            }
+
+            // 2. Fallback to IP Lookup (freeipapi.com)
+            if ((!detectedCountryCode || detectedCountryCode === 'N/A') && ip && ip.length > 6) {
+                try {
+                    // Using freeipapi.com (allows commercial use, limit 60/min)
+                    const geoRes = await fetch(`https://freeipapi.com/api/json/${ip}`);
+                    if (geoRes.ok) {
+                        const geoData = await geoRes.json();
+                        if (geoData.countryName) {
+                            detectedCountryName = geoData.countryName;
+                            detectedCountryCode = geoData.countryCode; // ISO2
+
+                            // Save to Cookie for future requests (Server-side Set-Cookie)
+                            // Expires in 30 days (2592000 seconds)
+                            // We must encode the JSON value
+                            const cookieValue = JSON.stringify({
+                                country: detectedCountryName,
+                                countryCode: detectedCountryCode
+                            });
+                            res.setHeader('Set-Cookie', `visitor_location=${encodeURIComponent(cookieValue)}; Path=/; Max-Age=2592000; SameSite=Lax`);
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Server-side IP lookup failed:', e.message);
+                }
             }
         }
 

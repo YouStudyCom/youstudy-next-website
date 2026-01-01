@@ -1,11 +1,23 @@
+import { countries } from '../../data/countries';
+
 export default async function handler(req, res) {
-    // get IP from headers (Next.js / Vercel / Nginx standard)
-    // get IP from headers (Prioritize Cloudflare, then X-Forwarded-For, then Remote)
     // get IP from headers (Prioritize Cloudflare, then Real IP, then X-Forwarded-For, then Remote)
     const ip = req.headers['cf-connecting-ip'] ||
         req.headers['x-real-ip'] ||
         req.headers['x-forwarded-for']?.split(',')[0] ||
         req.socket.remoteAddress;
+
+    // 1. Try Cloudflare Header (Fastest & Most Accurate)
+    const cfCountry = req.headers['cf-ipcountry'];
+    if (cfCountry && cfCountry.length === 2 && cfCountry !== 'XX') {
+        const matched = countries.find(c => c.code === cfCountry.toUpperCase());
+        return res.status(200).json({
+            country: matched ? matched.name.en : 'Unknown',
+            countryCode: cfCountry.toUpperCase(),
+            city: null,
+            ip: ip
+        });
+    }
 
     try {
         // Fetch from freeipapi.com (Server-to-Server)
