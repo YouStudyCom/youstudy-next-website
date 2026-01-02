@@ -170,10 +170,11 @@ export default function SubjectDetailPage({ subject, locale: serverLocale }) {
                                 <p className="text-slate-600 leading-relaxed mb-4">
                                     {descriptionText}
                                 </p>
-                                <p className="text-slate-600 leading-relaxed">
+                                <p className="text-slate-600 leading-relaxed font-medium">
+                                    {/* SEO: Ensure keywords 'Best Degrees' and 'Universities' are in text */}
                                     {locale === 'ar'
-                                        ? 'تواصل معنا للحصول على مزيد من التفاصيل حول أفضل الجامعات والبرامج المتاحة في هذا المجال.'
-                                        : 'Contact us for more details about the best universities and programs available in this field.'}
+                                        ? `اكتشف أفضل الدرجات العلمية والجامعات الرائدة لدراسة ${subjectTitle}. تواصل معنا اليوم لبدء رحلتك.`
+                                        : `Discover the Best Degrees and top Universities for studying ${subjectTitle}. Contact us today to start your journey.`}
                                 </p>
                             </div>
                         )}

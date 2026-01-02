@@ -219,6 +219,12 @@ export default function DestinationLandingPage({ destination, articles, locale: 
 
                 {/* Overview Section */}
                 <section className="mb-16 text-center">
+                    {/* SEO: Ensure keywords from title are present in the text */}
+                    <h2 className="text-2xl font-bold text-slate-900 mb-6">
+                        {locale === 'ar'
+                            ? `الجامعات، التكاليف، وتأشيرة الطالب في ${destName}`
+                            : `Universities, Costs & Student Visa in ${destName}`}
+                    </h2>
                     <div
                         className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed prose prose-slate"
                         dangerouslySetInnerHTML={{ __html: destDescription }}
