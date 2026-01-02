@@ -193,12 +193,14 @@ export default function DestinationLandingPage({ destination, articles, locale: 
                         fill
                         className="object-cover opacity-40"
                         priority
+                        sizes="100vw"
+                        quality={60}
                     />
                 )}
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
                     <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">
-                        {destName}
+                        {locale === 'ar' ? `الدراسة في ${destName}` : `Study in ${destName}`}
                     </h1>
                     <p className="text-xl text-white/90 max-w-2xl font-medium drop-shadow-md">
                         {seoDesc}
@@ -252,7 +254,8 @@ export default function DestinationLandingPage({ destination, articles, locale: 
                                             </h3>
                                             {/* Added min-height, fallback to content if excerpt absent */}
                                             <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1 line-clamp-3 min-h-[4.5rem]">
-                                                {getDescription(article.excerpt) || (getName(article.content) ? getName(article.content).replace(/<[^>]*>?/gm, '').substring(0, 150) + '...' : '')}
+                                                {/* Use pre-calculated excerpt from getStaticProps */}
+                                                {article.excerpt}
                                             </p>
                                             <div className="mt-auto flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
                                                 {locale === 'ar' ? 'اقرأ الدليل' : 'Read Guide'}
@@ -439,11 +442,35 @@ export async function getStaticProps({ params, locale }) {
         };
     }
 
+    // OPTIMIZATION: Reduce Page Size
+    // Strip heavy 'content' and 'seo' fields from articles list.
+    // We only need fields for the card display: id, slug, title, date, category, image, excerpt.
+    const optimizedArticles = articles.map(article => {
+        // Fallback description from content if excerpt is missing, but truncate deeply
+        let excerpt = getName(article.excerpt);
+        if (!excerpt && article.content) {
+            const rawContent = getName(article.content);
+            excerpt = rawContent.replace(/<[^>]*>?/gm, '').substring(0, 160) + '...';
+        }
+
+        return {
+            id: article.id,
+            slug: article.slug,
+            title: article.title, // keep raw, getName used in component
+            publishDate: article.publishDate,
+            category: article.category,
+            image: article.image,
+            destination: { slug: article.destination?.slug || destination.slug },
+            destination_slug: article.destination_slug || destination.slug,
+            excerpt: excerpt // Pre-calculated string to avoid passing full content
+        };
+    });
+
     return {
         props: {
             destination,
-            articles,
-            locale, // Pass locale explicitly to ensure hydration matches server render
+            articles: optimizedArticles,
+            locale,
             ...(await serverSideTranslations(locale, ['common'])),
         },
         revalidate: 60,

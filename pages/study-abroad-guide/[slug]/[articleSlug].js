@@ -179,9 +179,10 @@ export default function ArticlePage({ article, destination, locale: serverLocale
                                     src={resolveImagePath(article.image || destination?.image)}
                                     alt={articleTitle}
                                     fill
-                                    sizes="(max-width: 768px) 100vw, 768px"
+                                    sizes="(max-width: 768px) 100vw, 840px"
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                                     priority
+                                    quality={60}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-80" />
                             </div>

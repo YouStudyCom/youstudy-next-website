@@ -37,7 +37,7 @@
     "read_less": "Read Less",
     "testimonials_title": "What Our Students Are Saying!",
     "seo": {
-        "title": "YouStudy - Your Gateway to Global Education & Study Abroad",
+        "title": "Study Abroad Consultants | UK, USA, Canada, Australia | YouStudy",
         "description": "Study abroad with confidence. Get a free consultation for university admissions in the UK, USA, Canada & Australia. YouStudy provides expert guidance, admissions support, and student visa assistance.",
         "keywords": "study abroad, study overseas, university admissions, education consultants, study in UK, study in USA, study in Canada, study in Australia, free consultation, student visa, international students, undergraduate study abroad, postgraduate study abroad"
     },
@@ -95,7 +95,7 @@
     "subject_areas_page": {
         "title": "Explore Top Subject Areas",
         "description": "Discover 18+ top academic subject areas for your study abroad journey. From Business and Engineering to Arts and Medicine, find the perfect program that matches your career goals and academic interests.",
-        "hero_title": "Find Your Path",
+        "hero_title": "Find Your Academic Path Abroad",
         "hero_subtitle": "Explore top academic disciplines. Whether you're creative, analytical, or scientific, there's a world of opportunity waiting.",
         "explore_programs": "Explore Programs"
     },
@@ -106,5 +106,8 @@
         "content_p1": "Our team of certified education counsellors offers personalized guidance, from selecting the right course and university to handling your application and visa process. We understand that every student is unique, which is why we tailor our services to meet your specific academic goals and financial requirements.",
         "content_p2": "We pride ourselves on our high success rate and transparent processes. Whether you are looking for undergraduate degrees, postgraduate masters, or English language courses, YouStudy is here to ensure your transition to international education is smooth, stress-free, and successful. Join thousands of students who have trusted us to build their future.",
         "cta": "Learn More About Us"
+    },
+    "terms": {
+        "description": "Legal terms of use and privacy policy for YouStudy. Learn about your rights and obligations when using our services."
     }
 }

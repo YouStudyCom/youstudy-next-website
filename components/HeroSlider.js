@@ -87,9 +87,8 @@ export default function HeroSlider() {
                                 fill
                                 priority={index === 0}
                                 loading={index === 0 ? "eager" : "lazy"}
-                                fetchPriority={index === 0 ? "high" : "auto"}
                                 className="object-cover"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                                sizes="(max-width: 768px) 100vw, 100vw"
                                 quality={60}
                             />
                             {/* Dark Overlay for contrast */}

@@ -1,18 +1,20 @@
 import SEO from '../components/SEO';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import legalData from '../data/legal.json';
 
 export default function TermsAndPrivacy() {
     const router = useRouter();
     const { locale } = router;
+    const { t } = useTranslation('common');
     const content = legalData[locale] || legalData['en'];
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-900" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <SEO
                 title={content.title}
-                description="Legal terms of use and privacy policy for YouStudy."
+                description={t('terms.description')}
             />
 
             {/* Header */}

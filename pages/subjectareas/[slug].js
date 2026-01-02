@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { useTranslation } from 'next-i18next';
 import ReadyToStudyAbroad from '../../components/ReadyToStudyAbroad';
+import { cleanHtml } from '../../lib/cleanHtml';
 
 export default function SubjectDetailPage({ subject, locale: serverLocale }) {
     const router = useRouter();
@@ -57,50 +58,20 @@ export default function SubjectDetailPage({ subject, locale: serverLocale }) {
         return '';
     };
 
-    const cleanHTML = (html) => {
-        if (!html || typeof html !== 'string') return '';
-
-        let cleaned = html;
-
-        // 1. Globally remove style, width, height, dir, lang attributes from ALL tags
-        cleaned = cleaned
-            .replace(/\s(style|width|height|dir|lang)="[^"]*"/gi, '')
-            .replace(/\s(style|width|height|dir|lang)='[^']*'/gi, '');
-
-        // 2. Remove 'class' attribute from all tags EXCEPT iframe and a (links)
-        cleaned = cleaned.replace(/<([a-z0-9]+)\s+([^>]+)>/gi, (match, tagName, attrs) => {
-            const lowerTag = tagName.toLowerCase();
-            // Preserve class for iframes (embeds) and a (links)
-            if (lowerTag === 'iframe' || lowerTag === 'a') {
-                return match;
-            }
-            // For everything else, strip class
-            return match
-                .replace(/\sclass="[^"]*"/gi, '')
-                .replace(/\sclass='[^']*'/gi, '');
-        });
-
-        // 3. Magic Video View: Wrap iframes in responsive container
-        cleaned = cleaned.replace(/(<iframe[^>]*>.*?<\/iframe>)/gi, (match) => {
-            // Add full width/height classes to the iframe itself
-            const styledIframe = match.replace(/<iframe/i, '<iframe class="w-full h-full"');
-            // Wrap in aspect-ratio container
-            return `<div class="relative w-full aspect-video my-8 rounded-xl overflow-hidden shadow-2xl bg-black">${styledIframe}</div>`;
-        });
-
-        // 4. Remove legacy/empty tags
-        return cleaned
-            .replace(/<p[^>]*>(\s|&nbsp;)*<\/p>/gi, '')
-            .replace(/<\/?font[^>]*>/gi, '')
-            .replace(/<\/?span[^>]*>/gi, '');
-    };
+    // cleanHTML logic replaced by imported utility
+    const contentHtml = cleanHtml(getDescription(subject.content));
 
     const subjectTitle = getName(subject.title);
     // Content might be in subject.content (Object) or subject.content[locale] if pre-processed
     // The helper helper 'getDescription' works for content too usually, but content might be just a string in some structures.
     // Let's rely on getName/getDescription logic which handles Objects and Strings.
-    const contentHtml = cleanHTML(getDescription(subject.content));
-    const descriptionText = subject.seo ? getDescription(subject.seo.description) : '';
+
+    // SEO Description: Prepend "Subject Guide: " to ensure uniqueness from related articles
+    const rawDescription = subject.seo ? getDescription(subject.seo.description) : '';
+    const descriptionText = locale === 'ar'
+        ? `دليل التخصص: ${rawDescription}`
+        : `Subject Guide: ${rawDescription}`;
+
     const keywordsText = subject.seo ? getDescription(subject.seo.keywords) : '';
 
     // Dynamic Canonical URL
@@ -155,7 +126,7 @@ export default function SubjectDetailPage({ subject, locale: serverLocale }) {
                             <span>Subject Guide</span>
                         </div>
                         <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">
-                            {subjectTitle}
+                            {locale === 'ar' ? `دراسة ${subjectTitle} في الخارج` : `Study ${subjectTitle} Abroad`}
                         </h1>
                         <div
                             className="text-xl text-slate-500 max-w-2xl leading-relaxed"
