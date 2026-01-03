@@ -490,10 +490,18 @@ export async function getStaticProps({ params, locale }) {
         };
     });
 
+    // Safe Serialization Hack: 
+    // JSON.stringify removes keys with 'undefined' values.
+    // JSON.parse turns it back into an object safe for Next.js props.
+    const safeData = JSON.parse(JSON.stringify({
+        destination,
+        articles: optimizedArticles
+    }));
+
     return {
         props: {
-            destination,
-            articles: optimizedArticles,
+            destination: safeData.destination,
+            articles: safeData.articles,
             locale,
             ...(await serverSideTranslations(locale, ['common'])),
         },
