@@ -448,27 +448,45 @@ export async function getStaticProps({ params, locale }) {
         };
     }
 
+    // Helper to extract localized text (duplicated from component to ensure server-side access)
+    const getLocalizedValue = (data) => {
+        if (!data) return '';
+        if (typeof data === 'object') return data[locale] || data['en'] || '';
+        if (typeof data === 'string') {
+            if (data.trim().startsWith('{')) {
+                try {
+                    const parsed = JSON.parse(data);
+                    return parsed[locale] || parsed['en'] || data;
+                } catch (e) {
+                    return data;
+                }
+            }
+            return data;
+        }
+        return '';
+    };
+
     // OPTIMIZATION: Reduce Page Size
     // Strip heavy 'content' and 'seo' fields from articles list.
     // We only need fields for the card display: id, slug, title, date, category, image, excerpt.
     const optimizedArticles = articles.map(article => {
         // Fallback description from content if excerpt is missing, but truncate deeply
-        let excerpt = getName(article.excerpt);
+        let excerpt = getLocalizedValue(article.excerpt);
         if (!excerpt && article.content) {
-            const rawContent = getName(article.content);
+            const rawContent = getLocalizedValue(article.content);
             excerpt = rawContent.replace(/<[^>]*>?/gm, '').substring(0, 160) + '...';
         }
 
         return {
-            id: article.id,
-            slug: article.slug,
-            title: article.title, // keep raw, getName used in component
-            publishDate: article.publishDate,
-            category: article.category,
-            image: article.image,
-            destination: { slug: article.destination?.slug || destination.slug },
+            id: article.id || null,
+            slug: article.slug || null,
+            title: article.title || '',
+            publishDate: article.publishDate || null,
+            category: article.category || 'Article',
+            image: article.image || null,
+            destination: article.destination ? { slug: article.destination.slug } : { slug: destination.slug },
             destination_slug: article.destination_slug || destination.slug,
-            excerpt: excerpt // Pre-calculated string to avoid passing full content
+            excerpt: excerpt || ''
         };
     });
 
